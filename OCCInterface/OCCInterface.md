@@ -39,9 +39,6 @@ I developped this app with ReactJS (with Redux, react-router), webpack to compil
 used travis CI on heroku, and some bash to make it properly works.
 
 ## Going further : ExploREST
-In fact, 90% of the developement is generic, and can be used to make this application works with every REST API you want !
-
-## Going further
 In fact, 90% of the developement is generic, and can be used to make this application works with every REST API you want!  
 
 It is a really cool tool to documentate you api, by puting sample/playground links to show simply how you API works to your user. Swagger is a reference in this domain, but here we have some interesting functionalities swagger does not have : playground links, sample links, markdown redaction, simplicity of use, cross resources browsing, a beautiful look.
