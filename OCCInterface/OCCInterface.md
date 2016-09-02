@@ -1,4 +1,3 @@
-# OCCInterface
 
 During my intership at Smile-OpenWide this summer, one my main project was the development of an application which aim is
 to explore, documentate and vulgarize OCCI servers.
