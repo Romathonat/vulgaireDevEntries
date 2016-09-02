@@ -38,10 +38,10 @@ You can try it here : http://occinterface.herokuapp.com (make take a little time
 I developped this app with ReactJS (with Redux, react-router), webpack to compile/minify/dev, NodeJS and express for the server. I also
 used travis CI on heroku, and some bash to make it properly works.
 
-## Going further
+## Going further : ExploREST
 In fact, 90% of the developement is generic, and can be used to make this application works with every REST API you want !
 It is a really cool tool to documentate you api, by puting sample/playground links to show simply how you API works to your user. Swagger is a reference in this domain, but here we have some interesting functionalities swagger does not have : playground links, sample links, markdown redaction, simplicity of use, cross resources browsing, a beautiful look.
 
-This project is open-sourced, so do not hesitate to contribute (give advices, report bug or make pull requests)!
+This project is open-sourced, so do not hesitate to contribute (give advices, report bug or make pull requests)! [https://github.com/Romathonat/ExploREST](https://github.com/Romathonat/ExploREST)
 
 
