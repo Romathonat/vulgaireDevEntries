@@ -30,7 +30,7 @@ Here is a list of features:
 - Write sample links into the markdown, which make a POST and/or DELETE request when clicking on it. It is particulary useful to communicate with your team, instead of making a curl, just write the request in the markdown. 
 - user friendly and quite sexy.
 
-You can try it here : http://occinterface.herokuapp.com (make take a little time if the app is asleep)
+You can try it here : [http://occinterface.herokuapp.com](http://occinterface.herokuapp.com) (may take a little time if the app is asleep)
 
 
 ### Technical stack
