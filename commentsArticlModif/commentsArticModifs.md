@@ -17,6 +17,9 @@ section !
 
 Also, disqus uses django, they made an interesting post about how they scale to billion of requests : [https://blog.disqus.com/scaling-django-to-8-billion-page-views](https://blog.disqus.com/scaling-django-to-8-billion-page-views)
 
+Edit: I find a little interesting detail. Disqus seems to auto dectect the main color of you site, and use it as its color (look disqus "theme" color is orange at the bottom of this article), so that the visual integration is
+smooth.
+
 ## Article submission
 
 I also developed a system that let you write a new article that you wanted to be on vulgairedev. It worked too,
