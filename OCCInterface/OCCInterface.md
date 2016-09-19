@@ -3,9 +3,8 @@ During my intership at Smile-OpenWide this summer, one my main project was the d
 to explore, documentate and vulgarize OCCI servers.
 
 ## What is an OCCI server ?
-OCCI is a set of specifications, which aim is to normalize and unify the Cloud. Indeed, If you use the Cloud today and want 
-to change your Cloud provider, it is really painful because the way of managing is different depending on the provider
-you use. OCCI try to solve this issue.
+OCCI is a set of specifications. Its aim is to normalize and unify the Cloud. Indeed, If you are using the Cloud today and want to change your Cloud provider, it is really painful because the way of managing is different depending on the provider
+you are using. OCCI is trying to solve this issue.
 
 In this standard, everything inherits from Resource or Link. For instance, an PostgreSQL database is a Resource, a Compute 
 is a resource, and you can link them through an StorageLink.
