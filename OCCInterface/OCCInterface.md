@@ -1,6 +1,5 @@
 
-During my intership at Smile-OpenWide this summer, one my main project was the development of an application which aim is
-to explore, documentate and vulgarize OCCI servers.
+During my intership at Smile-OpenWide this summer, one of my main projects was an application made for OCCI servers exploration, documentation and vulgarization.
 
 ## What is an OCCI server ?
 OCCI is a set of specifications. Its aim is to normalize and unify the Cloud. Indeed, If you are using the Cloud today and want to change your Cloud provider, it is really painful because the way of managing is different depending on the provider
