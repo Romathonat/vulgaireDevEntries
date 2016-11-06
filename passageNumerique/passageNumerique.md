@@ -9,7 +9,7 @@ La première conséquence du "numéricatouva" (qu'on abrégera NATV pour paraît
 Alors certes, l'informatique est de plus en plus important aujourd'hui. Certes, apprendre un peu d'algorithmique peut former l'esprit au même titre 
 que les mathématiques. Mais venir sacrifier des heures (disons trop d'heures) de disciplines fondamentales pour apprendre à faire de la mise en forme word, 
 ou comment faire de jolies powerpoints, non merci. On forme les gens pour qu'ils apprennent à réfléchir par eux-mêmes, pour qu'ils acquièrent
-une capacité d'abstraction, des méthodes de raisonnement et des connaissances. L'essentiel n'est pas de savoir utiliser un outil parmi tant d'autres, donc on ne sait même pas s'il va perdurer !
+une capacité d'abstraction, des méthodes de raisonnement et des connaissances. L'essentiel n'est pas de savoir utiliser un outil parmi tant d'autres, dont on ne sait même pas s'il va perdurer !
 Cette tendance privilégie la forme au fond, ça ne va pas.
 
 ###Diminution de l'attention
