@@ -18,7 +18,7 @@ git clone https://github.com/BVLC/caffe.git
 Then, we build the docker image (it will take some time):
 
 ```bash
-cd caffe
+cd caffe/docker
 docker build -t caffe:cpu standalone/cpu
 ```
 This step installed all needed dependencies to make caffe work.
@@ -26,7 +26,7 @@ This step installed all needed dependencies to make caffe work.
 Now, we will launch the docker container, with a shell access. Moreover, we mount a volume (/datas into the docker container) of datas from our computer to be able to access it from docker.
 
 ```bash
-docker run -ti -v /path/to/folder/caffe_datas/:/datas caffe:cpu bash
+docker run -ti -v /path/to/folder/conf_and_images_for_caffe/:/datas caffe:cpu bash
 ```
 **Important**: When you are in the docker container, caffe is installed in /opt/caffe/
 
