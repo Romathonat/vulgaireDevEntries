@@ -36,6 +36,7 @@ To create a CNN, you need to give it datas so that it can learn. You need to hav
 To convert you images to LMDB, you can use a tool included in caffe :
 
 ```bash
+cd /datas
 /opt/caffe/build/tools/convert_imageset --shuffle --gray train_images/ posneg.txt train_lmdb
 ```
 train_images is the folder when you have your training images. posneg.txt is a file with a line for each image, containing the path to the image relative to train_images, and the corresponding class (face or non-face), it looks like this :
