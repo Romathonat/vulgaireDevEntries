@@ -8,7 +8,7 @@ In a second time, and once the CNN was trained, we had to create a tool using it
 ##Architecture
 We used a simple one, with convolution, pooling, and only two neurons layers (so it is not really "deep" learning).
 Here is a schema of the architecture :
-<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png" width="600">
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png" width="1000">
 ##First iteration
 On our first iteration, testing our CNN on test images (~7600 images) gave us a precision of ~84%, depending on our luck
 because the training of the CNN is not deterministic. It was decent. 
@@ -27,8 +27,7 @@ As you can see, most of faces are detected, but some non-faces are also detected
 To solve the many squares problem, we used a clustering algorithm : DBSCAN. You can read more about it [here](https://en.wikipedia.org/wiki/DBSCAN). In short, it detects highest densities. Here we detected highest densities of 
 square, and placed a circle on it.
 
-![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/cluster.jpg)
-
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/cluster.jpg" width="600">
 With correct parameters, it was pretty good !
 
 ##Third iteration
@@ -49,11 +48,11 @@ With this approach, we manages to reach a precision of 93.3% !
 
 Here are some results :
 
-![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/iteration3.jpg)
+[<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/iteration3.jpg" width="600">](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/iteration3.jpg)
 
 It does not seems so much better on this image than in the one from iteration 2, but trust me the detection is way better on other images.
 
-![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/twd.jpg_with_clusters_on_source.jpg)
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/twd.jpg_with_clusters_on_source.jpg" width="600">
  	
 Here we can se that Daryl (on the right) is not detected because his face is a little turn away from the camera, and our training only included faces "in front" of the camera. In the same way, I think black faces may be more difficult to detect for our CNN because there was less black faces in our training set.
 
