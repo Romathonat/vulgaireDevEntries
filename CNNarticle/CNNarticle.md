@@ -19,7 +19,8 @@ and extracted this 36\*36 image to check if is a face or not, thanks to our CNN.
 end the image, we resize it with a factor 0.9, in order to detect bigger faces than 36*36.
 This process worked quite good actually :
 
-![First iteration image](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/iteration1.jpg)
+
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/iteration1.jpg" width="600">
 
 As you can see, most of faces are detected, but some non-faces are also detected. In addition, we had many detections, and our goal was to detect faces with just a single square or a single circle per face !
 
