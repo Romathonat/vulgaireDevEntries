@@ -67,3 +67,4 @@ Authors:
 - CACHARD Côme
 - MATHONAT Romain
 - NATIVEL Nicolas
+- NOUVELLET Victor
