@@ -1,3 +1,5 @@
+#Convolutional Neural Network
+
 ##Introduction
 The aim of our project was to create a convolutional neural network (CNN) to determine if a small image of 36*36 is
 a face or not, with caffe (machine learning framework).
@@ -19,15 +21,15 @@ This process worked quite good actually :
 
 ![First iteration image](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/iteration1.jpg)
 
-As you can see, most of faces are detected, but some non-faces are detected. In addition, we had many detections, and our goal was to detect faces with just a single square or a single circle per face !
+As you can see, most of faces are detected, but some non-faces are also detected. In addition, we had many detections, and our goal was to detect faces with just a single square or a single circle per face !
 
 ##Second iteration
-To solve the many squares problem, we used a clustering technique : DBSCAN. You can read more about it [here](https://en.wikipedia.org/wiki/DBSCAN). In short, it detects higher densities. Here we detected higher densities of 
+To solve the many squares problem, we used a clustering algorithm : DBSCAN. You can read more about it [here](https://en.wikipedia.org/wiki/DBSCAN). In short, it detects highest densities. Here we detected highest densities of 
 square, and placed a circle on it.
 
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/cluster.jpg)
 
-With good parameters, it was very good !
+With correct parameters, it was pretty good !
 
 ##Third iteration
 We wanted to increase our detection precision. First we tried to change our architecture, but it was not very concluding. 
@@ -59,3 +61,9 @@ Here we can se that Daryl (on the right) is not detected because his face is a l
 
 ##Improvement axes
 We could keep only one circle when there are multiple on a the same location. A more important and reprensentative set of faces could also be a good improvement. Finally, we did not pay attention to performances, we could optimize the process because actually, it takes something like 30 seconds to detect faces in an image, depending on it size.
+
+Authors: 
+- BASEILHAC Theo
+- CACHARD Côme
+- MATHONAT Romain
+- NATIVEL Nicolas
