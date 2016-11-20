@@ -8,7 +8,7 @@ In a second time, and once the CNN was trained, we had to create a tool using it
 ##Architecture
 We used a simple one, with convolution, pooling, and only two neurons layers (so it is not really "deep" learning).
 Here is a schema of the architecture :
-<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png" width="1000">
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png" width="700">
 ##First iteration
 On our first iteration, testing our CNN on test images (~7600 images) gave us a precision of ~84%, depending on our luck
 because the training of the CNN is not deterministic. It was decent. 
@@ -56,8 +56,7 @@ It does not seems so much better on this image than in the one from iteration 2,
  	
 Here we can se that Daryl (on the right) is not detected because his face is a little turn away from the camera, and our training only included faces "in front" of the camera. In the same way, I think black faces may be more difficult to detect for our CNN because there was less black faces in our training set.
 
-![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/irlande.jpg_with_clusters_on_source.jpg)
-
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/irlande.jpg_with_clusters_on_source.jpg" width="600">
 ##Improvement axes
 We could keep only one circle when there are multiple on a the same location. A more important and reprensentative set of faces could also be a good improvement. Finally, we did not pay attention to performances, we could optimize the process because actually, it takes something like 30 seconds to detect faces in an image, depending on it size.
 
