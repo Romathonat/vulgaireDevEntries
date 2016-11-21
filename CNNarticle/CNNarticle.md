@@ -45,7 +45,7 @@ Then, we tried to add a bootstraping step in the creation of the CNN. The princi
 
 The advantage of bootstraping is that we train the CNN to better separate faces from non-faces. The fact that we first take into account big mistakes makes the CNN more performant, just like when you teach to a children, you first make him correct his big mistakes, not subtles errors.
 
-With this approach, we manages to reach a precision of 93.3% !
+With this approach, we manage to reach a precision of 93.3% !
 
 Here are some results :
 
@@ -80,6 +80,9 @@ $$
 We used [The BioID face database](https://www.bioid.com/About/BioID-Face-Database), composed of 1521 images from 23 different persons, which might not really be diverse enough to give the best results possible but had the enormous advantage to include, for each image, the coordinates of facial features, allowing us to skip the feature selection work.
 
 #### 2. Results
+
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_dataset.png" width="600">
+A sample of faces we synthesized from the BioID dataset and used to train our CNN
 
 In the end, we randomly created 60 000 "Frankenstein monsters" using parts of randomly selected faces among the initial 1500 images. With our CNN and using bootstrapping during the training phase, the frankenstein dataset produced an accuracy of 89.4% on our test images - not that bad !
 Best results would certainly be achieved with a more diverse initial dataset (I may try that sooner or later, and update this post).
