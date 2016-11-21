@@ -28,6 +28,7 @@ To solve the many squares problem, we used a clustering algorithm : DBSCAN. You 
 square, and placed a circle on it.
 
 <img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/cluster.jpg" width="600">
+
 With correct parameters, it was pretty good !
 
 ##Third iteration
