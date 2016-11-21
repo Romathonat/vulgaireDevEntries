@@ -68,7 +68,7 @@ For fun, we wanted to see how we could apply this concept and synthesize faces t
 
 #### Collect a (relatively) small sample of faces, and synthesize monsters
 
-<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_features_selection.bmp" width="600">
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_features_selection.png" width="600">
 Here you can see an exemple of face synthesis from two faces, using randomly generated binary codes (ranging from 1 to $2^{5}-2$) to choose which giver to pick facial features from.
 
 To create more synthesized faces, we picked random combinations of four face images from our dataset. For each combination, we created a synthesized face using features from the four images : one face giving the head, one face giving the eyes, another the nose and the last the mouth.
