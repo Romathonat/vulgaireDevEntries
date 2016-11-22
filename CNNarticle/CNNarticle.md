@@ -69,6 +69,7 @@ For fun, we wanted to see how we could apply this concept and synthesize faces t
 #### Collect a (relatively) small sample of faces, and synthesize monsters
 
 <img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_features_selection.png" width="600">
+
 Here you can see an exemple of face synthesis from two faces, using randomly generated binary codes (ranging from 1 to $2^{5}-2$) to choose which giver to pick facial features from.
 
 To create more synthesized faces, we picked random combinations of four face images from our dataset. For each combination, we created a synthesized face using features from the four images : one face giving the head, one face giving the eyes, another the nose and the last the mouth.
@@ -82,6 +83,7 @@ We used [The BioID face database](https://www.bioid.com/About/BioID-Face-Databas
 #### 2. Results
 
 <img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_dataset.png" width="600">
+
 A sample of faces we synthesized from the BioID dataset and used to train our CNN
 
 In the end, we randomly created 60 000 "Frankenstein monsters" using parts of randomly selected faces among the initial 1500 images. With our CNN and using bootstrapping during the training phase, the frankenstein dataset produced an accuracy of 89.4% on our test images - not that bad !
