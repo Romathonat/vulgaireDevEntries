@@ -36,7 +36,7 @@ We wanted to increase our detection precision. First we tried to change our arch
 
 Then, we tried to add a bootstraping step in the creation of the CNN. The principle is as follow:
 
-1. We create a big set of images of non faces : 36\*36 extraction of textures images
+1. We create a big set of images of non faces : 36\*36 images extracted from textures images
 2. We train our CNN like before.
 3. We make it work on textures we extracted on the step 1, and select images that are detected as faces with a threshold of 0.9. In fact, we choose images where our CNN makes big mistakes.
 4. We train our CNN again, but now we add the non-faces from the previous step to the training set. We take caution to have as many faces as non-faces in the training set.
@@ -45,7 +45,7 @@ Then, we tried to add a bootstraping step in the creation of the CNN. The princi
 
 The advantage of bootstraping is that we train the CNN to better separate faces from non-faces. The fact that we first take into account big mistakes makes the CNN more performant, just like when you teach to a children, you first make him correct his big mistakes, not subtles errors.
 
-With this approach, we manages to reach a precision of 93.3% !
+With this approach, we manage to reach a precision of 93.3% !
 
 Here are some results :
 
@@ -61,9 +61,32 @@ Here we can se that Daryl (on the right) is not detected because his face is a l
 ##Improvement axes
 We could keep only one circle when there are multiple on a the same location. A more important and reprensentative set of faces could also be a good improvement. Finally, we did not pay attention to performances, we could optimize the process because actually, it takes something like 30 seconds to detect faces in an image, depending on it size.
 
-Authors: 
-- BASEILHAC Theo
-- CACHARD Côme
-- MATHONAT Romain
-- NATIVEL Nicolas
-- NOUVELLET Victor
+##Bonus : Frankenstein
+Part of what makes Convolutional Neural Networks so powerful is the large quantity of data you "feed" them with during the learning phase. Supposing your dataset is diverse enough, the more training images, the better the detection rate in the end. Unfortunately, it's not always easy to find datasets that are both publicly available and large & diverse enough.
+Quite by accident we found a very interesting publication[^1] adressing the matter. The idea is to merge a set of giver faces into a synthesized face by picking facial features from each and pasting them onto a giver head.
+For fun, we wanted to see how we could apply this concept and synthesize faces to create a dataset as large as that we were successfully using to train our CNN, and if the results were comparable.
+
+#### Collect a (relatively) small sample of faces, and synthesize monsters
+
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_features_selection.png" width="600">
+Here you can see an exemple of face synthesis from two faces, using randomly generated binary codes (ranging from 1 to $2^{5}-2$) to choose which giver to pick facial features from.
+
+To create more synthesized faces, we picked random combinations of four face images from our dataset. For each combination, we created a synthesized face using features from the four images : one face giving the head, one face giving the eyes, another the nose and the last the mouth.
+
+Our goal was to produce approximately 60 000 unique faces. Theoritically, such a number can be obtained from only 37 initial unique faces :
+$$
+C_{36}^{4} = 58905 < 60000 < C_{37}^{4} = 66045
+$$
+We used [The BioID face database](https://www.bioid.com/About/BioID-Face-Database), composed of 1521 images from 23 different persons, which might not really be diverse enough to give the best results possible but had the enormous advantage to include, for each image, the coordinates of facial features, allowing us to skip the feature selection work.
+
+#### 2. Results
+
+<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/frankenstein_dataset.png" width="600">
+A sample of faces we synthesized from the BioID dataset and used to train our CNN
+
+In the end, we randomly created 60 000 "Frankenstein monsters" using parts of randomly selected faces among the initial 1500 images. With our CNN and using bootstrapping during the training phase, the frankenstein dataset produced an accuracy of 89.4% on our test images - not that bad !
+Best results would certainly be achieved with a more diverse initial dataset (I may try that sooner or later, and update this post).
+
+Authors: - BASEILHAC Theo - CACHARD Côme - MATHONAT Romain - NATIVEL Nicolas - NOUVELLET Victor
+
+[^1]:[G. Hu, X. Peng, Y. Yang, T. Hospedales, et J. Verbeek, « Frankenstein: Learning Deep Face Representations using Small Data », arXiv:1603.06470 [cs], mars 2016.](https://arxiv.org/abs/1603.06470)
