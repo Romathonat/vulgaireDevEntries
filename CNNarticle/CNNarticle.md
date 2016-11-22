@@ -75,7 +75,9 @@ Here you can see an exemple of face synthesis from two faces, using randomly gen
 To create more synthesized faces, we picked random combinations of four face images from our dataset. For each combination, we created a synthesized face using features from the four images : one face giving the head, one face giving the eyes, another the nose and the last the mouth.
 
 Our goal was to produce approximately 60 000 unique faces. Theoritically, such a number can be obtained from only 37 initial unique faces :
+
 $$C_{36}^{4} = 58905 < 60000 < C_{37}^{4} = 66045$$
+
 We used [The BioID face database](https://www.bioid.com/About/BioID-Face-Database), composed of 1521 images from 23 different persons, which might not really be diverse enough to give the best results possible but had the enormous advantage to include, for each image, the coordinates of facial features, allowing us to skip the feature selection work.
 
 #### 2. Results
