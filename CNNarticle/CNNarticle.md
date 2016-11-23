@@ -8,7 +8,7 @@ In a second time, and once the CNN was trained, we had to create a tool using it
 ##Architecture
 We used a simple one, with convolution, pooling, and only two neurons layers (so it is not really "deep" learning).
 Here is a schema of the architecture :
-<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png" width="700">
+[<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png" width="700">](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/architecture.png)
 ##First iteration
 On our first iteration, testing our CNN on test images (~7600 images) gave us a precision of ~84%, depending on our luck
 because the training of the CNN is not deterministic. It was decent. 
