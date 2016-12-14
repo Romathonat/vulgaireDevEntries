@@ -76,7 +76,7 @@ To create more synthesized faces, we picked random combinations of four face ima
 
 Our goal was to produce approximately 60 000 unique faces. Theoretically, such a number can be obtained from only 37 initial unique faces :
 
-$$\binom{4}{36} = 58905 < 60000 < \binom{4}{37} = 66045$$
+$$\binom{36}{4} = 58905 < 60000 < \binom{37}{4} = 66045$$
 
 We used [The BioID face database](https://www.bioid.com/About/BioID-Face-Database), composed of 1521 images from 23 different persons, which might not really be diverse enough to give the best results possible but had the enormous advantage to include, for each image, the coordinates of facial features, allowing us to skip the feature selection work.
 
