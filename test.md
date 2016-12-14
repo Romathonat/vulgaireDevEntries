@@ -22,7 +22,7 @@ var i = 25;
 
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-$$I = \int \rho R^{2} dV$$
+$$C{36}^{4} = 58905 < 60000 < C{37}^{4} = 66045$$
 
 bla bla <sup id="a1">[1](#f1)</sup>
 
