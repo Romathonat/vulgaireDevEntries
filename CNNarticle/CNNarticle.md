@@ -63,7 +63,7 @@ We could keep only one circle when there are multiple on a the same location. A 
 
 ##Bonus : Frankenstein
 Part of what makes Convolutional Neural Networks so powerful is the large quantity of data you "feed" them with during the learning phase. Supposing your dataset is diverse enough, the more training images, the better the detection rate in the end. Unfortunately, it's not always easy to find datasets that are both publicly available and large & diverse enough.
-Quite by accident we found a very interesting publication[^1] adressing the matter. The idea is to merge a set of giver faces into a synthesized face by picking facial features from each and pasting them onto a giver head.
+Quite by accident we found a very interesting publication <sup id="a1">[1](#f1)</sup> adressing the matter. The idea is to merge a set of giver faces into a synthesized face by picking facial features from each and pasting them onto a giver head.
 For fun, we wanted to see how we could apply this concept and synthesize faces to create a dataset as large as that we were successfully using to train our CNN, and if the results were comparable.
 
 #### Collect a (relatively) small sample of faces, and synthesize monsters
@@ -91,4 +91,5 @@ Best results would certainly be achieved with a more diverse initial dataset (I 
 
 Authors: - BASEILHAC Theo - CACHARD Côme - MATHONAT Romain - NATIVEL Nicolas - NOUVELLET Victor
 
-[^1]:[G. Hu, X. Peng, Y. Yang, T. Hospedales, et J. Verbeek, « Frankenstein: Learning Deep Face Representations using Small Data », arXiv:1603.06470 [cs], mars 2016.](https://arxiv.org/abs/1603.06470)
+<b id="f1">1</b> [G. Hu, X. Peng, Y. Yang, T. Hospedales, et J. Verbeek, « Frankenstein: Learning Deep Face Representations using Small Data », arXiv:1603.06470 [cs], mars 2016.](https://arxiv.org/abs/1603.06470) [↩](#a1)
+
