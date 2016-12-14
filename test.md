@@ -22,7 +22,7 @@ var i = 25;
 
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-$$C{36}^{4} = 58905 < 60000 < C{37}^{4} = 66045$$
+$$\binom{4}{36} = 58905 < 60000 < \binom{4}{37} = 66045$$
 
 bla bla <sup id="a1">[1](#f1)</sup>
 
