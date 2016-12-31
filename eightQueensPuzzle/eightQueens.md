@@ -13,7 +13,6 @@ This way of solving the problem is a greedy one. So, it can stay on a local extr
 
 Another thing with this algorithm is that it will find a solution, not necessarily all the solutions (or you must  repeat the algorithm but there is clever things to do if you want to find all solutions). But if you want to find a solution quickly, even on a big chessboard, this solution is good. In fact it works on way bigger chessboard : with 1 000 000 queens, the algorithm with the optimization of selecting the best next place when "repairing" takes 50 steps in average.
 ```python
-# coding: utf-8
 from random import randint
 
 # 0 means no queen on this location, 1 that there is one.
