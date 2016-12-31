@@ -17,9 +17,10 @@ Another thing with this algorithm is that it will find a solution, not necessari
 
 ```python
 
+# coding: utf-8
 from random import randint
 
-#the 0 means no queen on this location, 1 that there is one.
+# 0 means no queen on this location, 1 that there is one.
 game_board = [[0 for i in range(8)] for j in range(8)]
 
 def init_board(game_board):
@@ -27,96 +28,95 @@ def init_board(game_board):
     for i in range(len(game_board)):
         game_board[i][randint(0,7)] = 1
 
+def count_conflict(game_board, x, y):
+    """give the number of conflict for the position x,y"""
+    count = 0
+    # we check the top
+    for k in range(x-1,0,-1):
+        if game_board[k][y] == 1:
+            count += 1
+            # we break because the current queen will not affect
+            # other queen behind the one we just found
+            break
+
+    # we check the left
+    for l in range(y-1,0,-1):
+        if game_board[x][l] == 1:
+            count += 1
+            break
+
+    # we check the bottom
+    for k in range(x+1,len(game_board)):
+        if game_board[k][y] == 1:
+            count += 1
+            break
+
+    # we check the right
+    for l in range(y+1,len(game_board[x])):
+        if game_board[x][l] == 1:
+            count += 1
+            break
+
+    #we check the upper left diagonal:
+    if(x-1 >= 0 and y-1 >= 0):
+        next_location = (x-1,y-1)
+
+        while(next_location[0] >= 0 and next_location[1] >= 0):
+            if(game_board[next_location[0]][next_location[1]] == 1):
+                count += 1
+                break
+
+            next_location = (next_location[0]-1, next_location[1]-1)
+
+    #we check the bottom left diagonal:
+    if(x+1 < len(game_board) and y-1 >= 0):
+        next_location = (x+1,y-1)
+
+        while(next_location[0] < len(game_board) and next_location[1] >= 0):
+            if(game_board[next_location[0]][next_location[1]] == 1):
+                count += 1
+                break
+
+            next_location = (next_location[0]+1, next_location[1]-1)
+
+    #we check the bottom right diagonal:
+    if(x+1 < len(game_board) and y+1 < len(game_board[x])):
+        next_location = (x+1,y+1)
+        while(next_location[0] < len(game_board) and next_location[1] < len(game_board[x])):
+            if(game_board[next_location[0]][next_location[1]] == 1):
+                count += 1
+                break
+
+            next_location = (next_location[0]+1, next_location[1]+1)
+
+    #we check the upper right diagonal:
+    if(x-1 >= 0 and y+1 < len(game_board[x])):
+        next_location = (x-1,y+1)
+        while(next_location[0] >= 0 and next_location[1] < len(game_board[x])):
+            if(game_board[next_location[0]][next_location[1]] == 1):
+                count += 1
+                break
+            next_location = (next_location[0]-1, next_location[1]+1)
+
+    return count
+
+
 def check_configuration(game_board):
     """This function test if we are in a good configuration.
     If yes, it returns true, if not, it returns the location of the more conflicting queen """
 
-    #key is the location of the queen, second is the number of conflict
-    count_conflict = {}
+    # key is the location of the queen, second is the number of conflict
+    conflict_count = {}
 
     for i in range(len(game_board)):
         for j in range(len(game_board[i])):
             if(game_board[i][j] == 1):
-                #we add this queen if we do not have found her yet
-                count_conflict[(i,j)] = count_conflict.get((i,j), 0)
+                # we add this queen if we do not have found her yet
+                conflict_count[(i,j)] = count_conflict(game_board,i,j)
 
-                #we check the top
-                for k in range(i-1,0,-1):
-                    if game_board[k][j] == 1:
-                        count_conflict[(k,j)] = count_conflict.get((k,j), 0) + 1
-                        #print('nique {} {} depuis {} {}'.format(k,j,i,j))
-                        # we break because the current queen will not affect
-                        # other queen behind the one we just found
-                        break
+    more_conflicting = max(conflict_count, key=conflict_count.get)
 
-                #we check the left
-                for l in range(j-1,0,-1):
-                    if game_board[i][l] == 1:
-                        count_conflict[(i,l)] = count_conflict.get((i,l), 0) + 1
-                        break
-
-                #we check the bottom
-                for k in range(i+1,len(game_board)):
-                    if game_board[k][j] == 1:
-                        count_conflict[(k,j)] = count_conflict.get((k,j), 0) + 1
-                        break
-
-                #we check the right
-                for l in range(j+1,len(game_board[i])):
-                    if game_board[i][l] == 1:
-                        count_conflict[(i,l)] = count_conflict.get((i,l), 0) + 1
-                        break
-
-                #we check the upper left diagonal:
-                if(i-1 >= 0 and j-1 >= 0):
-                    next_location = (i-1,j-1)
-
-                    while(next_location[0] >= 0 and next_location[1] >= 0):
-                        if(game_board[next_location[0]][next_location[1]] == 1):
-                            count_conflict[(next_location[0],next_location[1])] = \
-                            count_conflict.get((next_location[0],next_location[1]), 0) + 1
-                            break
-
-                        next_location = (next_location[0]-1, next_location[1]-1)
-
-                #we check the bottom left diagonal:
-                if(i+1 < len(game_board) and j-1 >= 0):
-                    next_location = (i+1,j-1)
-
-                    while(next_location[0] < len(game_board) and next_location[1] >= 0):
-                        if(game_board[next_location[0]][next_location[1]] == 1):
-                            count_conflict[(next_location[0],next_location[1])] = \
-                            count_conflict.get((next_location[0],next_location[1]), 0) + 1
-                            break
-
-                        next_location = (next_location[0]+1, next_location[1]-1)
-
-                #we check the bottom right diagonal:
-                if(i+1 < len(game_board) and j+1 < len(game_board[i])):
-                    next_location = (i+1,j+1)
-                    while(next_location[0] < len(game_board) and next_location[1] < len(game_board[i])):
-                        if(game_board[next_location[0]][next_location[1]] == 1):
-                            count_conflict[(next_location[0],next_location[1])] = \
-                            count_conflict.get((next_location[0],next_location[1]), 0) + 1
-                            break
-
-                        next_location = (next_location[0]+1, next_location[1]+1)
-
-                #we check the upper right diagonal:
-                if(i-1 >= 0 and j+1 < len(game_board[i])):
-                    next_location = (i-1,j+1)
-
-                    while(next_location[0] >= 0 and next_location[1] < len(game_board[i])):
-                        if(game_board[next_location[0]][next_location[1]] == 1):
-                            count_conflict[(next_location[0],next_location[1])] = \
-                            count_conflict.get((next_location[0],next_location[1]), 0) + 1
-                            break
-
-                        next_location = (next_location[0]-1, next_location[1]+1)
-
-
-    more_conflicting = max(count_conflict, key=count_conflict.get)
-    if(count_conflict[(more_conflicting[0],more_conflicting[1])] == 0):
+    if(conflict_count[(more_conflicting[0], more_conflicting[1])] == 0):
         return True
     else:
         return more_conflicting
@@ -128,8 +128,8 @@ def print_game_board(game_board):
 init_board(game_board)
 more_conflicting = check_configuration(game_board)
 
-#let's say we let our algorithm try 1000 times from an initial configuration. If we can't find
-#a solution, we try with another random generation
+# let's say we let our algorithm try 1000 times from an initial configuration. If we can't find
+# a solution, we try with another random generation
 count = 1000
 
 while(more_conflicting != True):
@@ -138,12 +138,15 @@ while(more_conflicting != True):
     game_board[more_conflicting[0]][randint(0,7)] = 1
     more_conflicting = check_configuration(game_board)
 
+
+
     if count == 0:
         init_board(game_board)
         count = 1000
     count -= 1
 
 print_game_board(game_board)
+
 
 ```
 If we want to find all solutions, we can make a brute-force algorithm with a little of help : we begin the search from a configuration where there is a queen on each row ($$8^8 = 16,777,216$$ possibilities). If we do this with a DFS, row by row, we can eliminate many solutions soon in the search tree (it is the same idea as a branch-and-bound approach, you cut branches that you know are not good solutions).
