@@ -15,7 +15,7 @@ Another thing with this algorithm is that it will find a solution, not necessari
 ```python
 from random import randint
 
-# 0 means no queen on this location, 1 that there is one.
+#0 means no queen on this location, 1 that there is one.
 game_board = [[0 for i in range(8)] for j in range(8)]
 
 def init_board(game_board):
@@ -27,16 +27,16 @@ def check_configuration(game_board):
     """This function test if we are in a good configuration.
     If yes, it returns true, if not, it returns the location of the more conflicting queen """
 
-    # key is the location of the queen, second is the number of conflict
+    #key is the location of the queen, second is the number of conflict
     count_conflict = {}
 
     for i in range(len(game_board)):
         for j in range(len(game_board[i])):
             if(game_board[i][j] == 1):
-                # we add this queen if we do not have found her yet
+                #we add this queen if we do not have found her yet
                 count_conflict[(i,j)] = count_conflict.get((i,j), 0)
 
-                # we check the top
+                #we check the top
                 for k in range(i-1,0,-1):
                     if game_board[k][j] == 1:
                         count_conflict[(k,j)] = count_conflict.get((k,j), 0) + 1
@@ -45,19 +45,19 @@ def check_configuration(game_board):
                         # other queen behind the one we just found
                         break
 
-                # we check the left
+                #we check the left
                 for l in range(j-1,0,-1):
                     if game_board[i][l] == 1:
                         count_conflict[(i,l)] = count_conflict.get((i,l), 0) + 1
                         break
 
-                # we check the bottom
+                #we check the bottom
                 for k in range(i+1,len(game_board)):
                     if game_board[k][j] == 1:
                         count_conflict[(k,j)] = count_conflict.get((k,j), 0) + 1
                         break
 
-                # we check the right
+                #we check the right
                 for l in range(j+1,len(game_board[i])):
                     if game_board[i][l] == 1:
                         count_conflict[(i,l)] = count_conflict.get((i,l), 0) + 1
@@ -124,8 +124,8 @@ def print_game_board(game_board):
 init_board(game_board)
 more_conflicting = check_configuration(game_board)
 
-# let's say we let our algorithm try 1000 times from an initial configuration. If we can't find
-# a solution, we try with another random generation
+#let's say we let our algorithm try 1000 times from an initial configuration. If we can't find
+#a solution, we try with another random generation
 count = 1000
 
 while(more_conflicting != True):
