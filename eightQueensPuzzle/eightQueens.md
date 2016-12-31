@@ -16,17 +16,19 @@ This way of solving the problem is a greedy one. So, it can stay on a local extr
 Another thing with this algorithm is that it will find a solution, not necessarily all the solutions (or you must  repeat the algorithm but there is clever things to do if you want to find all solutions). But if you want to find a solution quickly, even on a big chessboard, this solution is good. In fact it works on way bigger chessboard : with 1 000 000 queens, the algorithm with the optimization of selecting the best next place when "repairing" takes 50 steps in average.
 
 ```python
-
 # coding: utf-8
+import time
+
 from random import randint
 
+PROBLEM_SIZE = 8
 # 0 means no queen on this location, 1 that there is one.
-game_board = [[0 for i in range(8)] for j in range(8)]
+game_board = [[0 for i in range(PROBLEM_SIZE)] for j in range(PROBLEM_SIZE)]
 
 def init_board(game_board):
     #we place a queen on each row
     for i in range(len(game_board)):
-        game_board[i][randint(0,7)] = 1
+        game_board[i][randint(0,PROBLEM_SIZE-1)] = 1
 
 def count_conflict(game_board, x, y):
     """give the number of conflict for the position x,y"""
@@ -125,31 +127,41 @@ def print_game_board(game_board):
     for i in range(len(game_board)):
         print(game_board[i])
 
-init_board(game_board)
-more_conflicting = check_configuration(game_board)
-
-# let's say we let our algorithm try 1000 times from an initial configuration. If we can't find
-# a solution, we try with another random generation
-count = 1000
-
-while(more_conflicting != True):
-    # we change the location of the queen
-    game_board[more_conflicting[0]][more_conflicting[1]] = 0
-    game_board[more_conflicting[0]][randint(0,7)] = 1
+def main(game_board):
+    init_board(game_board)
     more_conflicting = check_configuration(game_board)
 
+    # let's say we let our algorithm try 1000 times from an initial configuration. If we can't find
+    # a solution, we try with another random generation
+    count = 1000
 
+    while(more_conflicting != True):
+        # we change the location of the queen
+        game_board[more_conflicting[0]][more_conflicting[1]] = 0
+        game_board[more_conflicting[0]][randint(0,PROBLEM_SIZE-1)] = 1
+        more_conflicting = check_configuration(game_board)
 
-    if count == 0:
-        init_board(game_board)
-        count = 1000
-    count -= 1
+        if count == 0:
+            init_board(game_board)
+            count = 1000
+        count -= 1
 
-print_game_board(game_board)
-
-
+    #print_game_board(game_board)
+    
+    
+main(game_board)
 ```
 If we want to find all solutions, we can make a brute-force algorithm with a little of help : we begin the search from a configuration where there is a queen on each row ($$8^8 = 16,777,216$$ possibilities). If we do this with a DFS, row by row, we can eliminate many solutions soon in the search tree (it is the same idea as a branch-and-bound approach, you cut branches that you know are not good solutions).
 
+# Results 
+So now, let's see the difference between solutions : random, stupid iterative repair (random queen on the same row), smarter iterative repair (we place the queen in the square of the row where the threatening is the lowest):
+
+## 200 iterations, PROBLEM_SIZE = 8
+
+| Algorithm      | average time (s)  |       
+| ------------- | -------------  |
+| Random      | right-aligned  |
+| Repair(stupid)     | 0.58  |    
+| Repair(smarter) | are neat  |   
 
 
