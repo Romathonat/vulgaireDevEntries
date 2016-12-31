@@ -4,7 +4,7 @@ The [eight queens puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle) is 
 You have a chessboard of 8*8 square. You have 8 queens. Your goal is to place the 8 queens on the board, without any of them threatening another one. A queen is threaten if she is on the same row, or the same column, or the same diagonal of another queen (like in the rules of chess).
 
 # Solutions
-A brute-force approach may take too much time here, because we have $$\binom{8}{64}$$ possibilities. The interesting thing about this problem is that you have different approaches to solve it (check on [Wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle)): brute-force, dynamic programming, genetic algorithms...
+A brute-force approach may take too much time here, because we have 8 among 64 possibilities. The interesting thing about this problem is that you have different approaches to solve it (check on [Wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle)): brute-force, dynamic programming, genetic algorithms...
 
 An interesting (and simple) approach is the 'iterative repair'. The idea is to place a queen on each row, with a random position on this row. Then, we find the queen the more threaten, and we change her location on the same row : it is the **repair** operation. Here, I chose a new random position on the row, but selecting the position with the less conflict should be a very efficient heuristic (I kept it simple here).
 
@@ -14,10 +14,12 @@ This way of solving the problem is a greedy one. So, it can stay on a local extr
 *This function represents all possible configurations. When we reach a minimum, it is a solution. There are configurations when we stay in the local minimum, repairing after repairing we move a little on the curve but we stay here !*
 
 Another thing with this algorithm is that it will find a solution, not necessarily all the solutions (or you must  repeat the algorithm but there is clever things to do if you want to find all solutions). But if you want to find a solution quickly, even on a big chessboard, this solution is good. In fact it works on way bigger chessboard : with 1 000 000 queens, the algorithm with the optimization of selecting the best next place when "repairing" takes 50 steps in average.
+
 ```python
+
 from random import randint
 
-#0 means no queen on this location, 1 that there is one.
+#the 0 means no queen on this location, 1 that there is one.
 game_board = [[0 for i in range(8)] for j in range(8)]
 
 def init_board(game_board):
