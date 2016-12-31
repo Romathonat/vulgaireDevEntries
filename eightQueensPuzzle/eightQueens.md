@@ -10,7 +10,7 @@ An interesting (and simple) approach is the 'iterative repair'. The idea is to p
 
 This way of solving the problem is a greedy one. So, it can stay on a local extremum without finding a global one (= a solution). A solution to that is to give a count that you decrement each time you "repair" the current configuration. If that count is reached without finding that the current configuration is a solution, we consider that we are on a local extremum, we will not find a solution, so we generate another configuration.
 
-![](https://github.com/Romathonat/vulgaireDevEntries/blob/master/eightQueensPuzzle/localmaxmin.png)  
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/eightQueensPuzzle/localmaxmin.png)  
 *This function represents all possible configurations. When we reach a minimum, it is a solution. There are configurations when we stay in the local minimum, repairing after repairing we move a little on the curve but we stay here !*
 
 Another thing with this algorithm is that it will find a solution, not necessarily all the solutions (or you must  repeat the algorithm but there is clever things to do if you want to find all solutions). But if you want to find a solution quickly, even on a big chessboard, this solution is good. In fact it works on way bigger chessboard : with 1 000 000 queens, the algorithm with the optimization of selecting the best next place when "repairing" takes 50 steps in average.
