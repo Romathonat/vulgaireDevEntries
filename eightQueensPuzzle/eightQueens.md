@@ -192,27 +192,6 @@ def main(game_board):
 # Results 
 So now, let's see the difference between solutions : random, stupid iterative repair (random queen on the same row), smarter iterative repair (we place the queen in the square of the row where the threatening is the lowest):
 
-## 500 iterations, PROBLEM_SIZE = 8
-
-| Algorithm      | average time (s)  |       
-| ------------- | -------------  |  
-| Random      | >70 (stopped, too long) |  
-| Repair(stupid)     | 0.084  |    
-| Repair(smarter) | 0.160  |   
-
-## 200 iterations, PROBLEM_SIZE = 10
-
-| Algorithm      | average time (s)  |       
-| ------------- | -------------  |   
-| Repair(stupid)     | 0.595 |     
-| Repair(smarter) | 0.199  |  
-
-
-## 100 iterations, PROBLEM_SIZE = 11
-
-| Algorithm      | average time (s)  |        
-| ------------- | -------------  |  
-| Repair(stupid)     | 6.01 |     
-| Repair(smarter) | 0.741  |  
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/eightQueensPuzzle/results.png)
 
 As we can see, with small problems, the "stupid repair" works even better than a smarter approach. On bigger problems though, we see the huge difference between them.
