@@ -154,7 +154,8 @@ main(game_board)
 If we want to find all solutions, we can make a brute-force algorithm with a little of help : we begin the search from a configuration where there is a queen on each row ($$8^8 = 16,777,216$$ possibilities). If we do this with a DFS, row by row, we can eliminate many solutions soon in the search tree (it is the same idea as a branch-and-bound approach, you cut branches that you know are not good solutions).
 
 Now the smarter version of the iterative repair is to choose the square with the less threatening, in the same row.
-You just need to change a little bit of code at the end :
+You just need to change a little bit of code at the end :  
+
 ``` python
 def main(game_board):
     init_board(game_board)
