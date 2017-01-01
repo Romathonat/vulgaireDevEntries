@@ -195,24 +195,24 @@ So now, let's see the difference between solutions : random, stupid iterative re
 ## 500 iterations, PROBLEM_SIZE = 8
 
 | Algorithm      | average time (s)  |       
-| ------------- | -------------  |
-| Random      | >70 (stopped, too long) |
+| ------------- | -------------  |  
+| Random      | >70 (stopped, too long) |  
 | Repair(stupid)     | 0.084  |    
 | Repair(smarter) | 0.160  |   
 
 ## 200 iterations, PROBLEM_SIZE = 10
 
 | Algorithm      | average time (s)  |       
-| ------------- | -------------  |
-| Repair(stupid)     | 0.595 |    
+| ------------- | -------------  |   
+| Repair(stupid)     | 0.595 |     
 | Repair(smarter) | 0.199  |  
 
 
 ## 100 iterations, PROBLEM_SIZE = 11
 
-| Algorithm      | average time (s)  |       
-| ------------- | -------------  |
-| Repair(stupid)     | 6.01 |    
+| Algorithm      | average time (s)  |        
+| ------------- | -------------  |  
+| Repair(stupid)     | 6.01 |     
 | Repair(smarter) | 0.741  |  
 
 As we can see, with small problems, the "stupid repair" works even better than a smarter approach. On bigger problems though, we see the huge difference between them.
