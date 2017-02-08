@@ -38,10 +38,59 @@ C'est le nombre de concombre détectés qui sont de vrais concombres divisés pa
 
 *Le rappel indique à quel point le classifieur couvre les données, càd le pourcentage d'éléments qu'il détecte par rapport à l'ensemble d'éléments détectables pour une classe donnée*
 
+### F-mesure
+Avoir une seule mesure pour qualifier un classifieur est plus commode, c'est pourquoi on utilise souvent un indicateur appellé la F-mesure, dont voici la formule: 
+$$F-mesure = 2*\frac{precision*rappel}{precision+rappel}$$
+
+
+
 ## Cas général (classifieur multiclasses)
 
-Un classifieur multiclasses est un classifieur qui peut prédire la classe d'un élément parmi plus de deux classes. Dans notre cas ça pourrait être le fait de différencier des images de concombres en catégorisant de 1 à n, 1 étant un concombre de mauvaise qualité, et n un concombre de top qualité. Dans ces cas là, pour calculer la précision et le rappel, il faut calculer la précision et le rappel pour chacune des classes, et faire la moyenne :
+Un classifieur multiclasses est un classifieur qui peut prédire la classe d'un élément parmi plus de deux classes. Dans notre cas ça pourrait être le fait de différencier des images de concombres en catégorisant de 1 à n, 1 étant un concombre de mauvaise qualité, et n un concombre de top qualité. Pour calculer la précision et le rappel, il faut calculer la précision et le rappel pour chacune des classes, et faire la moyenne :
 
 $$precision = \sum\limits_{i=1}^n\frac{precision_i}{n}$$  
 $$rappel = \sum\limits_{i=1}^n\frac{rappel_i}{n}$$
 
+
+
+## Aller plus loin
+(symetrie des tp/tn et fn/fp dans le cas du classifieur binaire, faire une belle courbe. Expliquer qu'on répartit dans 4 silots
+les données. Mettre schéma wikipédia)
+```
+#0 -> concombre
+#1 -> non-concombre
+
+#en réalité 7 concombres, 3 non concombres
+#l'outil nous donne 2 concombres (vrai), 8 non concombres
+
+#detecte 2 concombres sur les 7, le reste est considere comme non-concombre
+true_positive_0 = 2
+true_negative_0 = 3 
+false_negative_0 = 5
+false_positive_0 = 0
+
+
+true_positive_1 = 3
+true_negative_1 = 2 
+false_negative_1 = 0
+false_positive_1 = 5
+
+def recall(tp, tn, fn, fp):
+  return tp/(tp+fn)
+  
+def precision(tp, tn, fn, fp):
+  return tp/(tp+fp)
+
+p_0 = precision(true_positive_0, true_negative_0, false_negative_0, false_positive_0)
+r_0 = recall(true_positive_0, true_negative_0, false_negative_0, false_positive_0)
+
+print('Pour la classe concombre, la precision est de {}\
+  et le recall de {}'.format(p_0, r_0))
+p_1 = precision(true_positive_1, true_negative_1, false_negative_1, false_positive_1)
+r_1 = recall(true_positive_1, true_negative_1, false_negative_1, false_positive_1)
+
+print('Pour la classe non-concombre, la precision est de {}\
+  et le recall de {}'.format(p_1, r_1))
+
+print('Precision moyenne: {}, Recall moyen: {}'.format((p_0+p_1)/2, (r_0+r_1)/2))
+```
