@@ -59,7 +59,7 @@ Take a look [here](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlen
 
 Last thing before training your CNN, you need to specify the path to your *train_lmdb* (that you generated with *convert_imageset*) in the *train_val.protoxt*. Open it, find the TRAIN layer, and replace the source field, in data_param, by the path to your train_lmdb.
 
-To train the CNN, you will make :
+To train the CNN, you will do :
 
 ```bash
 caffe train -solver solver.prototxt
