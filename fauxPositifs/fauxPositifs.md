@@ -1,4 +1,4 @@
-En statistiques et en machine learning, on utilise souvent la notion de "faux positifs", "vrai positifs", rappel, précision ...
+En statistique et en machine learning, on utilise souvent la notion de "faux positifs", "vrai positifs", rappel, précision ...
 Nous allons expliquer ces concepts aujourd'hui.
 
 ## Contexte (classifieur binaire)
@@ -51,7 +51,6 @@ $$Precision_moyenne = \sum\limits_{i=1}^n\frac{Precision_i}{n}$$
 $$Rappel_moyen = \sum\limits_{i=1}^n\frac{Rappel_i}{n}$$
 $$F-mesure = 2*\frac{Precision_moyenne*Rappel_moyen}{Precision+Rappel}$$
 
-//mettre schéma wikipedia
 
 ## Remarques 
 (je ne sais pas si c'est d'un grand interêt mais j'ai trouvé ces quelques trucs, je les mets là on ne sait jamais ...)
@@ -64,4 +63,5 @@ Dans le cas particulier du classifieur binaire, on peut constater qu'il y a une 
 On peut calculer le nombre de configurations possibles (par configuration j'entends répartition entre vrai positif, faut négatif etc): chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc $$n*(n-1)*(n-2)*(n-3)$$ configurations possibles (dans le cas du classifieur binaire, sinon c'est plus compliqué !)
 
 Un petit récapitulatif pour finir :
+
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/fauxPositifs/Precisionrecall.svg.png)
