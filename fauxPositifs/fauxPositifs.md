@@ -24,7 +24,7 @@ En vérité, retenir la proposition suivante vous assure de ne plus vous tromper
 ### La précision
 La formule de la précision est simple :
 
-$$Precision = \frac{Vrai positifs}{Vrai positifs + Faux positifs}$$
+$$Precision = \frac{Vrai_positifs}{Vrai_positifs + Faux_positifs}$$
 
 C'est le nombre de concombres réels détectés divisé par le nombre total de détections.
 
@@ -33,13 +33,14 @@ C'est le nombre de concombres réels détectés divisé par le nombre total de d
 ### Le rappel
 La précision ne suffit pas à évaluer la qualité d'un classifieur, voici pourquoi. Imaginez que nous ayons 7 photos de concombres, et 3 photos de non-concombres. Admettons que notre classifieur détecte 2 concombres qui sont rééllement des concombres, et le reste en non-concombres. En reprenant la formule de la précision, on se retrouve avec 2 vrai positifs et 0 faux positifs, on à alors une précision de 100% pour la classe concombre, càd notre classifieur ne se trompe jamais quand il détecte un concombre. C'est vrai, mais en attendant il en a detecté très peu! C'est là qu'intervient le rappel:
 
-$$Rappel = \frac{Vrai positifs}{Vrai positifs + Faux négatifs}$$
+$$Rappel = \frac{Vrai_positifs}{Vrai_positifs + Faux_négatifs}$$
 C'est le nombre de concombres détectés qui sont de vrais concombres divisés pas le nombre total de concombre détectables.
 
 *Le rappel indique à quel point le classifieur couvre les données, càd le pourcentage d'éléments qu'il détecte par rapport à l'ensemble d'éléments détectables pour une classe donnée*
 
 ### F-mesure
 Avoir une seule mesure pour qualifier un classifieur est plus commode, c'est pourquoi on utilise souvent un indicateur appellé la F-mesure, dont voici la formule: 
+
 $$F-mesure = 2*\frac{Precision*Rappel}{Precision+Rappel}$$
 
 
@@ -48,7 +49,9 @@ $$F-mesure = 2*\frac{Precision*Rappel}{Precision+Rappel}$$
 Un classifieur multiclasses est un classifieur qui peut prédire la classe d'un élément parmi plus de deux classes. Dans notre cas ça pourrait être le fait de différencier des images de concombres en catégorisant de 1 à n, 1 étant un concombre de mauvaise qualité, et n un concombre de top qualité. Pour calculer la précision et le rappel, il faut calculer la précision et le rappel pour chacune des classes, et faire la moyenne :
 
 $$Precision_moyenne = \sum\limits_{i=1}^n\frac{Precision_i}{n}$$
+
 $$Rappel_moyen = \sum\limits_{i=1}^n\frac{Rappel_i}{n}$$
+
 $$F-mesure = 2*\frac{Precision_moyenne*Rappel_moyen}{Precision+Rappel}$$
 
 
@@ -60,7 +63,11 @@ Dans le cas particulier du classifieur binaire, on peut constater qu'il y a une 
 - un vrai positif pour une classe est forcément un vrai négatif pour l'autre, et inversement: si le classifieur décrète qu'il s'agit de la première classe, alors cela implique qu'il ne s'agit pas de la deuxième classe (donc "positif" devient "négatif"), et s'il a bien fait de détecter la première classe, alors il aura bien fait de ne pas détecter la deuxième (donc on reste "vrai").
 - un faux négatif pour une classe est forcément un faux positif pour l'autre : même raisonnement que précédemment.
 
-On peut calculer le nombre de configurations possibles (par configuration j'entends répartition entre vrai positif, faut négatif etc): chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc $$n*(n-1)*(n-2)*(n-3)$$ configurations possibles (dans le cas du classifieur binaire, sinon c'est plus compliqué !)
+On peut calculer le nombre de configurations possibles (par configuration j'entends répartition entre vrai positif, faut négatif etc): chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc
+
+$$n*(n-1)*(n-2)*(n-3)$$ 
+
+configurations possibles (dans le cas du classifieur binaire, sinon c'est plus compliqué !)
 
 Un petit récapitulatif pour finir :
 
