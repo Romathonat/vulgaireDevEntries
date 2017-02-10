@@ -51,6 +51,7 @@ Finally, train_lmdb is the output, used in the next steps to train the CNN.
 
 ##Train the CNN
 To train the CNN, you will need to specify two files : 
+
 1. a config file : number of iterations, the learning rate ...
 2. a file describing the architecture of the CNN (number of layers etc).
 
