@@ -51,8 +51,8 @@ Finally, train_lmdb is the output, used in the next steps to train the CNN.
 
 ##Train the CNN
 To train the CNN, you will need to specify two files : 
-- a config file : number of iterations, the learning rate ...
-- a file describing the architecture of the CNN (number of layers etc).
+* a config file : number of iterations, the learning rate ...
+* a file describing the architecture of the CNN (number of layers etc).
 
 Take a look [here](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet). The solver.prototxt is the config file, and the train_val.prototxt is the description of the architecture of the CNN. As you can see, the solver.prototxt contains the train_val.prototxt.
 
