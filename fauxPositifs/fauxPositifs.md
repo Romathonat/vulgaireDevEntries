@@ -28,7 +28,7 @@ $$Precision = \frac{Vrai positifs}{Vrai positifs + Faux positifs}$$
 
 C'est le nombre de concombres réels détectés divisé par le nombre total de détections.
 
-*La précision indique à quel point le classifieur est juste, càd le pourcentage de chance qu'il ne se trompe pas, pour une classe donnée*
+*La précision indique à quel point le classifieur est juste, càd le pourcentage de chance qu'il ne se trompe pas, pour une classe donnée.*
 
 ### Le rappel
 La précision ne suffit pas à évaluer la qualité d'un classifieur, voici pourquoi. Imaginez que nous ayons 7 photos de concombres, et 3 photos de non-concombres. Admettons que notre classifieur détecte 2 concombres qui sont rééllement des concombres, et le reste en non-concombres. En reprenant la formule de la précision, on se retrouve avec 2 vrai positifs et 0 faux positifs, on à alors une précision de 100% pour la classe concombre, càd notre classifieur ne se trompe jamais quand il détecte un concombre. C'est vrai, mais en attendant il en a detecté très peu! C'est là qu'intervient le rappel:
@@ -59,6 +59,6 @@ $$F-mesure = 2*\frac{Precision_moyenne*Rappel_moyen}{Precision+Rappel}$$
 Dans le cas particulier du classifieur binaire, on peut constater qu'il y a une symétrie entre les deux classes : 
 
 - un vrai positif pour une classe est forcément un vrai négatif pour l'autre, et inversement: si le classifieur décrète qu'il s'agit de la première classe, alors cela implique qu'il ne s'agit pas de la deuxième classe (donc "positif" devient "négatif"), et s'il a bien fait de détecter la première classe, alors il aura bien fait de ne pas détecter la deuxième (donc on reste "vrai").
-- un faux négatif pour une classe est forcément un faut positif pour l'autre : même raisonnement que précédemment.
+- un faux négatif pour une classe est forcément un faux positif pour l'autre : même raisonnement que précédemment.
 
-On peut calculer le nombre de configurations possibles: chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc $$n*(n-1)*(n-2)*(n-3)$$ configurations possibles. 
+On peut calculer le nombre de configurations possibles (par configuration j'entends répartition entre vrai positif, faut négatif etc): chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc $$n*(n-1)*(n-2)*(n-3)$$ configurations possibles (dans le cas du classifieur binaire, sinon c'est plus compliqué !)
