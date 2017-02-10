@@ -54,9 +54,9 @@ To train the CNN, you will need to specify two files :
 1. a config file : number of iterations, the learning rate ...
 2. a file describing the architecture of the CNN (number of layers etc).
 
-Take a look [here](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet). The solver.prototxt is the config file, and the train_val.prototxt is the description of the architecture of the CNN. As you can see, the solver.prototxt contains the train_val.prototxt.
+Take a look [here](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet). The solver.prototxt is the config file, and the *train_val.prototxt* is the description of the architecture of the CNN. As you can see, the solver.prototxt contains the *train_val.prototxt*.
 
-Last thing before training your CNN, you need to specify the path to your train_lmdb (that you generated with convert_imageset) in the train_val.protoxt. Open it, find the TRAIN layer, and replace the source field, in data_param, by the path to your train_lmdb.
+Last thing before training your CNN, you need to specify the path to your *train_lmdb* (that you generated with convert_imageset) in the *train_val.protoxt*. Open it, find the TRAIN layer, and replace the source field, in data_param, by the path to your train_lmdb.
 
 To train the CNN, you will make :
 
@@ -65,7 +65,7 @@ caffe train -solver solver.prototxt
 ```
 
 This will generate two files. A .caffemodel, ready for deployment, and a .solverstate, used to keep doing modifications to the CNN later. 
-To deploy, I recommand making a deploy.protoxt file, like [here](https://github.com/BVLC/caffe/blob/master/models/bvlc_googlenet/deploy.prototxt). It is the same as train_val.prototxt, without a data layer instead of TRAIN and TEST layers, and an ending layer specifying that we want a classification as the output:
+To deploy, I recommand making a deploy.protoxt file, like [here](https://github.com/BVLC/caffe/blob/master/models/bvlc_googlenet/deploy.prototxt). It is the same as *train_val.prototxt*, without a data layer instead of TRAIN and TEST layers, and an ending layer specifying that we want a classification as the output:
 
 ```
 layer {
