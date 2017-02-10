@@ -41,7 +41,7 @@ C'est le nombre de concombres détectés qui sont de vrais concombres divisés p
 ### F-mesure
 Avoir une seule mesure pour qualifier un classifieur est plus commode, c'est pourquoi on utilise souvent un indicateur appellé la F-mesure, dont voici la formule: 
 
-$$F-mesure = 2*\frac{Precision*Rappel}{Precision+Rappel}$$
+$$F-mesure = 2\times\frac{Precision\timesRappel}{Precision+Rappel}$$
 
 
 ## Cas général (classifieur multiclasses)
@@ -52,7 +52,7 @@ $$Precision_moyenne = \sum\limits_{i=1}^n\frac{iPrecision}{n}$$
 
 $$Rappel_moyen = \sum\limits_{i=1}^n\frac{iRappel}{n}$$
 
-$$F-mesure = 2*\frac{Precision_moyenne*Rappel_moyen}{Precision+Rappel}$$
+$$Fmesure = 2\times\frac{Precision_moyenne\timesRappel_moyen}{Precision+Rappel}$$
 
 
 ## Remarques 
@@ -65,7 +65,7 @@ Dans le cas particulier du classifieur binaire, on peut constater qu'il y a une 
 
 On peut calculer le nombre de configurations possibles (par configuration j'entends répartition entre vrai positif, faut négatif etc): chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc
 
-$$n*(n-1)*(n-2)*(n-3)$$ 
+$$n\times(n-1)\times(n-2)\times(n-3)$$ 
 
 configurations possibles (dans le cas du classifieur binaire, sinon c'est plus compliqué !)
 
