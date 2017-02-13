@@ -41,7 +41,7 @@ C'est le nombre de concombres détectés qui sont de vrais concombres divisés p
 ### F-mesure
 Avoir une seule mesure pour qualifier un classifieur est plus commode, c'est pourquoi on utilise souvent un indicateur appellé la F-mesure, dont voici la formule: 
 
-$$F-mesure = 2\times\frac{Precision\timesRappel}{Precision+Rappel}$$
+$$Fmesure = 2\times\frac{Precision\times Rappel}{Precision+Rappel}$$
 
 
 ## Cas général (classifieur multiclasses)
@@ -50,7 +50,9 @@ Un classifieur multiclasses est un classifieur qui peut prédire la classe d'un 
 
 $$Precision_moyenne = \sum\limits_{i=1}^n\frac{iPrecision}{n}$$
 
+
 $$Rappel_moyen = \sum\limits_{i=1}^n\frac{iRappel}{n}$$
+
 
 $$Fmesure = 2\times\frac{Precision_moyenne\timesRappel_moyen}{Precision+Rappel}$$
 
