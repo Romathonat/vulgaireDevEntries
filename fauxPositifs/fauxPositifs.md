@@ -50,6 +50,7 @@ Un classifieur multiclasses est un classifieur qui peut prédire la classe d'un 
 
 $$Precision_moyenne = \sum\limits_{i=1}^n\frac{iPrecision}{n}$$
 
+test
 
 $$Rappel_moyen = \sum\limits_{i=1}^n\frac{iRappel}{n}$$
 
