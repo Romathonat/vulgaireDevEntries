@@ -48,14 +48,13 @@ $$Fmesure = 2\times\frac{Precision\times Rappel}{Precision+Rappel}$$
 
 Un classifieur multiclasses est un classifieur qui peut prédire la classe d'un élément parmi plus de deux classes. Dans notre cas ça pourrait être le fait de différencier des images de concombres en catégorisant de 1 à n, 1 étant un concombre de mauvaise qualité, et n un concombre de top qualité. Pour calculer la précision et le rappel, il faut calculer la précision et le rappel pour chacune des classes, et faire la moyenne :
 
-$$Precision_moyenne = \sum\limits_{i=1}^n\frac{iPrecision}{n}$$
-
-test
-
-$$Rappel_moyen = \sum\limits_{i=1}^n\frac{iRappel}{n}$$
+$$PrecisionMoyenne = \sum\frac{iPrecision}{n}$$
 
 
-$$Fmesure = 2\times\frac{Precision_moyenne\timesRappel_moyen}{Precision+Rappel}$$
+$$RappelMoyen = \sum\frac{iRappel}{n}$$
+
+
+$$Fmesure = 2\times\frac{PrecisionMoyenne\times RappelMoyen}{Precision+Rappel}$$
 
 
 ## Remarques 
