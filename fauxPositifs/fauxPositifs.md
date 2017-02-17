@@ -3,7 +3,7 @@ Nous allons expliquer ces concepts aujourd'hui.
 
 ## Contexte (classifieur binaire)
 Admettons qu'on ait une application de machine learning, qui permette de [classifier les concombres](https://cloud.google.com/blog/big-data/2016/08/how-a-japanese-cucumber-farmer-is-using-deep-learning-and-tensorflow).
-Dans un premier temps restons simple, gardons deux classes (classifieur binaire): les concombres et les non-concombres. Pour l'utilisateur, c'est très facile, il donne une photo au classifieur, et celle-ci lui-répond s'il s'agit d'un concombre ou pas. 
+Dans un premier temps restons simple, gardons deux classes (classifieur binaire): les concombres et les non-concombres. Pour l'utilisateur, c'est très facile, il donne une photo au classifieur, et celui-ci lui-répond s'il s'agit d'un concombre ou pas. 
 Bien.
 
 ## Des faux positifs ?
@@ -11,9 +11,9 @@ Bien.
 Notre application ne peut pas être parfaite, vous vous en doutez bien. Il y aura forcément des cas où elle détectera une image comme étant un concombre alors que ça n'en est pas un, ou l'inverse. C'est ici qu'interviennent ces notions de faux positifs, vrais négatifs, que voici:
 
 - **Faux positifs**: les images de "non-concombre" détectées comme "concombres" par notre application (erreur) 
-- **Vrai positifs**: les images de "concombre" détectées comme "concombres" (correct)
+- **Vrais positifs**: les images de "concombre" détectées comme "concombres" (correct)
 - **Faux négatifs**: les images de "concombre" detectées comme "non-concombres" (erreur)
-- **Vrai négatifs**: les images de "non-concombre" détectées comme "non-concombres" (correct)
+- **Vrais négatifs**: les images de "non-concombre" détectées comme "non-concombres" (correct)
 
 En vérité, retenir la proposition suivante vous assure de ne plus vous tromper: 
 
