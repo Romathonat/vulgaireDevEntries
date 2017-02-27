@@ -26,6 +26,8 @@ Bon, je ne sais pas si j'ai été très clair, c'est une notion assez difficile 
 - O(2^n) (dur)
 - O(n^n) (super dur)
 
+Les complexités de la forme O(p^n), avec p constant, sont des complexités dites **polynomiales**.
 
 ## Les problèmes de classe P
 Tous les problèmes pouvant être résolus en temps polynomial font parti de la classe P. 
+
