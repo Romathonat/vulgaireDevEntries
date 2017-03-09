@@ -23,9 +23,9 @@ Bon, je ne sais pas si j'ai été très clair, c'est une notion assez difficile 
 - O(1) (temps constant, super)
 - O(n)
 - O(n^2)
-- O(n!) (commence à devenir dur)
 - O(2^n) (dur)
 - O(n^n) (super dur)
+- O(n!) (RIP)
 
 Les complexités de la forme O(n^p), avec p constant, sont des complexités dites **polynomiales**.
 
@@ -48,9 +48,22 @@ l'algorithme suivant a une complexité O(n) (donc polynomiale) et répond au pro
 ## Les problèmes de la classe NP
 Les problèmes de décision dont les instances pour lesquelles la réponse est "oui" sont vérifiables en temps polynomial à partir d'un certificat (=une proposition de solution).
 
-Par exemple le problème du **voyageur de commerce** (version décision):
+Par exemple le problème du **voyageur de commerce** (version décision):  
 *Etant donné un ensemble de villes E, reliées entre elles par des chemins V, existe-t-il un chemin C passant par toutes les villes une seule fois et revenant à son point de départ, possédant une longueur inférieur à k ?*
 
 Pour ce problème, si on fournit une instance (E, V, k), càd un ensemble de villes, de chemins, et une distance, ainsi qu'un certificat, càd une proposition de solution (un ordre de chemins par lesquelles le voyageur de commerce doit passer), on peut verifier si cette solution permet de répondre oui ou non. En effet, il suffit de verifier si l'ensemble des chemins passent par toutes les villes une seule fois, et si la somme des longueur des chemins est inférieur à k.
+
+## Les problèmes NP-Complets
+Les problèmes NP-Complets sont des problèmes NP, mais il existe une condition sumplémentaire pour qu'ils soient NP-Complet: un problème X est NP-Complet si tout autre problème NP-Complet Y peut-être réduit à X en temps polynomial. Les chercheurs ont déjà effectué par mal de travail de ce côté là, on connait un certain nombre de problèmes NP-Complet, donc prouver que n'importe quel problème NP-Complet est reductible en temps polynomial à notre problème X suffit à prouver qu'il est NP-Complet.
+
+Intuitivement, les problèmes NP-Complet sont des problèmes NP qui sont difficiles à résoudre : si les instances sont trop grandes, on ne sais pas résoudre le problème sans que cela prenne un temps considérable (et par considérable ça peut être un jour, un mois, un siècle selon la taille). Si on tombe sur un problème NP-Complet, il faut savoir qu'on est tombé sur un os, et qu'il est probablement vain de vouloir trouver un bon algorithme pour le résoudre.
+
+Le problème du voyageur de commerce est NP-Complet, par exemple. En effet, le nombre de solutions possibles est exponentiel : si le graphe est complet (chaque ville est reliée à toutes les autres villes) avec n villes, il va falloir explorer n! possibilités ! 
+
+## Les problèmes NP-Difficiles
+Les problèmes NP-Difficiles sont des problèmes au moins aussi difficiles que les problèmes NP-Complets. De plus, ils ne sont pas forcément NP, ils ne sont donc pas forcément des problèmes de décision ! La formulation est surprenante, mais c'est ainsi.
+
+## P == NP ?
+
 
 
