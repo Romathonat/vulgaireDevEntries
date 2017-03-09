@@ -13,6 +13,7 @@ Pour savoir si on est capable de les résoudre ! On se rend bien compte qu'entre
 Savoir qu'on est tombé sur un problème NP-complet, par exemple, nous permet de savoir qu'on ne pourra pas le résoudre sur des cas trop compliqués, car les meilleurs chercheurs de la planète s'y sont cassés les dents. Inutile donc de perdre trop de temps, avoir cette information peut permettre de mieux s'adapter à la situation, en proposant, par exemple, un algorithme qu'y s'approche de la bonne solution sans qu'on soit sûr qu'elle soit juste.
 
 ## Prérequis (informel)
+### Complexité
 Il faut savoir ce que c'est que la complexité d'un algorithme. L'explication mathématiques est un peu pompeuse, allez la chercher si vous voulez. En très gros, *la complexité d'un algorithme c'est à quel point l'algorithme prend du temps, en fonction de la taille de son entrée*. Par exemple trouver le maximum d'un tableau de taille n, on dit que sa complexité est de O(n) car pour le résoudre, on regarde n cases du tableau. 
 Si on avait du parcourir deux fois le tableau, vous me direz qu'on noterait cela O(2n). Ca n'est pas faux, mais quand on varie seulement d'un facteur multiplicatif constant, on garde la notation O(n).
 
@@ -26,8 +27,30 @@ Bon, je ne sais pas si j'ai été très clair, c'est une notion assez difficile 
 - O(2^n) (dur)
 - O(n^n) (super dur)
 
-Les complexités de la forme O(p^n), avec p constant, sont des complexités dites **polynomiales**.
+Les complexités de la forme O(n^p), avec p constant, sont des complexités dites **polynomiales**.
+
+### Les problèmes de décision
+
+La plupart des classes suivantes portent sur des problèmes de décision: ceux-ci sont des problèmes qui attendent une réponse oui ou non, tout simplement.
+
+### Instance d'un problème
+Une instance d'un problème est un problème dont on fixe les paramètres. Par exemple:
+**Problème**: Trouver la moyenne de n valeurs.
+**Exemple d'instance du problème**: n=3, et les valeurs sont 5, 6 et 2.
+On a donc potentiellement une infinité d'instances pour un problème donné.
 
 ## Les problèmes de classe P
-Tous les problèmes pouvant être résolus en temps polynomial font parti de la classe P. 
+Les problèmes de décision pouvant être résolus en temps polynomial font parti de la classe P. 
+Par exemple:
+*Etant donné n valeurs, la différence entre la valeur max et la valeur min est-elle supérieure à la moyenne ?*
+l'algorithme suivant a une complexité O(n) (donc polynomiale) et répond au problème: "calculer la moyenne des valeurs, trouver la valeur max, trouver la valeur min, les soustraire, comparer la moyenne et cette différence". Ce problème fait donc parti de la classe P.
+
+## Les problèmes de la classe NP
+Les problèmes de décision dont les instances pour lesquelles la réponse est "oui" sont vérifiables en temps polynomial à partir d'un certificat (=une proposition de solution).
+
+Par exemple le problème du **voyageur de commerce** (version décision):
+*Etant donné un ensemble de villes E, reliées entre elles par des chemins V, existe-t-il un chemin C passant par toutes les villes une seule fois et revenant à son point de départ, possédant une longueur inférieur à k ?*
+
+Pour ce problème, si on fournit une instance (E, V, k), càd un ensemble de villes, de chemins, et une distance, ainsi qu'un certificat, càd une proposition de solution (un ordre de chemins par lesquelles le voyageur de commerce doit passer), on peut verifier si cette solution permet de répondre oui ou non. En effet, il suffit de verifier si l'ensemble des chemins passent par toutes les villes une seule fois, et si la somme des longueur des chemins est inférieur à k.
+
 
