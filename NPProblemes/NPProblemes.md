@@ -53,6 +53,8 @@ Par exemple le problème du **voyageur de commerce** (version décision):
 
 Pour ce problème, si on fournit une instance (E, V, k), càd un ensemble de villes, de chemins, et une distance, ainsi qu'un certificat, càd une proposition de solution (un ordre de chemins par lesquelles le voyageur de commerce doit passer), on peut verifier si cette solution permet de répondre oui ou non. En effet, il suffit de verifier si l'ensemble des chemins passent par toutes les villes une seule fois, et si la somme des longueur des chemins est inférieur à k.
 
+En résumé, pour savoir si un problème est NP: on choisit une instance du problème, on fournit une hypothétique solution, on vérifie en temps polynomial si cette solution est vraie. Si c'est le cas, c'est NP.
+
 ## Les problèmes NP-Complets
 Les problèmes NP-Complets sont des problèmes NP, mais il existe une condition sumplémentaire pour qu'ils soient NP-Complet: un problème X est NP-Complet si tout autre problème NP-Complet Y peut-être réduit à X en temps polynomial. Les chercheurs ont déjà effectué par mal de travail de ce côté là, on connait un certain nombre de problèmes NP-Complet, donc prouver que n'importe quel problème NP-Complet est reductible en temps polynomial à notre problème X suffit à prouver qu'il est NP-Complet.
 
@@ -63,7 +65,18 @@ Le problème du voyageur de commerce est NP-Complet, par exemple. En effet, le n
 ## Les problèmes NP-Difficiles
 Les problèmes NP-Difficiles sont des problèmes au moins aussi difficiles que les problèmes NP-Complets. De plus, ils ne sont pas forcément NP, ils ne sont donc pas forcément des problèmes de décision ! La formulation est surprenante, mais c'est ainsi.
 
-## P == NP ?
+Les problèmes NP-Complets sont inclus dans les problèmes NP-Difficiles.
+Par exemple, le problème de la somme des sous-ensembles : 
+"Etant donné un ensemble E de n entiers, existe-t-il un sous-ensemble de E tel que la somme des éléments valen 0 ?"
+Ceci est-un problème de décision qui est à la fois NP-Difficile et NP-Complet.
+
+Le problème du voyageur de commerce dans son énonciation classique (et non pas décisionelle comme vu précédemment) est NP-Difficile:
+"Etant donné n points (des « villes ») et les distances séparant chaque point, trouver un chemin de longueur totale minimale qui passe exactement une fois par chaque point et revienne au point de départ" (Wikipédia)
+
+## P != NP ?
+A l'heure actuelle, on a pas réussi à prouver mathématiquement que P = NP ou que P != NP. Il est très probable que la deuxième solution soit la bonne, car sinon cela signifierait qu'on puisse trouver des réponses en temps polynomial à tous les problèmes NP, ce qui inclut les problèmes NP-Complet. Or ces problèmes Np-Complets sont bien connus depuis des années, moult gens brillants ont travaillé dessus et personne n'a trouvé d'algorithme qui résolve ce genre de problème en temps polynomial. D'ailleur celui qui prouvera que P != NP (ou que P = NP) se vera offrir la coquette somme d'un million de dollars.
+
+Pour finir un petit schéma pompé sur Wikipédia, qui résume tout:
 
 
 
