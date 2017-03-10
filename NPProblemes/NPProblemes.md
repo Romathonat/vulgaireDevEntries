@@ -28,7 +28,6 @@ Bon, je ne sais pas si j'ai été très clair, c'est une notion assez difficile 
 - O(n)
 - O(n^2)
 - O(2^n) (dur)
-- O(n^n) (super dur)
 - O(n!) (RIP)
 
 Les complexités de la forme O(n^p), avec p constant, sont des complexités dites **polynomiales**.
@@ -68,7 +67,7 @@ Les chercheurs ont déjà effectué par mal de travail de ce côté là, on conn
 
 Intuitivement, les problèmes NP-Complet sont des problèmes NP qui sont difficiles à résoudre : si les instances sont trop grandes, on ne sais pas résoudre le problème sans que cela prenne un temps considérable (et par considérable ça peut être un jour, un mois, un siècle selon la taille). Si on tombe sur un problème NP-Complet, il faut savoir qu'on est tombé sur un os, et qu'il est probablement vain de vouloir trouver un bon algorithme pour le résoudre.
 
-Le problème du voyageur de commerce est NP-Complet, par exemple. En effet, le nombre de solutions possibles est exponentiel : si le graphe est complet (chaque ville est reliée à toutes les autres villes) avec n villes, il va falloir explorer n! possibilités !  
+Le problème du voyageur de commerce est NP-Complet, par exemple. En effet, le nombre de solutions possibles est exponentiel : si le graphe est complet (chaque ville est reliée à toutes les autres villes) avec n villes, on a un espace de n! possibilités !  
 (Détail) On a n possibilités pour le choix de la première ville, puis n-1 choix pour la seconde (on ne passe qu'une fois par ville), puis n-2 pour la troisième, etc, jusqu'à ce qu'on soit passé par les n villes, ce qui nous fait bien n! possibilités.
 
 ## Les problèmes NP-Difficiles
