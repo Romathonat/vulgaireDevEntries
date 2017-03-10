@@ -1,8 +1,8 @@
-En informatique, et en ingenierie en général, on peut voir notre métier comme une resolution successive de problèmes. 
-Créer un site web pour un client, mettre en place une architecture big data, résoudre des bugs d'affichage sur une IHM client lourd,
+  En informatique, et en ingenierie en général, on peut voir notre métier comme une resolution successive de problèmes. 
+Créer un site web, mettre en place une architecture big data, résoudre des bugs d'affichage sur une IHM,
 autant de problèmes que nous devons résoudre chaque jour. Notre spécialité c'est un peu la résolution de problème.
 
-Alors attention, nous ne sommes pas capables de résoudre tous les problèmes, et on est même assez spécialisé :
+Alors bien sûr, nous ne sommes pas capables de résoudre tous les problèmes, et on est même assez spécialisé :
 un ingenieur réseau ne va pas, a priori, savoir calculer les contraintes mécaniques auquel est soumis un avion de ligne afin d'optimiser son poids. Il y a des catégories de problèmes.
 
 Concernant l'informatique, c'est pareil. Il y a des catégories de problèmes, et celle qui m'interessent dans ce billet sont celles qu'on nomme **P, NP, NP-Complet, NP-difficile**. 
@@ -14,7 +14,11 @@ Savoir qu'on est tombé sur un problème NP-complet, par exemple, nous permet de
 
 ## Prérequis (informel)
 ### Complexité
-Il faut savoir ce que c'est que la complexité d'un algorithme. L'explication mathématiques est un peu pompeuse, allez la chercher si vous voulez. En très gros, *la complexité d'un algorithme c'est à quel point l'algorithme prend du temps, en fonction de la taille de son entrée*. Par exemple trouver le maximum d'un tableau de taille n, on dit que sa complexité est de O(n) car pour le résoudre, on regarde n cases du tableau. 
+Il faut savoir ce que c'est que la complexité d'un algorithme. L'explication mathématiques est un peu pompeuse, allez la chercher si vous voulez. En très gros:  
+
+*La complexité d'un algorithme c'est à quel point l'algorithme prend du temps, en fonction de la taille de son entrée*.   
+
+Par exemple trouver le maximum d'un tableau de taille n, on dit que sa complexité est de O(n) car pour le résoudre, on regarde n cases du tableau. 
 Si on avait du parcourir deux fois le tableau, vous me direz qu'on noterait cela O(2n). Ca n'est pas faux, mais quand on varie seulement d'un facteur multiplicatif constant, on garde la notation O(n).
 
 Maintenant, si on veut faire le [produit cartésien](http://www.bibmath.net/dico/index.php?action=affiche&quoi=./p/prodcart.html) du tableau avec lui-même, il faut itérer sur le tableau, et pour chaque itération réitérer sur tout le tableau pour trouver toutes les combinaisons possibles. On aura deux boucles imbriquées qui itèrent sur n, donc une complexité de O(n^2). Ca veut donc dire que le temps que va prendre mon algo dépend du carré de n, ce qui est moins bien que simplement de n.
@@ -34,16 +38,16 @@ Les complexités de la forme O(n^p), avec p constant, sont des complexités dite
 La plupart des classes suivantes portent sur des problèmes de décision: ceux-ci sont des problèmes qui attendent une réponse oui ou non, tout simplement.
 
 ### Instance d'un problème
-Une instance d'un problème est un problème dont on fixe les paramètres. Par exemple:
-**Problème**: Trouver la moyenne de n valeurs.
-**Exemple d'instance du problème**: n=3, et les valeurs sont 5, 6 et 2.
+Une instance d'un problème est un problème dont on fixe les paramètres. Par exemple:  
+**Problème**: Trouver la moyenne de n valeurs.  
+**Exemple d'instance du problème**: n=3, et les valeurs sont 5, 6 et 2.  
 On a donc potentiellement une infinité d'instances pour un problème donné.
 
 ## Les problèmes de classe P
-Les problèmes de décision pouvant être résolus en temps polynomial font parti de la classe P. 
-Par exemple:
-*Etant donné n valeurs, la différence entre la valeur max et la valeur min est-elle supérieure à la moyenne ?*
-l'algorithme suivant a une complexité O(n) (donc polynomiale) et répond au problème: "calculer la moyenne des valeurs, trouver la valeur max, trouver la valeur min, les soustraire, comparer la moyenne et cette différence". Ce problème fait donc parti de la classe P.
+Les problèmes de décision pouvant être résolus en temps polynomial font parti de la classe P.  
+Par exemple:  
+*Etant donné n valeurs, la différence entre la valeur max et la valeur min est-elle supérieure à la moyenne ?*  
+L'algorithme suivant a une complexité O(n) (donc polynomiale) et répond au problème: "calculer la moyenne des valeurs, trouver la valeur max, trouver la valeur min, les soustraire, comparer la moyenne et cette différence". Ce problème fait donc parti de la classe P.
 
 ## Les problèmes de la classe NP
 Les problèmes de décision dont les instances pour lesquelles la réponse est "oui" sont vérifiables en temps polynomial à partir d'un certificat (=une proposition de solution).
@@ -56,21 +60,26 @@ Pour ce problème, si on fournit une instance (E, V, k), càd un ensemble de vil
 En résumé, pour savoir si un problème est NP: on choisit une instance du problème, on fournit une hypothétique solution, on vérifie en temps polynomial si cette solution est vraie. Si c'est le cas, c'est NP.
 
 ## Les problèmes NP-Complets
-Les problèmes NP-Complets sont des problèmes NP, mais il existe une condition sumplémentaire pour qu'ils soient NP-Complet: un problème X est NP-Complet si tout autre problème NP-Complet Y peut-être réduit à X en temps polynomial. Les chercheurs ont déjà effectué par mal de travail de ce côté là, on connait un certain nombre de problèmes NP-Complet, donc prouver que n'importe quel problème NP-Complet est reductible en temps polynomial à notre problème X suffit à prouver qu'il est NP-Complet.
+Les problèmes NP-Complets sont des problèmes NP, mais il existe une condition sumplémentaire pour qu'ils être NP-Complet: 
+
+*Un problème X est NP-Complet si tout autre problème NP-Complet Y peut-être réduit à X en temps polynomial.*
+
+Les chercheurs ont déjà effectué par mal de travail de ce côté là, on connait un certain nombre de problèmes NP-Complet, donc prouver que n'importe quel problème NP-Complet est reductible en temps polynomial à notre problème X suffit à prouver qu'il est NP-Complet.
 
 Intuitivement, les problèmes NP-Complet sont des problèmes NP qui sont difficiles à résoudre : si les instances sont trop grandes, on ne sais pas résoudre le problème sans que cela prenne un temps considérable (et par considérable ça peut être un jour, un mois, un siècle selon la taille). Si on tombe sur un problème NP-Complet, il faut savoir qu'on est tombé sur un os, et qu'il est probablement vain de vouloir trouver un bon algorithme pour le résoudre.
 
-Le problème du voyageur de commerce est NP-Complet, par exemple. En effet, le nombre de solutions possibles est exponentiel : si le graphe est complet (chaque ville est reliée à toutes les autres villes) avec n villes, il va falloir explorer n! possibilités ! 
+Le problème du voyageur de commerce est NP-Complet, par exemple. En effet, le nombre de solutions possibles est exponentiel : si le graphe est complet (chaque ville est reliée à toutes les autres villes) avec n villes, il va falloir explorer n! possibilités !  
+(Détail) On a n possibilités pour le choix de la première ville, puis n-1 choix pour la seconde (on ne passe qu'une fois par ville), puis n-2 pour la troisième, etc, jusqu'à ce qu'on soit passé par les n villes, ce qui nous fait bien n! possibilités.
 
 ## Les problèmes NP-Difficiles
 Les problèmes NP-Difficiles sont des problèmes au moins aussi difficiles que les problèmes NP-Complets. De plus, ils ne sont pas forcément NP, ils ne sont donc pas forcément des problèmes de décision ! La formulation est surprenante, mais c'est ainsi.
 
 Les problèmes NP-Complets sont inclus dans les problèmes NP-Difficiles.
 Par exemple, le problème de la somme des sous-ensembles : 
-"Etant donné un ensemble E de n entiers, existe-t-il un sous-ensemble de E tel que la somme des éléments valen 0 ?"
+"Etant donné un ensemble E de n entiers, existe-t-il un sous-ensemble de E tel que la somme des éléments vaille 0 ?"
 Ceci est-un problème de décision qui est à la fois NP-Difficile et NP-Complet.
 
-Le problème du voyageur de commerce dans son énonciation classique (et non pas décisionelle comme vu précédemment) est NP-Difficile:
+Le problème du voyageur de commerce dans son énonciation classique (et non pas décisionelle comme vu précédemment) est NP-Difficile, mais pas NP-Complet car ce n'est pas un problème de décision:
 "Etant donné n points (des « villes ») et les distances séparant chaque point, trouver un chemin de longueur totale minimale qui passe exactement une fois par chaque point et revienne au point de départ" (Wikipédia)
 
 ## P != NP ?
@@ -78,5 +87,6 @@ A l'heure actuelle, on a pas réussi à prouver mathématiquement que P = NP ou 
 
 Pour finir un petit schéma pompé sur Wikipédia, qui résume tout:
 
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/NPProblemes/P_NP.png) 
 
 
