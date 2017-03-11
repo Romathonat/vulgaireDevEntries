@@ -59,7 +59,7 @@ Pour ce problème, si on fournit une instance (E, V, k), càd un ensemble de vil
 En résumé, pour savoir si un problème est NP: on choisit une instance du problème, on fournit une hypothétique solution, on vérifie en temps polynomial si cette solution est vraie. Si c'est le cas, c'est NP.
 
 ## Les problèmes NP-Complets
-Les problèmes NP-Complets sont des problèmes NP, mais il existe une condition sumplémentaire pour qu'ils être NP-Complet: 
+Les problèmes NP-Complets sont des problèmes NP, mais il existe une condition sumplémentaire pour être NP-Complet: 
 
 *Un problème X est NP-Complet si tout autre problème NP-Complet Y peut-être réduit à X en temps polynomial.*
 
