@@ -12,4 +12,4 @@ The classical approach for this kind of problem would be to use a reverse proxy 
 connects to the server, he reaches the reverse proxy (with port 80), wich then redirect on gitlab or taiga, using different port internally 
 (for example 8081 and 8082).
 
-This approach works fine, but I want to use 
+This approach works fine, but I want to use Docker. Indeed, I want to simplify the 
