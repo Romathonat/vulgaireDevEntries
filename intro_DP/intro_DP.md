@@ -52,14 +52,13 @@ Voilà le code correspondant :
 
 L = [(1,2), (3,6), (1,4), (2,2), (4,1), (2,3)]
 W = 5
-KP = [[0 for j in range(W)] for i in range(len(L)+1)]
+KP = [[0 for j in range(W+1)] for i in range(len(L)+1)]
 
 
 for i in range(1, len(L)+1):
-  #on a un petit décalage ici, 
   wi, vi = L[i-1]
   
-  for w in range(W):
+  for w in range(W+1):
     if wi > w:
       KP[i][w] = KP[i-1][w]
     else:
@@ -69,7 +68,38 @@ for i in range(1, len(L)+1):
 print(KP)
 
 ```
-Ce qui 
+Ce qui nous donne [0, 4, 6, 7, 10, 12] pour la dernière ligne de KP. Ceci veut dire que pour des contenances de 0, 1, 2, 3, 4 et 5, on a des sommes de valeurs maximales de 0, 4, 6, 7, 10 et 12.
+
+Pour connaitre la composition des solutions, on peut faire un tableau de booléens, de même taille que KP, qui retient les valeurs que l'on a choisi. Ainsi, on peut reconstruire la solution:
+
+``` python
+L = [(1,2), (3,6), (1,4), (2,2), (4,1), (2,3)]
+W = 5
+KP = [[0 for j in range(W+1)] for i in range(len(L)+1)]
+keep = [[0 for j in range(W+1)] for i in range(len(L)+1)]
+
+for i in range(1, len(L)+1):
+  wi, vi = L[i-1]
+  
+  for w in range(W+1):
+    if wi > w:
+      KP[i][w] = KP[i-1][w]
+    else:
+      KP[i][w] = max(KP[i-1][w], KP[i-1][w-wi] + vi)
+      
+      #à chaque fois qu'on prend le ième élément, on sauvegarde dans le tableau keep
+      keep[i][w] = 1
+      
+K = W
+
+for i in range(len(L), 0, -1):
+  if(keep[i][K] == 1):
+    print(i-1)
+    K = K - L[i-1][0]
+
+for i in range(len(KP)):
+  print(keep[i])
+```
 
 
 
