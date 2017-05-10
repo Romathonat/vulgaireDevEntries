@@ -46,7 +46,30 @@ En fait, ça veut dire que quand on prend le problème au rang i, on a deux cas:
 - Soit le iéme élément a un poids wi supérieur à w, du coup on ne peut pas le mettre dans le sac. Du coup pour avoir la solution au problème, il suffit de regarder quelle est la valeur de KP au rang i-1 avec la même contenance w.
 - Soit le ième élément peut être mis dans le sac. Dans ce cas, il faut prendre la valeur maximale entre KP(i-1, w), qui est la valeur du problème au rang i-1 (sans prendre le iéme élément), et KP(i-1, w-wi) + vi, qui correspond à la valeur du ième élément à laquelle on ajoute la valeur du problème au rang i-1, pour une contenance de w-wi. En effet, on prend le ième élément pour le mettre dans notre sac, il prend donc de la place, il reste donc w-wi dans le sac.
 
+Voilà le code correspondant :
 
+``` python
+
+L = [(1,2), (3,6), (1,4), (2,2), (4,1), (2,3)]
+W = 5
+KP = [[0 for j in range(W)] for i in range(len(L)+1)]
+
+
+for i in range(1, len(L)+1):
+  #on a un petit décalage ici, 
+  wi, vi = L[i-1]
+  
+  for w in range(W):
+    if wi > w:
+      KP[i][w] = KP[i-1][w]
+    else:
+      KP[i][w] = max(KP[i-1][w], KP[i-1][w-wi] + vi)
+      
+  
+print(KP)
+
+```
+Ce qui 
 
 
 
