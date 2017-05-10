@@ -41,9 +41,10 @@ En effet, on a:
 si wi > w : KP(i, w) = KP(i-1, w)
 sinon: KP(i, w) = max(KP(i-1, w), KP(i-1, w-wi) + vi) 
 
-Bon, c'est peut être pas ce qu'il y a de plus compréhensible écrit comme ça. En fait, ça veut dire que quand on prend le problème au rang i, on a deux cas:
-- Soit le iéme élément a un poids wi supérieur à w, du coup on ne peut pas le mettre dans le sac.
-
+Bon, c'est peut être pas ce qu'il y a de plus compréhensible écrit comme ça. J'essaie de l'expliquer mais c'est assez difficile.
+En fait, ça veut dire que quand on prend le problème au rang i, on a deux cas:
+- Soit le iéme élément a un poids wi supérieur à w, du coup on ne peut pas le mettre dans le sac. Du coup pour avoir la solution au problème, il suffit de regarder quelle est la valeur de KP au rang i-1 avec la même contenance w.
+- Soit le ième élément peut être mis dans le sac. Dans ce cas, il faut prendre la valeur maximale entre KP(i-1, w), qui est la valeur du problème au rang i-1 (sans prendre le iéme élément), et KP(i-1, w-wi) + vi, qui correspond à la valeur du ième élément à laquelle on ajoute la valeur du problème au rang i-1, pour une contenance de w-wi. En effet, on prend le ième élément pour le mettre dans notre sac, il prend donc de la place, il reste donc w-wi dans le sac.
 
 
 
