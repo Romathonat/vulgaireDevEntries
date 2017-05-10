@@ -23,5 +23,32 @@ On pourrait aussi se dire "bon ben alors, il faut commencer par mettre les objet
 
 Pareil, on se retrouverait avec une valeur totale de 4 avec un objet de poids 5, alors que mettre les deux objets (2,2) et (1,3) auraient constitué une valeur totale de 5.
 
-En fait ces deux algorithme sont des algorithmes **gloutons**
+En fait ces deux algorithme sont des algorithmes **gloutons**, c'est à dire qu'à chaque étape on fait un choix qui sur le coup nous 
+paraît le meilleur, mais sur le long terme il ne l'est pas forcément. Par exemple, si on considère que notre problème est le bien de l'humanté, utiliser des énergies fossiles peut paraître être un bon choix localement dans le temps, puisque ça permet l'air industriel, le développement économique et technique, par contre sur le long terme, ce n'est pas la solution optimale puisque ça nous mène à des problèmes climatiques (entre autres) qui sont néfastes à l'humanité :)
+
+Si on regarde l'espace des solutions possibles, on se rend vite compte que pour n objets, il y a 2^n possibilités. En effet, on peut associer ces solutions à un mot de n bits, chaque bit représentant si on met l'objet dans le sac ou pas (si vous ne comprenez pas pourquoi, aller regarder [le premier article de ce blog](http://vulgairedev.fr/blog/article/2-puissance-n).
+
+En fait, on est face à un problème NP-complet. On peut cependant se débrouiller avec un algorithme dit [pseudo-polynomial](https://en.wikipedia.org/wiki/Pseudo-polynomial_time), en 
+programmation dynamique !
+
+## Solution
+
+Notre problème dépend de deux paramètres: les éléments que l'on met dans le sac, ainsi que la contenance du sac. Notons-le KP(i, w)(KP pour Knapsack Problem), avec i signifiant qu'on prend le i premiers objets. KP(i, w) nous donne la **somme maximale des valeurs maximale qu'on puisse avoir**.
+
+On peut voir que dans ce problème du sac à dos, on a une sous-structure optimale.
+En effet, on a:
+
+si wi > w : KP(i, w) = KP(i-1, w)
+sinon: KP(i, w) = max(KP(i-1, w), KP(i-1, w-wi) + vi) 
+
+Bon, c'est peut être pas ce qu'il y a de plus compréhensible écrit comme ça. En fait, ça veut dire que quand on prend le problème au rang i, on a deux cas:
+- Soit le iéme élément a un poids wi supérieur à w, du coup on ne peut pas le mettre dans le sac.
+
+
+
+
+
+
+
+
 
