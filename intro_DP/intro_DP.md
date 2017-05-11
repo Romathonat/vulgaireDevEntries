@@ -28,22 +28,22 @@ paraît le meilleur, mais sur le long terme il ne l'est pas forcément. Par exem
 
 Si on regarde l'espace des solutions possibles, on se rend vite compte que pour n objets, il y a 2^n possibilités. En effet, on peut associer ces solutions à un mot de n bits, chaque bit représentant si on met l'objet dans le sac ou pas (si vous ne comprenez pas pourquoi, aller regarder [le premier article de ce blog](http://vulgairedev.fr/blog/article/2-puissance-n).
 
-En fait, on est face à un problème NP-complet. On peut cependant se débrouiller avec un algorithme dit [pseudo-polynomial](https://en.wikipedia.org/wiki/Pseudo-polynomial_time), en 
+En fait, on est face à un problème [NP-complet](http://vulgairedev.fr/blog/article/problemesP_NP). On peut cependant se débrouiller avec un algorithme dit [pseudo-polynomial](https://en.wikipedia.org/wiki/Pseudo-polynomial_time), en 
 programmation dynamique !
 
 ## Solution
 
-Notre problème dépend de deux paramètres: les éléments que l'on met dans le sac, ainsi que la contenance du sac. Notons-le KP(i, w)(KP pour Knapsack Problem), avec i signifiant qu'on prend le i premiers objets. KP(i, w) nous donne la **somme maximale des valeurs maximale qu'on puisse avoir**.
+Notre problème dépend de deux paramètres: les éléments que l'on met dans le sac, ainsi que la contenance du sac. Notons-le KP(i, w)(KP pour Knapsack Problem), avec i signifiant qu'on prend les i premiers objets. KP(i, w) nous donne la **somme maximale des valeurs maximales qu'on puisse avoir**.
 
 On peut voir que dans ce problème du sac à dos, on a une sous-structure optimale.
 En effet, on a:
 
-si wi > w : KP(i, w) = KP(i-1, w)
-sinon: KP(i, w) = max(KP(i-1, w), KP(i-1, w-wi) + vi) 
+**si wi > w** : KP(i, w) = KP(i-1, w)  
+**sinon**: KP(i, w) = max(KP(i-1, w), KP(i-1, w-wi) + vi) 
 
 Bon, c'est peut être pas ce qu'il y a de plus compréhensible écrit comme ça. J'essaie de l'expliquer mais c'est assez difficile.
 En fait, ça veut dire que quand on prend le problème au rang i, on a deux cas:
-- Soit le iéme élément a un poids wi supérieur à w, du coup on ne peut pas le mettre dans le sac. Du coup pour avoir la solution au problème, il suffit de regarder quelle est la valeur de KP au rang i-1 avec la même contenance w.
+- Soit le ième élément a un poids wi supérieur à w, du coup on ne peut pas le mettre dans le sac. Du coup pour avoir la solution au problème, il suffit de regarder quelle est la valeur de KP au rang i-1 avec la même contenance w.
 - Soit le ième élément peut être mis dans le sac. Dans ce cas, il faut prendre la valeur maximale entre KP(i-1, w), qui est la valeur du problème au rang i-1 (sans prendre le iéme élément), et KP(i-1, w-wi) + vi, qui correspond à la valeur du ième élément à laquelle on ajoute la valeur du problème au rang i-1, pour une contenance de w-wi. En effet, on prend le ième élément pour le mettre dans notre sac, il prend donc de la place, il reste donc w-wi dans le sac.
 
 Voilà le code correspondant :
@@ -68,7 +68,8 @@ for i in range(1, len(L)+1):
 print(KP)
 
 ```
-Ce qui nous donne [0, 4, 6, 7, 10, 12] pour la dernière ligne de KP. Ceci veut dire que pour des contenances de 0, 1, 2, 3, 4 et 5, on a des sommes de valeurs maximales de 0, 4, 6, 7, 10 et 12.
+>[0, 4, 6, 7, 10, 12] 
+pour la dernière ligne de KP. Ceci veut dire que pour des contenances de 0, 1, 2, 3, 4 et 5, on a des sommes de valeurs maximales de 0, 4, 6, 7, 10 et 12.
 
 Pour connaitre la composition des solutions, on peut faire un tableau de booléens, de même taille que KP, qui retient les valeurs que l'on a choisi. Ainsi, on peut reconstruire la solution:
 
@@ -79,27 +80,39 @@ KP = [[0 for j in range(W+1)] for i in range(len(L)+1)]
 keep = [[0 for j in range(W+1)] for i in range(len(L)+1)]
 
 for i in range(1, len(L)+1):
+  #on a un décalage car i commence à 1 et fini à len(L)+1
   wi, vi = L[i-1]
   
   for w in range(W+1):
-    if wi > w:
+    if wi > w or KP[i-1][w-wi] + vi < KP[i-1][w]:
       KP[i][w] = KP[i-1][w]
     else:
-      KP[i][w] = max(KP[i-1][w], KP[i-1][w-wi] + vi)
+      KP[i][w] = KP[i-1][w-wi] + vi
       
       #à chaque fois qu'on prend le ième élément, on sauvegarde dans le tableau keep
       keep[i][w] = 1
-      
-K = W
 
+#K est une valeur qui va nous permettre de retracer le chemin qui a été pris dans la DP.
+#Etant donné que la solution de notre problème est en KP[N][W], on fait prendre à K la valeur W.
+K = W
+result = []
+
+#Ensuite, on part de la ligne du bas du tableau (càd avec tous les objets pris en compte), et on cherche quand un objet a été ajouté
 for i in range(len(L), 0, -1):
+  #à chaque fois qu'on trouve un 1, cela signifie que l'objet est a été ajouté à cette étape
   if(keep[i][K] == 1):
-    print(i-1)
+    result.append(i - 1)
+    
+    #si l'objet a été ajouté, cela signife qu'on a utilisé une solution du sous probleme KP[i-1][w-wi], donc il faut adapter K
+    #en lui faisant prendre la valeur w-wi
     K = K - L[i-1][0]
 
-for i in range(len(KP)):
-  print(keep[i])
+#on affiche les indices des objets qui sont utilisés
+print(result)
 ```
+>[2, 1, 0]
+
+Voilà, j'espère que cet article vous aura plu. C'est un sujet un peu délicat donc n'hésitez pas à lire cela au calme. 
 
 
 
