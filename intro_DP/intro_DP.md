@@ -1,6 +1,5 @@
 ## Intro
-Dynamic Programming. Ou programmation dynamique en français. C'est une technique de résolution de problèmes, qui n'est pas si évidente 
-à comprendre, du moins quand on débute. 
+Dynamic Programming. Ou programmation dynamique en français. C'est une technique de résolution de problèmes, qui peut être un peu compliquée à comprendre. 
 
 Le principe de la programmation dynamique est d'utiliser la récursivité d'un problème, on parle de **sous-structure optimale**.
 Cela consiste à prendre un problème de taille N, le résoudre pour les versions de taille moindre, de la plus petite à la plus plus grande,
@@ -14,7 +13,7 @@ Prenons un bon exemple pour mieux comprendre. Vous possédez un sac à dos qui p
 
 On pourrait se dire "c'est facile, il suffit de commencer par mettre les objets les plus lourds, puis les plus légers et ça marche".  
 
-*Contre exemple*: W = 5, objets = {(5, 2), (2, 3), (2, 3)} (le premier terme est le poids, le second est la valeur.
+*Contre exemple*: W = 5, objets = {(5, 2), (2, 3), (2, 3)} (le premier terme est le poids, le second est la valeur).
 En applicant cela, on se retrouve avec un seul objet de poids 5, pour une valeur de 2, alors que si on avait mis les deux objets de poids 2, on aurait une valeur totale de 4, ce qui aurait été mieux.
 
 On pourrait aussi se dire "bon ben alors, il faut commencer par mettre les objets de plus fortes valeurs en premier".
@@ -68,7 +67,14 @@ for i in range(1, len(L)+1):
 print(KP)
 
 ```
->[0, 4, 6, 7, 10, 12] 
+>
+[0, 0, 0, 0, 0, 0]  
+[0, 2, 2, 2, 2, 2]  
+[0, 2, 2, 6, 8, 8]  
+[0, 4, 6, 6, 10, 12]  
+[0, 4, 6, 6, 10, 12]  
+[0, 4, 6, 6, 10, 12]  
+[0, 4, 6, 7, 10, 12]    
 pour la dernière ligne de KP. Ceci veut dire que pour des contenances de 0, 1, 2, 3, 4 et 5, on a des sommes de valeurs maximales de 0, 4, 6, 7, 10 et 12.
 
 Pour connaitre la composition des solutions, on peut faire un tableau de booléens, de même taille que KP, qui retient les valeurs que l'on a choisi. Ainsi, on peut reconstruire la solution:
