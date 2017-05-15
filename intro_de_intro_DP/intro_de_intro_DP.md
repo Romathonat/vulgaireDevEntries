@@ -26,4 +26,21 @@ Et bien la solution c'est la suite de Fibonacci, et le plus simple pour le compr
 Les lapins en gris ne peuvent pas encore se reproduire, les autres oui. Au rang n, on a le nombre de lapins du rang n-1, auquel on ajoute tous les nouveaux nées, ce qui correspond au nombre de lapins du rang n-2. En effet, parmis les lapins du rang n-1, certains ne peuvent pas encore se reproduire, par contre tous ceux du rang n-2 le peuvent.
 
 ## Elle est où la DP ?
-J'y arrive. Si on pose le problème "Combien vaut la suite de Fibonacci au rang n"
+J'y arrive. Si on pose le problème "Combien vaut la suite de Fibonacci au rang n ?", on pourrait être tenté de faire un algo naif récursif de ce type: 
+
+``` python
+def Fibo(n):
+  if n == 0 or n == 1: 
+    return 1
+  else:
+    return Fibo(n-1)+Fibo(n-2)
+print(Fibo(10))
+
+```
+> 89
+
+Le problème avec cette implémentation, c'est qu'on refait plusieurs fois les mêmes calculs !
+En effet, si on dessine les appels successifs à Fibo(n), on obtient ça:
+
+
+
