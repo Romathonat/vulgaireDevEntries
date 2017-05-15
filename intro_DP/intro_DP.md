@@ -8,6 +8,8 @@ en stockant les résultats intermédiaires (un genre de [mémoïsation](https://
 Alors bien sûr, on ne peut pas utiliser la programmation dynamique pour résoudre tous les problèmes, ce serait trop simple. Il faut
 que celui-ci présente une sous-structure optimale.
 
+**EDIT**: Le problème qui va suivre peut être un peu compliqué, pour commencer je vous conseil de lire **[ceci](http://vulgairedev.fr/blog/article/intro_intro_dp)**, c'est un exemple plus simple qui permet de commencer un peu plus en douceur.
+
 ## Le problème du sac à dos
 Prenons un bon exemple pour mieux comprendre. Vous possédez un sac à dos qui peut contenir un poids maximal W. Vous possédez i objets, que vous pouvez mettre dans le sac à dos, chacun ayant un poids wi et une valeur vi. Le but est de trouver l'ensemble des objets i qui maximise la somme des valeurs que vous avez dans votre sac, sans dépasser le poids W.  
 
