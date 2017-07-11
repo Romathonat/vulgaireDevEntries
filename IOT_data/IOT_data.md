@@ -6,7 +6,7 @@ good performances, the power of relationnal databases... The project is open-sou
 
 ## Problem
 
-There are data from multiples sites, each one with its own database. There is also a backend (let's say a cloud plateforme), where all data from all sites are stored. How can we synchronize data each X minutes from each site to the backend, knowing that some data may be updated ?
+There are data from multiples sites, each one with its own database. There is also a backend (let's say a cloud plateform), where all data from all sites are stored. How can we synchronize data each X minutes from each site to the backend, knowing that some data may be updated ?
 
 ## Solution
 
