@@ -65,11 +65,6 @@ Dans le cas particulier du classifieur binaire, on peut constater qu'il y a une 
 - un vrai positif pour une classe est forcément un vrai négatif pour l'autre, et inversement: si le classifieur décrète qu'il s'agit de la première classe, alors cela implique qu'il ne s'agit pas de la deuxième classe (donc "positif" devient "négatif"), et s'il a bien fait de détecter la première classe, alors il aura bien fait de ne pas détecter la deuxième (donc on reste "vrai").
 - un faux négatif pour une classe est forcément un faux positif pour l'autre : même raisonnement que précédemment.
 
-On peut calculer le nombre de configurations possibles (par configuration j'entends répartition entre vrai positif, faut négatif etc): chaque élément qui doit être évalué par le classifieur peut être réparti dans une des quatres "cases" (vrai positif, vrai négatif, faux positif, faux négatif), c'est comme un tirage sans remise. Pour n éléments, on a donc
-
-$$n\times(n-1)\times(n-2)\times(n-3)$$ 
-
-configurations possibles (dans le cas du classifieur binaire, sinon c'est plus compliqué !)
 
 Un petit récapitulatif pour finir :
 
