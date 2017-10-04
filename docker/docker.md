@@ -19,3 +19,23 @@ Docker begins to be widely used today, by dev, devops, Cloud Provider etc. Why ?
 - **Easy deployment**: Each container has a single configuration file, the Dockerfile, where all the instructions to create the image are located. You want to launch your app ? Easy!
 - **Same prod and dev** (if you want): You can have the same environment for the production ans the development, because each part of your project is in a container, which is **isolated**. No more issues like "it worked on my computer!", it is easier to reproduce a bug.
 - **Creating micro-services architecture**: When you want your project to scale up, you have several possibilities for the service, like horizontal scalability. But maybe you also want your code to be better organized, so to maintain it, you can develop a [micro-services architecture](https://en.wikipedia.org/wiki/Microservices). Docker is a very good choice for this approach, whether you use [docker-compose](https://github.com/docker/compose) when deploying your services when it is a small project, or [Kubernetes](https://github.com/kubernetes/kubernetes) for a more robust solution.
+
+- It is **plateform-agnostic**, you can run it on Windows, Linux (Debian, Ubuntu, CentOS ...), on AWS etc.
+- You can access to **docker images** of the community freely. You want to deploy an nginx ? Just pull the official image, and use it
+- Another use case is to use it to **execute your tests**. It is isolated, so you can install whatever you need, no problem! 
+- You can **duplicate containers** to have horizontal scalability (more advanced use case).
+
+## How to use it ?
+
+describe dockerfile etc
+
+## Be stateless !
+
+
+## Some tips/problem encoutered
+- docker-compose probleme quand up des nouveaux containers
+- ajouter le contexte au build (issue github)
+- le stateful est source de bcp erreurs
+- expose, publish and -p
+- entrypoint vs cmd
+- cmd faut mettre des "
