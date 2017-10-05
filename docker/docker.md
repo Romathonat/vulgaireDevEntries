@@ -34,12 +34,12 @@ At the beginning, you write a **Dockerfile** to describe what you want to put in
 On the schema, you also have the **docker hub**, wich is a place when you can push you images, and where you can also pull images from other people !
 For example, if I want to run a nginx locally, I can pull the image locally like this:
 
-``` bash
+```bash
 docker pull nginx
 ```
 Then, you can instantiate it like this (=creating a container):
 
-``` bash
+```bash
 docker run -p 80:80 nginx
 ```
 **NB**: The -p option is here to map the port of the host to the port of the container. Each request coming on the port 80 of the host will be redirect to the port 80 of the container.
@@ -50,17 +50,17 @@ On the schema, there is also a docker registery, wich is like a docker hub (= a 
 Maybe you want to create your own image. Well for that, you have to write your configuration in a Dockerfile (written that way)
 Let's say we want to create an hello-world with python.
 
-``` bash
+```bash
 mkdir hello-world && cd hello-world
 ``` 
 
 We create a python file (hello.py) wich prints our message:
-``` python
+```python
 print("Hello world")
 ```
 
 
-``` Dockerfile
+```Dockerfile
 #First we specify the base image we are using. Here we take the official python one, where python is already installed
 FROM python:3.6
 
@@ -81,14 +81,14 @@ CMD ["python", "hello.py"]
 
 Then, we can build our image with :
 
-``` bash
+```bash
 docker build -t hello .
 ```
 **NB**: -t option let you *tag* your image, to give it a more convenient name than "8f85s6df3f3".
 The "." specify the location of the Dockerfile.
 
 You can list your images with :
-``` bash
+```bash
 docker images
 >>>REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 >>>hello                                latest              e1aba4171710        6 minutes ago       690MB
@@ -105,11 +105,11 @@ docker run hello
 That's all! You have an image wich can be deployed on your linux, windows, mac, on the cloud or whatever, it will works the same way !
 
 Now, you can stop the container with:
-``` bash
+```bash
 docker stop <container-id>
 ```
 and restart it with:
-``` bash
+```bash
 docker start <container-id>
 ```
 
@@ -118,7 +118,7 @@ You can also stop using these two commands, be stateless, so your containers hav
 ## Be stateless !
 With docker, you can mount **volumes**. It means you can share data between the host and the container, like this:
 
-``` bash
+```bash
 docker run -v /home/foo/bar:/foo
 ```
 It will mount the "/home/foo/bar" folder of the host on the "/foo" folder of the container. Each time you run your image, data will not be lost (you need it for a database container for example). If you don't do that, and you change the code of your app in the container, you will have to rebuild an image, so a new container, so you will lose your data, wich is sad.
@@ -132,7 +132,7 @@ Docker-compose is a great tool, it is like a mini-orchestrator. You specify wich
 
 Example:
 
-``` docker-compose.yml
+```docker-compose.yml
 version: '3'
 services:
   web:
@@ -185,7 +185,7 @@ services:
 ### Expose and -p
 When you want to share a port with the host, use 
 
-``` bash
+```bash
 docker run -p 8080:80 <my_image>
 ```
 It means "every request coming in the 8080 port of the host will be redirected to the port 80 of this container".
@@ -196,7 +196,7 @@ When you want to make inter-container communication, use EXPOSE <my-port> in the
 ### Inter-container communication
 Docker-compose automatically creates a docker network, so that container can talk to each other. You can also create this network easily:
 
-``` bash
+```bash
 docker network create --driver bridge --attachable <network_name>
 docker network connect --alias <container1> <network_name> <container1>
 docker network connect --alias <container2> <network_name> <container2>
@@ -205,7 +205,7 @@ docker network connect --alias <container2> <network_name> <container2>
 Now if you want to call the container <container1> (let's say a REST API) from <container2>, you can just make a call to "http://<container1>/api". 
 
 ### Enter in a container:
-``` bash
+```bash
 docker exexc -ti <container_name> bash
 ```
 Now you can use it like a classical VM.
@@ -214,7 +214,7 @@ Now you can use it like a classical VM.
 The CMD in the Dockerfile specifies the default command to launch when running the container.
 You can also specify the ENTRYPOINT. By default it is "/bin/sh -c". For some needs, you need to custom it (like in [the postgreSQL Dockerfile](https://github.com/docker-library/postgres/blob/master/Dockerfile-alpine.template), but generally you don't need to. 
 **Warning**: When using CMD, use double-quotes:
-``` bash
+```bash
 #BAD
 CMD ['python', 'hello.py']
 
