@@ -132,7 +132,9 @@ It will mount the "/home/foo/bar" folder of the host on the "/foo" folder of the
 ### Docker-compose
 Docker-compose is a great tool, it is like a mini-orchestrator. You specify wich image you want to build and container you want to instantiate, what ports you want to map etc. It is a single configuration file for your project, and it also create a docker network so that your container can communicate with each other using their names. 
 
-###
+### Build context
+https://github.com/moby/moby/issues/2745#issuecomment-290047384
+
 - ajouter le contexte au build (issue github)
 - le stateful est source de bcp erreurs
 - expose, publish and -p
