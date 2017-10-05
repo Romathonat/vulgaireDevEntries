@@ -1,4 +1,4 @@
-TL;DR
+*TL;DR*
 I used Docker during last months. I write down here what I would have liked to know when beginning using it, what you can do with it and some tricks you need to be aware of.
 
 ## What is docker ?
@@ -55,6 +55,7 @@ mkdir hello-world && cd hello-world
 ``` 
 
 We create a python file (hello.py) wich prints our message:
+
 ```python
 print("Hello world")
 ```
@@ -88,6 +89,7 @@ docker build -t hello .
 The "." specify the location of the Dockerfile.
 
 You can list your images with :
+
 ```bash
 docker images
 >>>REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
@@ -105,10 +107,12 @@ docker run hello
 That's all! You have an image wich can be deployed on your linux, windows, mac, on the cloud or whatever, it will works the same way !
 
 Now, you can stop the container with:
+
 ```bash
 docker stop <container-id>
 ```
 and restart it with:
+
 ```bash
 docker start <container-id>
 ```
@@ -162,17 +166,20 @@ A
     │   Dockerfile
 ```
 And you need to access myJson.json from the dockerfile, just write the dockerfile as if you were in A:
+
 ``` bash
 FROM my_image
 ADD ./B/myJson.json .
 ```
 And then launch docker specifying the path to the Dockerfile: 
+
 ``` bash
 docker build -f ./C/Dockerfile  .
 ```
 That way, it work for me.
 
 Moreover if you use docker compose, you can also do (assuming your docker-compose.yml is in A):
+
 ``` bash
 version: '3'
 services:
@@ -205,6 +212,7 @@ docker network connect --alias <container2> <network_name> <container2>
 Now if you want to call the container <container1> (let's say a REST API) from <container2>, you can just make a call to "http://<container1>/api". 
 
 ### Enter in a container:
+
 ```bash
 docker exexc -ti <container_name> bash
 ```
@@ -214,6 +222,7 @@ Now you can use it like a classical VM.
 The CMD in the Dockerfile specifies the default command to launch when running the container.
 You can also specify the ENTRYPOINT. By default it is "/bin/sh -c". For some needs, you need to custom it (like in [the postgreSQL Dockerfile](https://github.com/docker-library/postgres/blob/master/Dockerfile-alpine.template), but generally you don't need to. 
 **Warning**: When using CMD, use double-quotes:
+
 ```bash
 #BAD
 CMD ['python', 'hello.py']
