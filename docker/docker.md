@@ -1,4 +1,4 @@
-# A docker summary
+# A docker summary (a quick review of Docker ?)
 
 TL;DR
 I used Docker during the last months. I write down here what I learnt from it, what you can do with it and some tricks you need to be aware of.
@@ -26,8 +26,45 @@ Docker begins to be widely used today, by dev, devops, Cloud Provider etc. Why ?
 - You can **duplicate containers** to have horizontal scalability (more advanced use case).
 
 ## How to use it ?
+Here is the process of building a *container*
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/docker/docker_build.png) 
 
-describe dockerfile etc
+At the beginning, you write a **Dockerfile** to describe what you want to put in your **image**: a python project? A java? A PostgreSQL database ? Then, you can create an **image**, from this dockerfile. From this image, you can run one or more **containers**. What is the difference between images and containers ? You can see it like in OOP: the image is the class, and the container is the object. You can instantiate several objects from a single class, each of them owning their data. If we continue with the metaphor we can say that the Dockerfile corresponds to the code you write to describe you class.
+
+### Docker pull
+On the schema, you also have the **docker hub**, wich is a place when you can push you images, and where you can also pull images from other people !
+For example, if I want to run a nginx locally, I can pull the image locally like this:
+
+``` bash
+docker pull nginx
+```
+Then, you can instantiate it like this (=creating a container):
+
+``` bash
+docker run -p 80:80 nginx
+```
+NB: The -p option is here to map the port of the host to the port of the container. Each request coming on the port 80 of the host will be redirect to the port 80 of the container.
+
+### Docker build
+Maybe you want to create your own image. Well for that, you have to write your configuration in a Dockerfile (written that way)
+Let's say we want to create an hello-world with python.
+
+``` bash
+mkdir hello-world && cd hello-world
+``` 
+
+We create a python file wich print our message:
+``` python
+
+```
+
+
+``` Dockerfile
+FROM python:3.6
+
+
+```
+
 
 ## Be stateless !
 
@@ -39,3 +76,4 @@ describe dockerfile etc
 - expose, publish and -p
 - entrypoint vs cmd
 - cmd faut mettre des "
+- port un seul par container
