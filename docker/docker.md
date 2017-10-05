@@ -5,12 +5,12 @@ I used Docker during last months. I write down here what I would have liked to k
 
 ## What is docker ?
 ### As a User
-[Docker](https://github.com/moby/moby) is a project developped in Go. You can see it as a tool to put your apps/code/database/services in containers. As a user, containers look like virtual machines you can start and stop quickly. In fact, you can when your **image** is build, starting/stoping docker containers should take only some seconds.
+[Docker](https://github.com/moby/moby) is a project developped in Go. You can see it as a tool to put your apps/code/database/services in containers. As a user, containers look like virtual machines you can start and stop quickly. In fact, when your **image** is build, starting/stoping docker containers should take only some seconds.
 
 ### As a sysadmin
 Docker containers are based on [LXC](https://en.wikipedia.org/wiki/LXC)
 
-In fact there is no hypervisor like with a VM. The term "lightweigt virtualization" is often used. The size of a docker image can go from some MB to some hundred of MB. The average size is way less than with a VM. In fact, it takes less CPU/RAM/Disk than a disk, that is why for the same bare-metal machine, you can get more with docker than with VMs. It's like filling a box with rocks or with sand.
+In fact there is no hypervisor like with a VM. The term "lightweigt virtualization" is often used. The size of a docker image can go from some MB to some hundred of MB. The average size is way less than with a VM. In fact, it takes less CPU/RAM/Disk than a VM, that is why for the same bare-metal machine, you can get more with docker than with VMs. It's like filling a box with rocks or with sand.
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/docker/docker_vm.png) 
 
 ## Why is it cool ?
@@ -30,7 +30,7 @@ Here is the process of building a *container*
 
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/docker/docker_build.png) 
 
-At the beginning, you write a **Dockerfile** to describe what you want to put in your **image**: a python project? A java? A PostgreSQL database ? Then, you can create an **image**, from this dockerfile. From this image, you can run one or more **containers**. What is the difference between images and containers ? You can see it like in OOP: the image is the class, and the container is the object. You can instantiate several objects from a single class, each of them owning their data. If we continue with the metaphor we can say that the Dockerfile corresponds to the code you write to describe you class.
+At the beginning, you write a **Dockerfile** to describe what you want to put in your **image**: a python project? A java? A PostgreSQL database ? Then, you can create an **image**, from this Dockerfile. From this image, you can run one or more **containers**. What is the difference between images and containers ? You can see it like in OOP: the image is the class, and the container is the object. You can instantiate several objects from a single class, each of them owning their data. If we continue with the metaphor we can say that the Dockerfile corresponds to the code you write to describe you class.
 
 ### Docker pull
 On the schema, you also have the **docker hub**, wich is a place when you can push you images, and where you can also pull images from other people !
@@ -44,7 +44,7 @@ Then, you can instantiate it like this (=creating a container):
 ``` bash
 docker run -p 80:80 nginx
 ```
-NB: The -p option is here to map the port of the host to the port of the container. Each request coming on the port 80 of the host will be redirect to the port 80 of the container.
+**NB**: The -p option is here to map the port of the host to the port of the container. Each request coming on the port 80 of the host will be redirect to the port 80 of the container.
 
 On the schema, there is also a docker registery, wich is like a docker hub (= a place to push all your images), but your host it where you want, images are yours and you don't have to share them with anyone. It is an interesting tool for business.
 
@@ -86,7 +86,7 @@ Then, we can build our image with :
 ``` bash
 docker build -t hello .
 ```
-NB: -t option let you *tag* your image, to give it a more convenient name than "8f85s6df3f3".
+**NB**: -t option let you *tag* your image, to give it a more convenient name than "8f85s6df3f3".
 The "." specify the location of the Dockerfile.
 
 You can list your images with :
@@ -102,7 +102,7 @@ docker run hello
 >>> Hello world!
 ```
 
-NB: Here the size is quite important because I use the docker image of python 3.6 ("FROM python:3.6"), wich is built on top of a debian image. We could reduce this size drastically by using the "alpine" version.
+**NB**: Here the size is quite important because I used the docker image of python 3.6 ("FROM python:3.6"), wich is built on top of a debian image. We could reduce this size drastically by using the "alpine" version.
   
 That's all! You have an image wich can be deployed on your linux, windows, mac, on the cloud or whatever, it will works the same way !
 
@@ -132,8 +132,23 @@ It will mount the "/home/foo/bar" folder of the host on the "/foo" folder of the
 ### Docker-compose
 Docker-compose is a great tool, it is like a mini-orchestrator. You specify wich image you want to build and container you want to instantiate, what ports you want to map etc. It is a single configuration file for your project, and it also create a docker network so that your container can communicate with each other using their names. 
 
+Example:
+
+``` docker-compose.yml
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+  redis:
+    image: "redis:alpine"
+```
+
+
+
 ### Build context
-When you are building your image, the current folder is sent to the docker context (due to the client-server architecture of Docker, from what I understood), which means you can't add a file from a parent folder, by default. There is a workaround that i described here : [https://github.com/moby/moby/issues/2745#issuecomment-290047384](https://github.com/moby/moby/issues/2745#issuecomment-290047384), but the downside is that your image will be bigger, since the context of parent folder is sent to docker. I put this here so that you can see the interesting discussion about this problem.
+When you are building your image, the current folder is sent to the docker context (due to the client-server architecture of Docker, from what I understood), which means you can't add a file from a parent folder, by default. There is a workaround that i described here : [https://github.com/moby/moby/issues/2745#issuecomment-290047384](https://github.com/moby/moby/issues/2745#issuecomment-290047384), but the downside is that your image will be bigger, since the context of parent folder is sent to docker. You can see an interesting discussion about this problem on the github issue.
 
 So if you want to add a file from a parent structure, do the following.
 
@@ -170,7 +185,7 @@ services:
 ``` 
 
 ### Expose and -p
-When you want share a port with the host, use 
+When you want to share a port with the host, use 
 
 ``` bash
 docker run -p 8080:80 <my_image>
@@ -195,8 +210,16 @@ Now if you want to call the container <container1> (let's say a REST API) from <
 ``` bash
 docker exexc -ti <container_name> bash
 ```
-Now you can use it like a classical VM
+Now you can use it like a classical VM.
 
 ### Entrypoint vs CMD
 The CMD in the Dockerfile specifies the default command to launch when running the container.
 You can also specify the ENTRYPOINT. By default it is "/bin/sh -c". For some needs, you need to custom it (like in [the postgreSQL Dockerfile](https://github.com/docker-library/postgres/blob/master/Dockerfile-alpine.template), but generally you don't need to. 
+**Warning**: When using CMD, use double-quotes:
+``` bash
+#BAD
+CMD ['python', 'hello.py']
+
+#GOOD
+CMD ["python","hello.py"]
+```
