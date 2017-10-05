@@ -44,7 +44,7 @@ docker run -p 80:80 nginx
 ```
 **NB**: The -p option is here to map the port of the host to the port of the container. Each request coming on the port 80 of the host will be redirect to the port 80 of the container.
 
-On the schema, there is also a docker registery, wich is like a docker hub (= a place to push all your images), but your host it where you want, images are yours and you don't have to share them with anyone. It is an interesting tool for business.
+On the schema, there is also a docker registery, wich is like a docker hub (= a place to push all your images), but you host it where you want, images are yours and you don't have to share them with anyone. It is an interesting tool for business.
 
 ### Docker build
 Maybe you want to create your own image. Well for that, you have to write your configuration in a Dockerfile (written that way)
