@@ -1,5 +1,3 @@
-# Docker: a post to my past self.
-
 TL;DR
 I used Docker during last months. I write down here what I would have liked to know when beginning using it, what you can do with it and some tricks you need to be aware of.
 
