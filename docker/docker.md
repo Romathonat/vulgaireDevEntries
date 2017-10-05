@@ -1,4 +1,4 @@
-# A docker summary (a quick review of Docker ?)
+# Docker: a post to my past self.
 
 TL;DR
 I used Docker during last months. I write down here what I learnt from it, what you can do with it and some tricks you need to be aware of.
