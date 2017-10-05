@@ -1,7 +1,7 @@
 # Docker: a post to my past self.
 
 TL;DR
-I used Docker during last months. I write down here what I learnt from it, what you can do with it and some tricks you need to be aware of.
+I used Docker during last months. I write down here what I would have liked to know when beginning using it, what you can do with it and some tricks you need to be aware of.
 
 ## What is docker ?
 ### As a User
@@ -133,11 +133,70 @@ It will mount the "/home/foo/bar" folder of the host on the "/foo" folder of the
 Docker-compose is a great tool, it is like a mini-orchestrator. You specify wich image you want to build and container you want to instantiate, what ports you want to map etc. It is a single configuration file for your project, and it also create a docker network so that your container can communicate with each other using their names. 
 
 ### Build context
-https://github.com/moby/moby/issues/2745#issuecomment-290047384
+When you are building your image, the current folder is sent to the docker context (due to the client-server architecture of Docker, from what I understood), which means you can't add a file from a parent folder, by default. There is a workaround that i described here : [https://github.com/moby/moby/issues/2745#issuecomment-290047384](https://github.com/moby/moby/issues/2745#issuecomment-290047384), but the downside is that your image will be bigger, since the context of parent folder is sent to docker. I put this here so that you can see the interesting discussion about this problem.
 
-- ajouter le contexte au build (issue github)
-- le stateful est source de bcp erreurs
-- expose, publish and -p
-- entrypoint vs cmd
-- cmd faut mettre des "
-- port un seul par container
+So if you want to add a file from a parent structure, do the following.
+
+I you have a tree like this:
+
+```
+A
+│   README.md 
+└───B
+│   │   myJson.json
+│
+└───C
+    │   Dockerfile
+```
+And you need to access myJson.json from the dockerfile, just write the dockerfile as if you were in A:
+``` bash
+FROM my_image
+ADD ./B/myJson.json .
+```
+And then launch docker specifying the path to the Dockerfile: 
+``` bash
+docker build -f ./C/Dockerfile  .
+```
+That way, it work for me.
+
+Moreover if you use docker compose, you can also do (assuming your docker-compose.yml is in A):
+``` bash
+version: '3'
+services:
+  my_service:
+    build:
+      context: ./
+      dockerfile: ./C/Dockerfile
+``` 
+
+### Expose and -p
+When you want share a port with the host, use 
+
+``` bash
+docker run -p 8080:80 <my_image>
+```
+It means "every request coming in the 8080 port of the host will be redirected to the port 80 of this container".
+**Warning**: You can have only one container per host's port.
+
+When you want to make inter-container communication, use EXPOSE <my-port> in the Dockerfile, to specify that other containers on the same network can use this port.
+
+### Inter-container communication
+Docker-compose automatically creates a docker network, so that container can talk to each other. You can also create this network easily:
+
+``` bash
+docker network create --driver bridge --attachable <network_name>
+docker network connect --alias <container1> <network_name> <container1>
+docker network connect --alias <container2> <network_name> <container2>
+```
+
+Now if you want to call the container <container1> (let's say a REST API) from <container2>, you can just make a call to "http://<container1>/api". 
+
+### Enter in a container:
+``` bash
+docker exexc -ti <container_name> bash
+```
+Now you can use it like a classical VM
+
+### Entrypoint vs CMD
+The CMD in the Dockerfile specifies the default command to launch when running the container.
+You can also specify the ENTRYPOINT. By default it is "/bin/sh -c". For some needs, you need to custom it (like in [the postgreSQL Dockerfile](https://github.com/docker-library/postgres/blob/master/Dockerfile-alpine.template), but generally you don't need to. 
