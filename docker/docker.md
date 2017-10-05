@@ -106,12 +106,33 @@ NB: Here the size is quite important because I use the docker image of python 3.
   
 That's all! You have an image wich can be deployed on your linux, windows, mac, on the cloud or whatever, it will works the same way !
 
+Now, you can stop the container with:
+``` bash
+docker stop <container-id>
+```
+and restart it with:
+``` bash
+docker start <container-id>
+```
+
+You can also stop using these two commands, be stateless, so your containers have no data, and are all the same. Each time you want to launch your application, you just have to run your image, it is easier (it is just my personal opinion here, feel free to debate).
 
 ## Be stateless !
+With docker, you can mount **volumes**. It means you can share data between the host and the container, like this:
 
+``` bash
+docker run -v /home/foo/bar:/foo
+```
+It will mount the "/home/foo/bar" folder of the host on the "/foo" folder of the container. Each time you run your image, data will not be lost (you need it for a database container for example). If you don't do that, and you change the code of your app in the container, you will have to rebuild an image, so a new container, so you will lose your data, wich is sad.
+
+**Warning**: From personnal experience, sometimes you will forget that you have volumes, and will not understand why you app does not work properly. Remember that data and states are now on the host when you are debugging.
 
 ## Some tips/problem encoutered
-- docker-compose probleme quand up des nouveaux containers
+
+### Docker-compose
+Docker-compose is a great tool, it is like a mini-orchestrator. You specify wich image you want to build and container you want to instantiate, what ports you want to map etc. It is a single configuration file for your project, and it also create a docker network so that your container can communicate with each other using their names. 
+
+###
 - ajouter le contexte au build (issue github)
 - le stateful est source de bcp erreurs
 - expose, publish and -p
