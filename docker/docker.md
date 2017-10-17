@@ -6,7 +6,7 @@ I used Docker during last months. I write down here what I would have liked to k
 [Docker](https://github.com/moby/moby) is a project developped in Go. You can see it as a tool to put your apps/code/database/services in containers. As a user, containers look like virtual machines you can start and stop quickly. In fact, when your **image** is build, starting/stoping docker containers should take only some seconds.
 
 ### As a sysadmin
-Docker containers are based on [LXC](https://en.wikipedia.org/wiki/LXC)
+Docker was originally based on [LXC](https://en.wikipedia.org/wiki/LXC). Now it uses its own user-space lightweight virtualization mechanisms (you can read [here](https://www.infoworld.com/article/3204171/linux/what-is-docker-linux-containers-explained.html) if you want more informations on the underlying architecture of Docker).
 
 In fact there is no hypervisor like with a VM. The term "lightweigt virtualization" is often used. The size of a docker image can go from some MB to some hundred of MB. The average size is way less than with a VM. In fact, it takes less CPU/RAM/Disk than a VM, that is why for the same bare-metal machine, you can get more with docker than with VMs. It's like filling a box with rocks or with sand.
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/docker/docker_vm.png) 
