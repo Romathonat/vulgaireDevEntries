@@ -2,7 +2,7 @@ Je suis en train de faire les cours du MIT sur les probabilités/statisitques ([
 aux probabilités et statistiques, mais le cours est tout de même assez complet je trouve, donc je fais un petit résumé ici (ce n'est pas un cours, donc si vous ne connaissez pas un minimum ça risque d'être un peu dur).
 
 ## Loi de multiplication
-*S'il y a n façons de réaliser l'actions 1, et m façons de réaliser l'action 2, alors il y a n*m façons de réaliser l'action 1 suivit de l'action 2*.  
+*S'il y a n façons de réaliser l'actions 1, et m façons de réaliser l'action 2, alors il y a n*\m façons de réaliser l'action 1 suivit de l'action 2*.  
 **Exemple:** Combien y a-t-il de façons de tirer une paire d'as si l'on tire deux cartes d'un jeu de 52 cartes ?  
 **Réponse:** Il y a 4 as dansle jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi qui suivante, on a donc une probabilité de:
 $$\frac{12}{52*51} = \frac{1}{221}$$
@@ -77,8 +77,41 @@ Pour le sac exemple, ça nous donne:
 $$\{VR, RB, BV, VV, RR, BB\}$$
 
 **Le nombre d'issues possibles est**:
-$$\frac{n!}{k!(n-k)!} = \frac{A_n^{k}}{k!}$$
+$$\frac{n+k-1!}{k!(n-1)!}$$
 
 Ca correpond à une combinaison sans remise de k éléments parmi n + k - 1.
+
+Ici on trouve:
+$$\frac{4!}{2!(3-1)!} = 6$$
+
+**NB**: On pourrait se dire qu'il suffirait de diviser les arrangements avec répétitions par k! pour trouver les combinaisons avec répétitions, comme on avait fait dans le cas sans répétition. Ca ne fonctionne pas car il y a des cas où les combinaisons et les arrangements se confondent. Par exemple l'ensemble {RB} correspond bien à 2! tuples (BR et RB), mais le set {RR} ne génère qu'un seul tuple RR !
+
+## Principe d'inclusion-exclusion
+$$|A\cup B| = |A|+|B|-|A\cap B|$$
+
+![](https://upload.wikimedia.org/wikipedia/commons/9/99/Venn0001.svg)
+
+## Probabilité conditionelle et théorème de Bayes
+
+### Probabilité conditionnelle:
+$$P(A|B) = \frac{P(A\cap B)}{P(B)}$$ si P(B) != 0
+
+## Loi des probabilités totales
+Si l'ensemble des issues possibles est divisé en 2 parties disjointes B et C, pour tout évènement A, on a:
+
+$$P(A) = P(A\cap B) + P(A\cap C)$$
+
+## Indépendance d'évènements
+Deux évènements sont indépendants ssi:
+$$P(A\cap B) = P(A)*P(B)$$
+
+## Théorème de Bayes
+$$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
+
+On peut utiliser le théorème de Bayes pour démontrer l'*oublie de la fréquence de base* (**Base rate fallacy**).
+En gros: 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ? **Réponse**: 8.3%
+
+
+
 
 
