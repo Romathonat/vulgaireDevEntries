@@ -144,10 +144,46 @@ C'est l'ensemble des malades détectés sur l'ensemble des détections, càd la 
 
 Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades detectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est faux (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes detectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effetivement malade faible, bien que le test soit positif.
 
-## Démo
+### Démo
+Notation:
+M: malade  
+!M: non-malade  
+D: détecté  
+!D: non-détecté  
+
+On veut la probabilité d'être malade sachant qu'on est détecté, càd P(M|D).
+On sait aussi que:
+
+$$p(M) = \frac{0.5}{100}$$
+$$p(D|\neg M) = \frac{5}{100}$$
+(définition du faux positif)
+
+$$p(\neg D|M) = \frac{10}{100}$$
+(définition du faux négatif)
+
+$$p(\neg D|\neg M) = \frac{95}{100}$$
+(complémentaire du faux positif)
 
 
+$$p(D| M) = \frac{90}{100}$$
+(complémentaire du faux négatif)
 
+En application le théorème de Bayes, on a:
+$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} $$
+
+Or, d'après la loi des probabilités totales, on a:
+
+$$p(D) =  p(D\cap M) + p(D\cap \neg M)$$
+
+$$p(D) = 0.90*0.005 + 0.995*0.05$$
+
+Donc on trouve 
+$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} = 8.3%$$
+
+
+### Se souvenir:
+
+$$P(A|B)+P(!A|B) = 1$$
 
 
 
