@@ -1,10 +1,10 @@
 Je suis en train de faire les cours du MIT sur les probabilités/statisitques ([ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)). Le titre officiel est "Introduction 
-aux probabilités et statistiques, mais le cours est tout de même assez complet je trouve, donc je fais un petit résumé ici (ce n'est pas un cours, donc si vous ne connaissez pas un minimum ça risque d'être un peu dur).
+aux probabilités et statistiques", mais le cours est tout de même assez complet je trouve, donc je fais un petit résumé ici (ce n'est pas un cours, donc si vous ne connaissez pas un minimum, ça risque d'être un peu dur).
 
 ## Loi de multiplication
 *S'il y a n façons de réaliser l'actions 1, et m façons de réaliser l'action 2, alors il y a n*\m façons de réaliser l'action 1 suivit de l'action 2*.  
 **Exemple:** Combien y a-t-il de façons de tirer une paire d'as si l'on tire deux cartes d'un jeu de 52 cartes ?  
-**Réponse:** Il y a 4 as dansle jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi qui suivante, on a donc une probabilité de:
+**Réponse:** Il y a 4 as dansle jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi suivante, on a donc une probabilité de:
 $$\frac{12}{52*51} = \frac{1}{221}$$
   
 Avoir une paire d'as avant le flop au poker est donc rare, puisqu'on a seulement 0.45% de chances.
@@ -97,7 +97,7 @@ $$|A\cup B| = |A|+|B|-|A\cap B|$$
 $$P(A|B) = \frac{P(A\cap B)}{P(B)}$$ si P(B) != 0
 
 ## Loi des probabilités totales
-Si l'ensemble des issues possibles est divisé en 2 parties disjointes B et C, pour tout évènement A, on a:
+Si l'ensemble des issues possibles est divisée en 2 parties disjointes B et C, pour tout évènement A, on a:
 
 $$P(A) = P(A\cap B) + P(A\cap C)$$
 
@@ -108,8 +108,48 @@ $$P(A\cap B) = P(A)*P(B)$$
 ## Théorème de Bayes
 $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
-On peut utiliser le théorème de Bayes pour démontrer l'*oublie de la fréquence de base* (**Base rate fallacy**).
+
+### Base rate fallacy
+On peut utiliser le théorème de Bayes pour l'*oublie de la fréquence de base* (**Base rate fallacy**).
 En gros: 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ? **Réponse**: 8.3%
+
+Ce résultat paraît très surprenant à première vue. On a un classifieur qui a des taux d'erreur de l'ordre de 5 à 10%, et pourtant quand il détecte qu'on est malade, il y a très peu de chances qu'on le soit vraiment ! En fait il est très important de discerner precision, FPR (False Positive Rate) et FNR (False Negative Rate) pour ne pas faire d'erreur.
+
+(je met les notations en anglais, la plupart des articles sont en anglais donc ça permet moins de confusion)
+
+| Prediction/Real  | T | F |
+|:-:|---|---|
+| T | TP | FP |
+| F | FN | TN |  
+
+Verticalement on a la réalité, et horizontalement ce qui est prédit.
+En language courant, la traduction de ces sigles est la suivante:
+
+- TP: Malades detectés comme étant malades
+- FP: Non-malades detectés comme étant malades (erreur)
+- FN: Malades non detectés (erreur)
+- TN: Non-malades non detectés.
+
+D'après l'énoncé et la définition du FPR (False Positive Rate), on a:
+$$FPR = \frac{FP}{FP+TN}$$
+C'est donc l'ensemble des non-malades détectés comme étant malades, divisé par l'ensemble des non-malades, càd la **proportion d'erreur parmi les non-malades**.
+
+De même, le FNR (False Positive Rate):
+$$FNR = \frac{FN}{FN+TP}$$
+C'est donc l'ensemble des malades non-détectés, divisé par l'ensemble de malades, càd la **proportion d'erreur parmi les malades**.
+
+La précision, quand à elle, est définie comme suit:
+$$Precision = \frac{TP}{TP+TN}$$
+C'est l'ensemble des malades détectés sur l'ensemble des détections, càd la **proportion de détections justes**.  
+
+Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades detectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est faux (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes detectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effetivement malade faible, bien que le test soit positif.
+
+## Démo
+
+
+
+
+
 
 
 
