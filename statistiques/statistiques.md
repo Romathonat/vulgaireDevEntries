@@ -188,6 +188,8 @@ La **fonction de répartition** (cumulative mass function = cmf) décrit la prob
 Elle est définie comme suit:  
 
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
+  
+$$E(x) = \sum \limits_{i=1}^n p(x_i)$$
 
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
 On a:  
