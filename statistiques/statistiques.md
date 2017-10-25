@@ -288,7 +288,7 @@ $$f(x,y) = f_X(x)f_Y(y)$$
 
 ## Covariance et corrélation
 ### Covariance
-La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes dont des covariances positive car quand l'une est grande, l'autre a tendance à l'être aussi.
+La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes dont des covariances positive car quand l'une est grande, l'autre a tendance à l'être aussi. Inversement, quand la covariance est négative, quand une des variables est grande, l'autre a tendance a être petite.
 
 $$Cov(X,Y) = E((X-\mu_X)(Y-\mu_Y))$$
 
