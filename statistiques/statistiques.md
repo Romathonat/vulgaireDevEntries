@@ -173,7 +173,7 @@ $$p(D) =  p(D\cap M) + p(D\cap \neg M)$$
 $$p(D) = 0.90\*0.005 + 0.995\*0.05$$
 
 Donc on trouve 
-$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} \approx 8.3%$$
+$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} \approx 0.083$$
 
 
 **Se souvenir**:
