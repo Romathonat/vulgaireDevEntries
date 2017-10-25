@@ -258,7 +258,7 @@ Voir [ce pdf pour avoir des exemples](https://ocw.mit.edu/courses/mathematics/18
 
 La fonction de répartition à plusieurs variables est:
 
-$$F(x,y) = p(X \leq x, Y \leq y) = \int_{a}^{y} \int_{b}^{x} f(u,v)dudv$$
+$$F(x,y) = p(X \leq x, Y \leq y) = \iint\limits_{[a,y][b,x]} f(u,v)dudv$$
 
 Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.
 
@@ -290,7 +290,7 @@ $$f(x,y) = fX(x)fY(y)$$
 ### Covariance
 La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes dont des covariances positive car quand l'une est grande, l'autre a tendance à l'être aussi. Inversement, quand la covariance est négative, quand une des variables est grande, l'autre a tendance a être petite.
 
-$$Cov(X,Y) = E((X-\mu_X)(Y-\mu_Y))$$
+$$Cov(X,Y) = E((X- \mu X)(Y- \mu Y))$$
 
 **Propriétés de la covariance**
 $$Cov(aX+b, cY+ d) = acCov(X,Y)$$
