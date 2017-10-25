@@ -11,11 +11,11 @@ Avoir une paire d'as avant le flop au poker est donc rare, puisqu'on a seulement
 
 ## Dénombrement
 Dans le cas discret (par exemple tirer au hasard des cartes parmi un jeu de 52 cartes), si il y a équiprobabilité des issues, on fait souvent:
-$$\frac{nombre\_issues\_qui\_nous\_interessent}{nombre\_issues\_possibles}$$
+$$\frac{nombreIssuesQuiNousInteressent}{nombreIssuesPossibles}$$
 
 Par exemple, trouver la probabilité de tirer un carreau (on parle de poker):
 $$\frac{13}{52} = \frac{1}{4}$$
-
+  
 ### Arrangement sans répétition
 Un arrangement sans répétition est noté:  
 $$A_n^{k}$$
@@ -25,7 +25,7 @@ Un arrangement avec répétions c'est prendre k billes parmi n dans un sac de bi
 Par exemple j'ai un sac avec une boule verte (V), une bleue (B) et une rouge(R) (n=3), dans lequel je prend deux billes (k=2) l'ensemble des issues possibles est:
 $${VB, VR, BV, BR, RV, RB}$$   
 Ce sont des tuples, l'ordre des éléments est importants.
-
+  
 **Le nombre d'issues possibles est**:  
 $$\frac{n!}{(n-k)!}$$
 
@@ -48,7 +48,7 @@ $$n^k$$
 Pour notre exemple, cela fait:
 
 $$3^2 = 9$$
-
+  
 ### Combinaison sans répétition
 Une combinaison sans répétition est notée:  
 $$C_n^{k}$$
@@ -66,8 +66,7 @@ $$\frac{3!}{2!(3-1)!} = 3$$
 **NB**: Ceci est dû au fait qu'il y a une "correspondance" entre combinaison avec répétition et arrangement sans répétition. En effet, l'ensemble des arrangements qu'on peut générer à partir d'une combinaison (sans répétition) vaut k! : k possibilités de choix pour le premier élément, k-1 pour le deuxième etc.
 
 Ce sont des ensembles, il n'y a pas d'ordre des éléments.
-
-
+  
 ### Combinaison avec répétition
 Une combinaison avec répétition est une combinaison dans laquelle les éléments peuvent apparaître plusieurs fois.
 Par exemple faire 3 tirage de boules avec remise, si on s'intéresse uniquement aux résultats et pas à l'ordre dans lequel elles apparaissent, est une combinaison avec répétition.
@@ -86,25 +85,24 @@ $$\frac{4!}{2!(3-1)!} = 6$$
 **NB**: On pourrait se dire qu'il suffirait de diviser les arrangements avec répétitions par k! pour trouver les combinaisons avec répétitions, comme on avait fait dans le cas sans répétition. Ca ne fonctionne pas car il y a des cas où les combinaisons et les arrangements se confondent. Par exemple l'ensemble {RB} correspond bien à 2! tuples (BR et RB), mais l'ensemble {RR} ne génère qu'un seul tuple RR !
 
 ## Principe d'inclusion-exclusion
-$$|A\cup B| = |A|+|B|-|A\cap B|$$
-
 ![](https://upload.wikimedia.org/wikipedia/commons/9/99/Venn0001.svg)
+$$|A\cup B| = |A|+|B|-|A\cap B|$$
 
 ## Probabilité conditionelle et théorème de Bayes
 
 ### Probabilité conditionnelle:
 $$P(A|B) = \frac{P(A\cap B)}{P(B)}$$ si P(B) != 0
 
-## Loi des probabilités totales
+### Loi des probabilités totales
 Si l'ensemble des issues possibles est divisée en 2 parties disjointes B et C, pour tout évènement A, on a:
 
 $$P(A) = P(A\cap B) + P(A\cap C)$$
 
-## Indépendance d'évènements
+### Indépendance d'évènements
 Deux évènements sont indépendants ssi:
 $$P(A\cap B) = P(A)*P(B)$$
 
-## Théorème de Bayes
+##" Théorème de Bayes
 $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
 
@@ -166,23 +164,23 @@ $$p(\neg D|\neg M) = \frac{95}{100}$$
 
 $$p(D| M) = \frac{90}{100}$$
 (complémentaire du faux négatif)
-
-En application le théorème de Bayes, on a:
+  
+En appliquant le théorème de Bayes, on a:
 $$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} $$
 
 Or, d'après la loi des probabilités totales, on a:
 
 $$p(D) =  p(D\cap M) + p(D\cap \neg M)$$
-
-$$p(D) = 0.90*0.005 + 0.995*0.05$$
+  
+$$p(D) = 0.90\*0.005 + 0.995\*0.05$$
 
 Donc on trouve 
 $$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} \approx 8.3%$$
 
 
-### Se souvenir:
+**Se souvenir**:
 
-$$P(A|B)+P(!A|B) = 1$$
+$$P(A|B)+P(\neg A|B) = 1$$
 
 ## Variable aléatoire
 
@@ -193,7 +191,7 @@ Elle est définie comme suit:
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
 On a:
-$$E(x) = \sum \limits_{i=1}^n p(x_i)*x_i$$
+$$E(x) = \sum \limits_{i=1}^n p(x_i)\*x_i$$
 
 **Propriétés de E(x)**:
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
@@ -204,7 +202,7 @@ $$Var(X) = E((X - \mu)^2)$$
 **Propriétés de Var(X)**:
 Si X et Y sont *indépendantes*
 $$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
-$$Var(X) = E(X^2) - E(X)^2
+$$Var(X) = E(X^2) - E(X)^2$$
 
 L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
 $$\sigma = \sqrt{Var(X)}$$
@@ -299,7 +297,8 @@ $$Cov(X,X) = Var(X)$$
 $$Cov(X,Y) = E(X,Y) - \mu_X \mu_Y$$
 $$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$
 
-Si X et Y sont indépendants, alors Cov(X, Y) = 0. **Attention la réciproque n'est pas vraie!**
+Si X et Y sont indépendants, alors Cov(X, Y) = 0.  
+**Attention la réciproque n'est pas vraie!**
 
 ### Corrélation
 Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.
