@@ -245,7 +245,7 @@ Si on a un ensemble de n variables indépendantes et identiquement distribuées 
 ### Théorème central limite
 On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et X_mean la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):
 
-$$Zn = \frac{Sn - n\mu}{\sigma \* \sqrt{n}} = \frac{\bar Xn - \mu}{\frac{\sigma}{\sqrt{n}}}$$
+$$Zn = \frac{Sn - n\mu}{\sigma \sqrt{n}} = \frac{\bar Xn - \mu}{\frac{\sigma}{\sqrt{n}}}$$
 
 Zn est la loi normale centrée réduite N(0,1)
 
@@ -258,7 +258,7 @@ Voir [ce pdf pour avoir des exemples](https://ocw.mit.edu/courses/mathematics/18
 
 La fonction de répartition à plusieurs variables est:
 
-$$F(x,y) = p(X \leq x, Y \leq y) = \int_{-\infty}^{y} \int_{-\infty}^{x} f(u,v)dudv$$
+$$F(x,y) = p(X \leq x, Y \leq y) = \int_{-\infty}^{y} f(u,v)dudv$$
 
 Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.
 
@@ -296,7 +296,7 @@ $$Cov(X,Y) = E((X-\mu_X)(Y-\mu_Y))$$
 $$Cov(aX+b, cY+ d) = acCov(X,Y)$$
 $$Cov(X1+X2, Y) = Cov(X1,Y)+Cov(X2,Y)$$
 $$Cov(X,X) = Var(X)$$
-$$Cov(X,Y) = E(X,Y) - \muX \muY$$
+$$Cov(X,Y) = E(X,Y) - \mu X \mu Y$$
 $$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$
 
 Si X et Y sont indépendants, alors Cov(X, Y) = 0.  
@@ -305,7 +305,7 @@ Si X et Y sont indépendants, alors Cov(X, Y) = 0.
 ### Corrélation
 Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.
 
-$$Cor(X,Y)=\frac{Cov(X,Y)}{\sigmaX\sigmaY}$$
+$$Cor(X,Y)=\frac{Cov(X,Y)}{\sigma X\sigma Y}$$
 
 
 
