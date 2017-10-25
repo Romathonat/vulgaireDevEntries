@@ -189,7 +189,7 @@ Elle est définie comme suit:
 
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
   
-$$E(x) = \sum \limits_{i=1}^n p(x_i)$$
+$$E(x) = \sum \limits_{i=1}^n p(x)$$
 
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
 On a:  
