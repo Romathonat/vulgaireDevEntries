@@ -202,6 +202,13 @@ $$ E(aX+Y+b) = aE(X) + E(Y) + b$$
 La **variance** est l'écart à la moyenne (au carré pour ne pas avoir de nombres négatifs). Notée Var(X):
 $$Var(X) = E((X - \mu)^2)$$
 
+**Propriétés de Var(X)**:
+Si X et Y sont *indépendantes*
+$$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
+$$Var(X) = E(X^2) - E(X)^2
+
+L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
+$$\sigma = \sqrt{Var(X)}$$
 
 
 
