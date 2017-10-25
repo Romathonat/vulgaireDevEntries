@@ -107,8 +107,8 @@ $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
 
 ### Base rate fallacy
-On peut utiliser le théorème de Bayes pour l'*oublie de la fréquence de base* (**Base rate fallacy**).
-**Enoncé** 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ? **Réponse**: 8.3%
+On peut utiliser le théorème de Bayes pour l'*oublie de la fréquence de base* (**Base rate fallacy**).  
+**Enoncé** 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ?     **Réponse**: 8.3%
 
 Ce résultat paraît très surprenant à première vue. On a un classifieur qui a des taux d'erreur de l'ordre de 5 à 10%, et pourtant quand il détecte qu'on est malade, il y a très peu de chances qu'on le soit vraiment ! En fait il est très important de discerner precision, FPR (False Positive Rate) et FNR (False Negative Rate) pour ne pas faire d'erreur.
 
