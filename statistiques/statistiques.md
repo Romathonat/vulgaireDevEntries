@@ -232,7 +232,7 @@ $$Var(X) = E((X - \mu)^2)$$
 **Propriétés de Var(X)**:
 Si X et Y sont *indépendantes*
 $$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
-$$Var(X) = E(X^2) - E(X)^2
+$$Var(X) = E(X^2) - E(X)^2$$
 
 L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
 $$\sigma = \sqrt{Var(X)}$$
@@ -258,7 +258,7 @@ Voir [ce pdf pour avoir des exemples](https://ocw.mit.edu/courses/mathematics/18
 
 La fonction de répartition à plusieurs variables est:
 
-$$F(x,y) = p(X \leq x, Y \leq y) = \int_{-\infty}^{y} f(u,v)dudv$$
+$$F(x,y) = p(X \leq x, Y \leq y) = \int_{a}^{y} \int_{b}^{x} f(u,v)dudv$$
 
 Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.
 
