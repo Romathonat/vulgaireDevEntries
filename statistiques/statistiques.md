@@ -1,10 +1,10 @@
 Je suis en train de faire les cours du MIT sur les probabilités/statisitques ([ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)). Le titre officiel est "Introduction 
-aux probabilités et statistiques", mais le cours est tout de même assez complet je trouve, donc je fais un petit résumé ici (ce n'est pas un cours, donc si vous ne connaissez pas un minimum, ça risque d'être un peu dur).
+aux probabilités et statistiques", mais le cours est tout de même assez complet je trouve, donc je fais un résumé ici (ce n'est pas un vrai cours suffisamment, donc si vous ne connaissez pas un minimum, ça risque d'être un peu dur).
 
 ## Loi de multiplication
 *S'il y a n façons de réaliser l'actions 1, et m façons de réaliser l'action 2, alors il y a n*\m façons de réaliser l'action 1 suivit de l'action 2*.  
 **Exemple:** Combien y a-t-il de façons de tirer une paire d'as si l'on tire deux cartes d'un jeu de 52 cartes ?  
-**Réponse:** Il y a 4 as dansle jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi suivante, on a donc une probabilité de:
+**Réponse:** Il y a 4 as dans le jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi suivante, on a donc une probabilité de:
 $$\frac{12}{52*51} = \frac{1}{221}$$
   
 Avoir une paire d'as avant le flop au poker est donc rare, puisqu'on a seulement 0.45% de chances.
@@ -12,7 +12,7 @@ Avoir une paire d'as avant le flop au poker est donc rare, puisqu'on a seulement
 ## Dénombrement
 Dans le cas discret (par exemple tirer au hasard des cartes parmi un jeu de 52 cartes), si il y a équiprobabilité des issues, on fait souvent:
 $$\frac{nombre\_issues\_qui\_nous\_interessent}{nombre\_issues\_possibles}$$
-  !
+
 Par exemple, trouver la probabilité de tirer un carreau (on parle de poker):
 $$\frac{13}{52} = \frac{1}{4}$$
 
@@ -20,7 +20,7 @@ $$\frac{13}{52} = \frac{1}{4}$$
 Un arrangement sans répétition est noté:  
 $$A_n^{k}$$
 
-Un arrangement avec répétions c'est prendre k billes parmi n dans un sac de billes, en tenant compte de l'ordre dans lequel on sort chacune d'elle. L'ensemble des issues (qui sont de longueur k) correspond aux arrangements sans répétition.
+Un arrangement avec répétions c'est prendre k billes parmi n dans un sac de billes, en tenant compte de l'ordre dans lequel on sort chacune d'elles. L'ensemble des issues (qui sont de longueur k) correspond aux arrangements sans répétition.
 
 Par exemple j'ai un sac avec une boule verte (V), une bleue (B) et une rouge(R) (n=3), dans lequel je prend deux billes (k=2) l'ensemble des issues possibles est:
 $${VB, VR, BV, BR, RV, RB}$$   
@@ -48,7 +48,6 @@ $$n^k$$
 Pour notre exemple, cela fait:
 
 $$3^2 = 9$$
-
 
 ### Combinaison sans répétition
 Une combinaison sans répétition est notée:  
@@ -84,7 +83,7 @@ Ca correpond à une combinaison sans remise de k éléments parmi n + k - 1.
 Ici on trouve:
 $$\frac{4!}{2!(3-1)!} = 6$$
 
-**NB**: On pourrait se dire qu'il suffirait de diviser les arrangements avec répétitions par k! pour trouver les combinaisons avec répétitions, comme on avait fait dans le cas sans répétition. Ca ne fonctionne pas car il y a des cas où les combinaisons et les arrangements se confondent. Par exemple l'ensemble {RB} correspond bien à 2! tuples (BR et RB), mais le set {RR} ne génère qu'un seul tuple RR !
+**NB**: On pourrait se dire qu'il suffirait de diviser les arrangements avec répétitions par k! pour trouver les combinaisons avec répétitions, comme on avait fait dans le cas sans répétition. Ca ne fonctionne pas car il y a des cas où les combinaisons et les arrangements se confondent. Par exemple l'ensemble {RB} correspond bien à 2! tuples (BR et RB), mais l'ensemble {RR} ne génère qu'un seul tuple RR !
 
 ## Principe d'inclusion-exclusion
 $$|A\cup B| = |A|+|B|-|A\cap B|$$
@@ -111,7 +110,7 @@ $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
 ### Base rate fallacy
 On peut utiliser le théorème de Bayes pour l'*oublie de la fréquence de base* (**Base rate fallacy**).
-En gros: 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ? **Réponse**: 8.3%
+**Enoncé** 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ? **Réponse**: 8.3%
 
 Ce résultat paraît très surprenant à première vue. On a un classifieur qui a des taux d'erreur de l'ordre de 5 à 10%, et pourtant quand il détecte qu'on est malade, il y a très peu de chances qu'on le soit vraiment ! En fait il est très important de discerner precision, FPR (False Positive Rate) et FNR (False Negative Rate) pour ne pas faire d'erreur.
 
@@ -136,13 +135,13 @@ C'est donc l'ensemble des non-malades détectés comme étant malades, divisé p
 
 De même, le FNR (False Positive Rate):
 $$FNR = \frac{FN}{FN+TP}$$
-C'est donc l'ensemble des malades non-détectés, divisé par l'ensemble de malades, càd la **proportion d'erreur parmi les malades**.
+C'est donc l'ensemble des malades non-détectés, divisé par l'ensemble de malades, càd la **proportion d'erreurs parmi les malades**.
 
 La précision, quand à elle, est définie comme suit:
 $$Precision = \frac{TP}{TP+TN}$$
 C'est l'ensemble des malades détectés sur l'ensemble des détections, càd la **proportion de détections justes**.  
 
-Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades detectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est faux (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes detectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effetivement malade faible, bien que le test soit positif.
+Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades detectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est **faux** (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes detectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effectivement malade faible, bien que le test soit positif.
 
 ### Démo
 Notation:
@@ -178,17 +177,17 @@ $$p(D) =  p(D\cap M) + p(D\cap \neg M)$$
 $$p(D) = 0.90*0.005 + 0.995*0.05$$
 
 Donc on trouve 
-$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} = 8.3%$$
+$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} \approx 8.3%$$
 
 
 ### Se souvenir:
 
 $$P(A|B)+P(!A|B) = 1$$
 
-## Variables aléatoires
+## Variable aléatoire
 
-### Discrètes
-La **fonction de masse** (probability mass function = pmf) décrit la probabilité d'obtenir chacune des issues. On la note p(x)
+### Discrète
+La **fonction de masse** (probability mass function = pmf) décrit la probabilité d'obtenir chacune des issues. On la note p(x).
 La **fonction de répartition** (cumulative mass function = cmf) décrit la probabilité d'avoir p(X < x). On la note F(x).
 Elle est définie comme suit:
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
@@ -197,7 +196,7 @@ On a:
 $$E(x) = \sum \limits_{i=1}^n p(x_i)*x_i$$
 
 **Propriétés de E(x)**:
-$$ E(aX+Y+b) = aE(X) + E(Y) + b$$
+$$E(aX+Y+b) = aE(X) + E(Y) + b$$
 
 La **variance** est l'écart à la moyenne (au carré pour ne pas avoir de nombres négatifs). Notée Var(X):
 $$Var(X) = E((X - \mu)^2)$$
@@ -209,6 +208,105 @@ $$Var(X) = E(X^2) - E(X)^2
 
 L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
 $$\sigma = \sqrt{Var(X)}$$
+
+### Continue
+La **densité de probabilité** (probability mass function = pdf) la loi de probabilité des issues. La "probabilité unitaire" est f(x)dx. On la note f(x).
+La **fonction de répartition** (cumulative mass function = cdf) décrit la probabilité d'avoir p(X < x). On la note F(x).
+Elle est définie comme suit:
+$$F(x) = \int_{-\infty}^{b} p(x)dx$$
+
+**Propriétés de F(x)**:
+$$p(a \le X \le b) = F(b) - F(a) $$
+$$F'(x) = f(x)$$
+$$p(a \le X \le b) = \int_{a}^{b} f(x)dx$$
+
+L'**espérance** est la moyenne des issues. Elle est notée E(x).
+On a:
+$$E(x) = \int_{a}^{b} xf(x)dx$$
+
+**Propriétés de E(x)**:
+$$E(aX+Y+b) = aE(X) + E(Y) + b$$
+
+La **variance** est l'écart à la moyenne (au carré pour ne pas avoir de nombres négatifs). Notée Var(X):
+$$Var(X) = E((X - \mu)^2)$$
+
+**Propriétés de Var(X)**:
+Si X et Y sont *indépendantes*
+$$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
+$$Var(X) = E(X^2) - E(X)^2
+
+L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
+$$\sigma = \sqrt{Var(X)}$$
+
+## Théorème central limite et loi des grands nombres.
+
+### Loi des grands nombres
+Si on a un ensemble de n variables indépendantes et identiquement distribuées (i.i.d), plus n augmente, plus la moyenne des X s'approche de E(X).
+
+### Théorème central limite
+On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et X_mean la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):
+
+$$Zn = \frac{S_n - n\mu}{\sigma * \sqrt{n}} = \frac{\bar X_n - \mu}{\frac{\sigma}{\sqrt{n}}}$$
+
+Zn est la loi normale centrée réduite N(0,1)
+
+Si on a 100 lancés de pièces succesifs, on peut estimer la probabiblité d'avoir plus de 55 faces, par exemple.
+
+## Distributions jointes et indépendance
+Si on a plusieurs variables, on a une loi de probabilité à plusieurs variables (joint probability mass function) qu'on note p(xi, yi) pour le cas discret, et f(xi,yi) pour le cas continu.
+
+Voir [ce pdf pour avoir des exemples](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading7a.pdf).    
+
+La fonction de répartition à plusieurs variables est:
+
+$$F(x,y) = p(X \leq x, Y \leq y) = \int_{-\infty}^{y} \int_{-\infty}^{x} f(u,v)dudv$$
+
+Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.
+
+$$f(x,y) = frac{\partial^2F(x,y)}{\partial x\partial y}$$
+
+### Loi de probabilité marginale
+Une loi de probabilité marginale permet d'avoir le "comportement" d'une seule variable.
+
+Si y prend ses valeurs dans [c, d], on a :
+
+$$ f_X(x) =  \int_{c}^{d} f(x,y)dy$$
+
+(on somme les valeurs de y).
+
+
+### Fonction de répartition
+Pour avoir la fonction de répartition marginale, si X et Y prennent leur valeur dans [a,b]x[c,d], on a:
+$$F_X(x) = F(x,d)$$
+$$F_Y(y) = F(b,y)$$
+
+### Indépendance
+X et Y sont indépendantes ssi:
+$$F(X,Y) = F_X(x)F_Y(y)$$
+ou encore:
+$$f(x,y) = f_X(x)f_Y(y)$$
+
+## Covariance et corrélation
+### Covariance
+La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes dont des covariances positive car quand l'une est grande, l'autre a tendance à l'être aussi.
+
+$$Cov(X,Y) = E((X-\mu_X)(Y-\mu_Y))$$
+
+**Propriétés de la covariance**
+$$Cov(aX+b, cY+ d) = acCov(X,Y)$$
+$$Cov(X_1+X_2, Y) = Cov(X_1,Y)+Cov(X_2,Y)$$
+$$Cov(X,X) = Var(X)$$
+$$Cov(X,Y) = E(X,Y) - \mu_X \mu_Y$$
+$$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$
+
+Si X et Y sont indépendants, alors Cov(X, Y) = 0. **Attention la réciproque n'est pas vraie!**
+
+### Corrélation
+Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.
+
+$$Cor(X,Y)=\frac{Cov(X,Y)}{\sigma_X\sigma_Y}$$
+
+
 
 
 
