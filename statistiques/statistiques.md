@@ -2,7 +2,7 @@ Je suis en train de faire les cours du MIT sur les probabilités/statisitques ([
 aux probabilités et statistiques", mais le cours est tout de même assez complet je trouve, donc je fais un résumé ici (ce n'est pas un vrai cours suffisamment, donc si vous ne connaissez pas un minimum, ça risque d'être un peu dur).
 
 ## Loi de multiplication
-*S'il y a n façons de réaliser l'actions 1, et m façons de réaliser l'action 2, alors il y a n*\m façons de réaliser l'action 1 suivit de l'action 2*.  
+*S'il y a n façons de réaliser l'actions 1, et m façons de réaliser l'action 2, alors il y a n\*m façons de réaliser l'action 1 suivit de l'action 2*.  
 **Exemple:** Combien y a-t-il de façons de tirer une paire d'as si l'on tire deux cartes d'un jeu de 52 cartes ?  
 **Réponse:** Il y a 4 as dans le jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi suivante, on a donc une probabilité de:
 $$\frac{12}{52*51} = \frac{1}{221}$$
@@ -102,7 +102,7 @@ $$P(A) = P(A\cap B) + P(A\cap C)$$
 Deux évènements sont indépendants ssi:
 $$P(A\cap B) = P(A)*P(B)$$
 
-##" Théorème de Bayes
+### Théorème de Bayes
 $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
 
@@ -114,10 +114,8 @@ Ce résultat paraît très surprenant à première vue. On a un classifieur qui 
 
 (je met les notations en anglais, la plupart des articles sont en anglais donc ça permet moins de confusion)
 
-| Prediction/Real  | T | F |
-|:-:|---|---|
-| T | TP | FP |
-| F | FN | TN |  
+
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/statistiques/table_FP.png) 
 
 Verticalement on a la réalité, et horizontalement ce qui est prédit.
 En language courant, la traduction de ces sigles est la suivante:
