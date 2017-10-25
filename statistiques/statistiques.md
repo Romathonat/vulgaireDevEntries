@@ -185,8 +185,10 @@ $$P(A|B)+P(\neg A|B) = 1$$
 ### Discrète
 La **fonction de masse** (probability mass function = pmf) décrit la probabilité d'obtenir chacune des issues. On la note p(x).
 La **fonction de répartition** (cumulative mass function = cmf) décrit la probabilité d'avoir p(X < x). On la note F(x).
-Elle est définie comme suit:
+Elle est définie comme suit:  
+
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
+
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
 On a:
 $$E(x) = \sum \limits_{i=1}^n p(x_i)\*x_i$$
