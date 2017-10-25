@@ -190,8 +190,9 @@ Elle est définie comme suit:
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
 
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
-On a:
-$$E(x) = \sum \limits_{i=1}^n p(x_i)\*x_i$$
+On a: 
+
+$$E(x) = \sum \limits_{i=1}^n p(x_i) \* x_i$$
 
 **Propriétés de E(x)**:
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
