@@ -188,13 +188,11 @@ La **fonction de répartition** (cumulative mass function = cmf) décrit la prob
 Elle est définie comme suit:  
 
 $$F(x) = \sum \limits_{i=1}^x p(x)$$
-  
-$$E(x) = \sum \limits_{i=1}^n p(x)$$
 
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
 On a:  
 
-$$ E(x) = \sum \limits_{i=1}^n p(x_i) \* x_i $$
+$$ E(x) = \sum \limits_{i=1}^n p(xi) \* xi $$
 
 **Propriétés de E(x)**:
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
@@ -247,7 +245,7 @@ Si on a un ensemble de n variables indépendantes et identiquement distribuées 
 ### Théorème central limite
 On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et X_mean la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):
 
-$$Zn = \frac{S_n - n\mu}{\sigma * \sqrt{n}} = \frac{\bar X_n - \mu}{\frac{\sigma}{\sqrt{n}}}$$
+$$Zn = \frac{Sn - n\mu}{\sigma \* \sqrt{n}} = \frac{\bar Xn - \mu}{\frac{\sigma}{\sqrt{n}}}$$
 
 Zn est la loi normale centrée réduite N(0,1)
 
@@ -264,28 +262,29 @@ $$F(x,y) = p(X \leq x, Y \leq y) = \int_{-\infty}^{y} \int_{-\infty}^{x} f(u,v)d
 
 Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.
 
-$$f(x,y) = frac{\partial^2F(x,y)}{\partial x\partial y}$$
+$$f(x,y) = \frac{\partial^2F(x,y)}{\partial x\partial y}$$
 
 ### Loi de probabilité marginale
 Une loi de probabilité marginale permet d'avoir le "comportement" d'une seule variable.
 
 Si y prend ses valeurs dans [c, d], on a :
 
-$$ f_X(x) =  \int_{c}^{d} f(x,y)dy$$
+$$ fX(x) =  \int_{c}^{d} f(x,y)dy$$
 
 (on somme les valeurs de y).
 
 
 ### Fonction de répartition
 Pour avoir la fonction de répartition marginale, si X et Y prennent leur valeur dans [a,b]x[c,d], on a:
-$$F_X(x) = F(x,d)$$
-$$F_Y(y) = F(b,y)$$
+$$FX(x) = F(x,d)$$  
+
+$$FY(y) = F(b,y)$$
 
 ### Indépendance
 X et Y sont indépendantes ssi:
-$$F(X,Y) = F_X(x)F_Y(y)$$
+$$F(X,Y) = FX(x)FY(y)$$
 ou encore:
-$$f(x,y) = f_X(x)f_Y(y)$$
+$$f(x,y) = fX(x)fY(y)$$
 
 ## Covariance et corrélation
 ### Covariance
@@ -295,9 +294,9 @@ $$Cov(X,Y) = E((X-\mu_X)(Y-\mu_Y))$$
 
 **Propriétés de la covariance**
 $$Cov(aX+b, cY+ d) = acCov(X,Y)$$
-$$Cov(X_1+X_2, Y) = Cov(X_1,Y)+Cov(X_2,Y)$$
+$$Cov(X1+X2, Y) = Cov(X1,Y)+Cov(X2,Y)$$
 $$Cov(X,X) = Var(X)$$
-$$Cov(X,Y) = E(X,Y) - \mu_X \mu_Y$$
+$$Cov(X,Y) = E(X,Y) - \muX \muY$$
 $$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$
 
 Si X et Y sont indépendants, alors Cov(X, Y) = 0.  
@@ -306,7 +305,7 @@ Si X et Y sont indépendants, alors Cov(X, Y) = 0.
 ### Corrélation
 Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.
 
-$$Cor(X,Y)=\frac{Cov(X,Y)}{\sigma_X\sigma_Y}$$
+$$Cor(X,Y)=\frac{Cov(X,Y)}{\sigmaX\sigmaY}$$
 
 
 
