@@ -4,7 +4,7 @@ aux probabilités et statistiques", mais le cours est tout de même assez comple
 ## Loi de multiplication
 *S'il y a n façons de réaliser l'action 1, et m façons de réaliser l'action 2, alors il y a n\*m façons de réaliser l'action 1 suivi de l'action 2*.  
 **Exemple:** Combien y a-t-il de façons de tirer une paire d'as si l'on tire deux cartes d'un jeu de 52 cartes ?  
-**Réponse:** Il y a 4 as dans le jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi qu'on va voire juste après, on a donc une probabilité de:
+**Réponse:** Il y a 4 as dans le jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi qu'on va voir juste après, on a donc une probabilité de:
 $$\frac{12}{52*51} = \frac{1}{221}$$
   
 Avoir une paire d'as avant le flop au poker est donc rare, puisqu'on a seulement 0.45% de chances.
@@ -75,7 +75,7 @@ Pour le sac exemple, ça nous donne:
 $$\{VR, RB, BV, VV, RR, BB\}$$
 
 **Le nombre d'issues possibles est**:
-$$\frac{n+k-1!}{k!(n-1)!}$$
+$$\frac{(n+k-1)!}{k!(n-1)!}$$
 
 Ca correpond à une combinaison sans remise de k éléments parmi n + k - 1.
 
@@ -107,12 +107,12 @@ $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
 
 ### Base rate fallacy
-On peut utiliser le théorème de Bayes pour l'*oublie de la fréquence de base* (**Base rate fallacy**).  
-**Enoncé** 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens detectés mais non malades) de 5% et un taux de faux négatifs (= gens non-detectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ?     **Réponse**: 8.3%
+On peut utiliser le théorème de Bayes pour l'*oubli de la fréquence de base* (**Base rate fallacy**).  
+**Enoncé** 0.5% de la population est malade. On a un test de détection de la maladie, qui a un taux de [faux positifs](http://vulgairedev.fr/blog/article/faux-positifs) (= gens détectés mais non malades) de 5% et un taux de faux négatifs (= gens non-détectés mais malades) de 10%. On teste quelqu'un, le test est positif, quelle est la probabilité qu'il soit vraiment malade ?     **Réponse**: 8.3%
 
 Ce résultat paraît très surprenant à première vue. On a un classifieur qui a des taux d'erreur de l'ordre de 5 à 10%, et pourtant quand il détecte qu'on est malade, il y a très peu de chances qu'on le soit vraiment ! En fait il est très important de discerner precision, FPR (False Positive Rate) et FNR (False Negative Rate) pour ne pas faire d'erreur.
 
-(je met les notations en anglais, la plupart des articles sont en anglais donc ça permet moins de confusion)
+(je mets les notations en anglais, la plupart des articles sont en anglais donc ça permet moins de confusion)
 
 
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/statistiques/table_FP.png) 
@@ -129,7 +129,7 @@ D'après l'énoncé et la définition du FPR (False Positive Rate), on a:
 $$FPR = \frac{FP}{FP+TN}$$
 C'est donc l'ensemble des non-malades détectés comme étant malades, divisé par l'ensemble des non-malades, càd la **proportion d'erreur parmi les non-malades**.
 
-De même, le FNR (False Positive Rate):
+De même, le FNR (False Negative Rate):
 $$FNR = \frac{FN}{FN+TP}$$
 C'est donc l'ensemble des malades non-détectés, divisé par l'ensemble de malades, càd la **proportion d'erreurs parmi les malades**.
 
@@ -137,7 +137,7 @@ La précision, quand à elle, est définie comme suit:
 $$Precision = \frac{TP}{TP+TN}$$
 C'est l'ensemble des malades détectés sur l'ensemble des détections, càd la **proportion de détections justes**.  
 
-Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades detectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est **faux** (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes detectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effectivement malade faible, bien que le test soit positif.
+Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades d&tectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est **faux** (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes détectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effectivement malade faible, bien que le test soit positif.
 
 ### Démo
 Notation:
@@ -197,7 +197,7 @@ $$ E(x) = \sum \limits_{i=1}^n p(xi) \* xi $$
 **Propriétés de E(x)**:
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
 
-La **variance** est l'écart à la moyenne (au carré pour ne pas avoir de nombres négatifs). Notée Var(X):
+La **variance** est l'espérance des carrés des écarts à la moyenne (le carré est là pour ne pas avoir de nombres négatifs). Notée Var(X):
 $$Var(X) = E((X - \mu)^2)$$
 
 **Propriétés de Var(X)**:
@@ -205,7 +205,7 @@ Si X et Y sont *indépendantes*
 $$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
 $$Var(X) = E(X^2) - E(X)^2$$
 
-L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
+L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine carrée de la variance:
 $$\sigma = \sqrt{Var(X)}$$
 
 ### Continue
@@ -288,7 +288,7 @@ $$f(x,y) = fX(x)fY(y)$$
 
 ## Covariance et corrélation
 ### Covariance
-La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes dont des covariances positive car quand l'une est grande, l'autre a tendance à l'être aussi. Inversement, quand la covariance est négative, quand une des variables est grande, l'autre a tendance a être petite.
+La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes ont des covariances positives car quand l'une est grande, l'autre a tendance à l'être aussi. Inversement, quand la covariance est négative, quand une des variables est grande, l'autre a tendance a être petite.
 
 $$Cov(X,Y) = E((X- \mu X)(Y- \mu Y))$$
 
@@ -306,6 +306,7 @@ Si X et Y sont indépendants, alors Cov(X, Y) = 0.
 Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.
 
 $$Cor(X,Y)=\frac{Cov(X,Y)}{\sigma X\sigma Y}$$
+
 
 
 
