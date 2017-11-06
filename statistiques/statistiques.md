@@ -243,7 +243,7 @@ $$\sigma = \sqrt{Var(X)}$$
 Si on a un ensemble de n variables indépendantes et identiquement distribuées (i.i.d), plus n augmente, plus la moyenne des X s'approche de E(X).
 
 ### Théorème central limite
-On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et X_mean la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):
+On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et Xn la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):
 
 $$Zn = \frac{Sn - n\mu}{\sigma \sqrt{n}} = \frac{\bar Xn - \mu}{\frac{\sigma}{\sqrt{n}}}$$
 
