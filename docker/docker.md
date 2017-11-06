@@ -34,12 +34,12 @@ At the beginning, you write a **Dockerfile** to describe what you want to put in
 On the schema, you also have the **docker hub**, wich is a place when you can push you images, and where you can also pull images from other people !
 For example, if I want to run a nginx locally, I can pull the image locally like this:
 
-```bash
+``` bash
 docker pull nginx
 ```
 Then, you can instantiate it like this (=creating a container):
 
-```bash
+``` bash
 docker run -p 80:80 nginx
 ```
 **NB**: The -p option is here to map the port of the host to the port of the container. Each request coming on the port 80 of the host will be redirect to the port 80 of the container.
@@ -50,18 +50,18 @@ On the schema, there is also a docker registery, wich is like a docker hub (= a 
 Maybe you want to create your own image. Well for that, you have to write your configuration in a Dockerfile (written that way)
 Let's say we want to create an hello-world with python.
 
-```bash
+``` bash
 mkdir hello-world && cd hello-world
 ``` 
 
 We create a python file (hello.py) wich prints our message:
 
-```python
+``` python
 print("Hello world")
 ```
 
 
-```Dockerfile
+``` bash
 #First we specify the base image we are using. Here we take the official python one, where python is already installed
 FROM python:3.6
 
@@ -82,7 +82,7 @@ CMD ["python", "hello.py"]
 
 Then, we can build our image with :
 
-```bash
+``` bash
 docker build -t hello .
 ```
 **NB**: -t option let you *tag* your image, to give it a more convenient name than "8f85s6df3f3".
@@ -90,14 +90,14 @@ The "." specify the location of the Dockerfile.
 
 You can list your images with :
 
-```bash
+``` bash
 docker images
 >>>REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 >>>hello                                latest              e1aba4171710        6 minutes ago       690MB
 ```
 Now you can run your image, easily:
 
-```bash
+``` bash
 docker run hello
 >>> Hello world!
 ```
@@ -108,12 +108,12 @@ That's all! You have an image wich can be deployed on your linux, windows, mac, 
 
 Now, you can stop the container with:
 
-```bash
+``` bash
 docker stop <container-id>
 ```
 and restart it with:
 
-```bash
+``` bash
 docker start <container-id>
 ```
 
