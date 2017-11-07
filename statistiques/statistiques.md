@@ -69,7 +69,7 @@ Ce sont des ensembles, il n'y a pas d'ordre des éléments.
   
 ### Combinaison avec répétition
 Une combinaison avec répétition est une combinaison dans laquelle les éléments peuvent apparaître plusieurs fois.
-Par exemple faire 3 tirage de boules avec remise, si on s'intéresse uniquement aux résultats et pas à l'ordre dans lequel elles apparaissent, est une combinaison avec répétition.
+Par exemple faire 2 tirage de boules avec remise, si on s'intéresse uniquement aux résultats et pas à l'ordre dans lequel elles apparaissent, est une combinaison avec répétition.
 
 Pour le sac exemple, ça nous donne:
 $$\{VR, RB, BV, VV, RR, BB\}$$
