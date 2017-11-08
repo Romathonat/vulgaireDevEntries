@@ -7,7 +7,11 @@ $$\frac{1}{\dbinom{n}{3}} = \frac{3!}{n(n-1)(n-2)}$$
 
 car il n'existe qu'une combinaison qui sélectionne ces 3 éléments parmi n.
   
-**NB:** On peut trouver cette probabilité autrement. On peut se dire que cet expérience revient à prendre un élément parmi n, puis un parmi n-1, puis un parmi n-2. 
+**NB:** On peut trouver cette probabilité autrement. On peut se dire que cette expérience revient à prendre un élément parmi n, puis un parmi n-1, puis un parmi n-2. 
 Ceci nous donne une probabilité de :
 $$\frac{1}{n(n-1)(n-2)}$$
-En faisant cela, on a considéré la probabilité de tirer 1, puis 3, puis 7. Mais vu qu'on se moque de l'ordre, il faut aussi rajouter la possibilité de prendre 317, 731 etc, càd le nombre d'arrangement sans remise de k parmi k, soit k! .
+En faisant cela, on a considéré la probabilité de tirer 1, puis 3, puis 7. Mais vu qu'on se moque de l'ordre, il faut aussi rajouter la possibilité de prendre 317, 731 etc, càd le nombre d'arrangement sans remise de k parmi k, soit 3! ici.
+
+Du coups il n'est pas vraiment nécessaire d'appliquer complétement la méthode du maximum de vraisemblance, puisque on voit directement que plus n est petit, plus la probabilité p(data|n) est forte, dans la limite où n ne peut pas être plus petit que 7. On a donc un MLE pour n = 7.
+
+
