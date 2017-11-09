@@ -1,6 +1,6 @@
 ## Préambule:
 Comme l'article sur les probabilités, il s'agit ici d'un résumé de cours du MIT trouvable [ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/).
-L'inférence Bayesienne est nouvelle pour moi, il est possible que certains éléments soient faux. Dans ce cas, et si vous le souhaites, vous pouvez me laisser un commentaire afin que je corrige l'article.
+L'inférence Bayesienne est nouvelle pour moi, il est possible que certains éléments soient faux. Dans ce cas, et si vous le souhaitez, vous pouvez me laisser un commentaire afin que je corrige l'article.
 
 ## Loi de Bayes
 L'inférence bayésienne se base sur la loi de Bayes:
