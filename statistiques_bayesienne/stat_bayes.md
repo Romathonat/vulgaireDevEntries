@@ -37,3 +37,19 @@ En faisant cela, on a considéré la probabilité de tirer 1, puis 3, puis 7. Ma
 Finalement, il n'est pas vraiment nécessaire d'appliquer complétement la méthode du maximum de vraisemblance, puisque on voit directement que plus n est petit, plus la probabilité p(data|n) est forte, dans la limite où n ne peut pas être plus petit que 7. On a donc un MLE pour n = 7.
 
 
+## Mise à jour bayésienne
+L'idée générale est qu'on va faire une ou des hypothèses, et qu'on va calculer leur probabilités *a priori*. Ensuite, on va récolter des données. Ces données vont nous donner de l'information pour mieux approximer ces probabilités, cela nous donne la probabilité *postérieure*.
+
+Par exemple dans le cas d'un détecteur de maladie, avec un taux de faux positifs de 99%, et un taux de faux négatifs de 2%, sachant que la proportion de la population qui est malade est de 0,5%, la probabilité d'être malade si le test est positif est de (NB: H+ c'est être malade, T+ c'est être détecté):
+
+![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/statistiques_bayesienne/bayes1.png)
+
+Le principe est qu'on va maintenant pouvoir réutiliser le posterior pour faire de nouveaux calculs si on a une nouvelle expérience. Par exemple disons qu'on est dans la situation où le test qui nous a été donné est positif. Disons que quelqu'un qui est atteint de la maladie à 10% de chances de ne pas faire de sport (c'est complètement faux, je dis ça juste pour l'exemple). Notons S- et S+ le fait de faire du sport ou pas. Du coup la probabilité que la personne fasse du sport sachant qu'elle a été testée positive est donc, d'après la loi des probabilités totales:
+$$p(S+|T+) = p(S+, H+|T+) + p(S+, H-| T+) $$
+$$= p(S+|H+)p(H+|T+) + p(S+|H-)p(H-|T+)$$
+
+On peut aussi utliser la mise à jour bayésienne avec des fonctions continues, que ce soit pour le prior ou bien la probabilité pour la donnée. L'idée est de proposer une approximation du prior (une loi uniforme si on a aucun idée), de récolter les données et d'obtenir une nouvelle approximation (le posterior), grâce à cette donnée. Voir [ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading14b.pdf).
+
+## Conjugate prior
+
+On dit qu'une distribution est un "conjugate prior" pour une autre distribution si la  posterior est du même type que la première. Par exemple la distribution beta est le "conjugate prior" de la distribution binomiale. C'est assez pratique, cela signifie qu'il faut juste mettre à jour un paramètre plutôt que de devoir recalculer entièrement une intégrale. A noter que les formules pour les fonctions normales sont déjà prêtes [ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading15a.pdf).
