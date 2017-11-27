@@ -10,7 +10,7 @@ Concernant l'informatique, c'est pareil. Il y a des catégories de problèmes, e
 ## Pourquoi classifier les problèmes ?
 Pour savoir si on est capable de les résoudre ! On se rend bien compte qu'entre trouver, par exemple, le maximum d'un tableau, et le problème de la [somme de sous-ensembles](https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_la_somme_de_sous-ensembles), il y a une différence ! 
 
-Savoir qu'on est tombé sur un problème NP-complet, par exemple, nous permet de savoir qu'on ne pourra pas le résoudre sur des cas trop compliqués, car les meilleurs chercheurs de la planète s'y sont cassés les dents. Inutile donc de perdre trop de temps, avoir cette information peut permettre de mieux s'adapter à la situation, en proposant, par exemple, un algorithme qu'y s'approche de la bonne solution sans qu'on soit sûr qu'elle soit juste.
+Savoir qu'on est tombé sur un problème NP-complet, par exemple, nous permet de savoir qu'on ne pourra pas le résoudre sur des cas trop compliqués, car les meilleurs chercheurs de la planète s'y sont cassés les dents. Inutile donc de perdre trop de temps, avoir cette information peut permettre de mieux s'adapter à la situation, en proposant, par exemple, un algorithme qui s'approche de la bonne solution sans qu'on soit sûr qu'elle soit juste.
 
 ## Prérequis (informel)
 ### Complexité
