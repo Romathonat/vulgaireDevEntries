@@ -23,7 +23,7 @@ Si on avait du parcourir deux fois le tableau, vous me direz qu'on noterait cela
 
 Maintenant, si on veut faire le [produit cartésien](http://www.bibmath.net/dico/index.php?action=affiche&quoi=./p/prodcart.html) du tableau avec lui-même, il faut itérer sur le tableau, et pour chaque itération réitérer sur tout le tableau pour trouver toutes les combinaisons possibles. On aura deux boucles imbriquées qui itèrent sur n, donc une complexité de O(n^2). Ca veut donc dire que le temps que va prendre mon algo dépend du carré de n, ce qui est moins bien que simplement de n.
 
-Bon, je ne sais pas si j'ai été très clair, c'est une notion assez difficile à faire comprendre. Retenez que plus on a une complexité "simple", plus on est performant. Voici un par exemple quelques complexités, classées par ordre croissant:  
+Bon, je ne sais pas si j'ai été très clair, c'est une notion assez difficile à faire comprendre. Retenez que plus on a une complexité "simple", plus on est performant. Voici par exemple quelques complexités, classées par ordre croissant:  
 - O(1) (temps constant, super)   
 - O(n)  
 - O(n^2)  
