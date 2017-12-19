@@ -5,20 +5,27 @@ Question : Combien de combats sont organisés par poule?
 On va modéliser le problème avec un graphe : les noeuds représentent les combattants, les arcs les combats entre judokas.  Une bonne méthode pour comprendre est de reconstruire l'ensemble des combats qui auront lieu.
 
 
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/combat_poules/poule1.png) 
+
 Chaque numéro correspond à un combattant
 
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/combat_poules/poule2.png) 
 
  Pour n combattants, le combattant 1 aura n-1 rencontres, car il rencontre chacun des autres adversaires (il ne combat pas contre lui-même bien évidemment), on tisse donc n-1 arcs.
 
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/combat_poules/poule3.png) 
 
 Le combattant 2 aura n-1 randoris aussi, mais l'arc vers le combattant 1 a déjà été tissé, on ne tisse donc que n-2 liens.
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/combat_poules/poule4.png) 
+
 Et ainsi de suite
 
-[Cliquer et glisser pour déplacer]
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/combat_poules/poule5.png) 
 
 
 Le nombre total de liens tissés est donc :
 
+$$(n-1) + (n-2) + (n-3) + ... + 1 + 0 = \sum_{k=1}^{n-1}n-k = \sum_{k=1}^{n-1}k = \frac{n(n-1)}{2}$$
 
 Car il s'agit d'une suite arithmétique de raison 1 commençant à 1.
 
