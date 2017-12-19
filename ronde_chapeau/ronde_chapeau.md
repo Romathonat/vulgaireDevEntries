@@ -15,11 +15,17 @@ Afin de simplifier l'énigme, on peut considérer un problème équivalent dans 
 
 Remarquons que la somme des numéros des chapeaux modulo N donne un nombre inclus dans l'intervalle [0 ; N-1]. Nous avons à disposition autant de personnes que de sommes (modulo N) possibles. On décide alors d'associer à chaque personne une somme possible. Par exemple, la personne k sera associée à la somme possible k. Je propose d'appeler S la somme réelle des chapeaux (modulo N).
 
-Une fois ceci posé, la stratégie à mettre en place est la suivante : chaque personne doit calculer la somme des chapeaux visibles (modulo N). Cette somme intermédiaire Si est égale à
+Une fois ceci posé, la stratégie à mettre en place est la suivante : chaque personne doit calculer la somme des chapeaux visibles (modulo N). Cette somme intermédiaire Si est égale à:
+
+$$Si=S-(chapeaudek) \mod N$$
 
 Dans cette équation, la personne connait Si, mais pas S ni la valeur de son propre chapeau. Cependant, nous avons associé chaque personne à une somme possible k. On va donc demander à chaque personne de supposer que S = k. L'équation ci dessus devient :
 
+$$Si=k-(chapeaudek) \mod N$$
+
 Par conséquent, chaque personne peut calculer une valeur pour chapeau de k. Cette valeur sera la véritable valeur du chapeau de k, à l'unique condition que :
+
+$$ S = k$$
 
 Or cette condition est vraie pour exactement une personne dans la salle ! En effet, il y a N personnes, et chacune possède une somme possible k différente, on tombera donc forcément sur quelqu'un qui aura S=k.
 
@@ -27,6 +33,13 @@ Or cette condition est vraie pour exactement une personne dans la salle ! En eff
 En résumé : chaque personne reçoit un nombre k, calcule Si égal à la somme des chapeaux visibles, puis annonce k - Si (modulo N).
 
 NB : comme nous sommes dans le cas d'un modulo, il peut s'avérer possible que :
+$$ Si > k $$
+
+- Personne (k) 	Chapeaux
+- 0 	3
+- 1 	2
+- 2 	3
+- 3 	1
 
 Dans ce cas là, il ne faut pas annoncer k - Si, puisqu'on aurait un résultat négatif. Il faut annoncer k + N - Si.
 
@@ -43,14 +56,17 @@ Personne (k)	Chapeaux
 
 La personne 0 va supposer que la somme des chapeaux modulo 4 vaut 0. Elle calcule la somme des chapeaux visibles : 2+3+1 = 6.
 
+$$Si=6 \mod N$$
+
 Donc :
+$$Si=2 \mod N$$
 
 Elle doit donc annoncer k - Si, soit 0 - 2. On se trouve exactement dans le cas k < Si. Donc au lieu d'annoncer -2, elle annonce k - Si + N, soit 0 - 2 + 4, à savoir 2.
 
 
 Passons cette fois à la personne 1. La somme visible est 3+3+1 = 7.
 
-Si = 3 (mod 4)
+$$Si=3 \mod 4$$
 
 Elle annonce k - Si + N, soit 1 - 3 + 4 = 2.
 
