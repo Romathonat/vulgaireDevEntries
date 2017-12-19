@@ -8,8 +8,8 @@ Cet article sera en C++,mais une fois le principe compris il est facilement réu
 
 Sommaire de ce petit article :
 
-    Les opérateurs
-    Exercices
+Les opérateurs
+Exercices
 
 ## 1. Les opérateurs
 
@@ -19,24 +19,25 @@ Vous en connaissez déjà certains : les opérateurs &, | et ^ qui sont respecti
 
 Voilà, vous savez tout ce qu'il faut savoir ! Ou presque, voyons cela un peu plus précisément.
 
-#### Le décalage de bits vers la gauche :
+### Le décalage de bits vers la gauche :
 
 Si l'on fait 4 << 1, cela donne (8)10, car :
 
-    - (4)10 donne (100)2,
-    - lorsque l'on décale de 1 bit vers la gauche, on ajoute un 0 derrière (100)2 et on obtient (1000)2, ce qui correspond à (8)10 en base 10.
+- (4)10 donne (100)2,
+- lorsque l'on décale de 1 bit vers la gauche, on ajoute un 0 derrière (100)2 et on obtient (1000)2, ce qui correspond à (8)10 en base 10.
 
 En effet, lorsque l'on fait un décalage de x bits, on multiplie en fait par 2x. Quand on y réfléchit c'est logique : ajouter un zéro à droite (une dizaine) en base 10 multiplie le nombre par 10, et ajouter un zéro à droite en base 2 multiplie le nombre par 2 !
 
 Dans notre exemple on a bien 4<<1 = 4*21 = 4*2.
 
-#### Le décalage de bit vers la droite :
+### Le décalage de bit vers la droite :
 
 Le principe est le même que pour le décalage vers la gauche, sauf qu'au lieu d'une multiplication, on fait une division avec troncage.
 
 Par exemple si l'on fait 7>>1, on obtient (3)10, car (7)10 donne (111)2. Si l'on décale de 1 vers la droite, on obtient (11)2 (le bit de la droite est enlevé), ce qui correspond à (3)10. On a bien fait une division par 21 en gardant seulement la partie entière.
 
-#### Les opérateurs &, |, ^ et ~ :
+
+### Les opérateurs &, |, ^ et ~ :
 
 L'opérateur & fait une comparaison bit par bit. Si chaque bits = 1, alors il retourne 1, sinon il retourne 0. Par exemple si l'on prend (8)10 & (7)10, on obtient 0 :
 
@@ -61,6 +62,7 @@ Pareillement, si l'on fait (12)10 | (7)10, on obtiendra (15)10, car (12)10 donne
 L'opérateur ^ fait la même chose, mais avec un XOR au lieu d'un OR, c'est à dire que dans le cas où les deux bits valent 1, XOR donne 0, sinon il se comporte comme un OR.
 
 Enfin, le ~ est le complémentaire (le NOT). Il retournera l'inverse de chaque bit (1 pour 0 et 0 pour 1).
+
 ## 2. Exercices
 
 Il est temps de faire des petits exercices tout simples, voir si vous avez compris le principe !
