@@ -40,10 +40,10 @@ Par exemple si l'on fait 7>>1, on obtient (3)10, car (7)10 donne (111)2. Si l'on
 
 L'opérateur & fait une comparaison bit par bit. Si chaque bits = 1, alors il retourne 1, sinon il retourne 0. Par exemple si l'on prend (8)10 & (7)10, on obtient 0 :
 
-    - (8)10 donne (1000)10, (7)10 donne (111)2
-    - Les 2 n'ont pas le même nombre de bits, on ajoute un 0 devant le (111)2, on a donc (1000)2 et (0111)2
-    - On regarde bit par bit, donc on compare si les deux bits de poids forts sont à 1, si oui on met 1 sinon 0. et ainsi de suite pour tous les bits
-    - Le résultat obtenu est 0
+- (8)10 donne (1000)10, (7)10 donne (111)2
+- Les 2 n'ont pas le même nombre de bits, on ajoute un 0 devant le (111)2, on a donc (1000)2 et (0111)2
+- On regarde bit par bit, donc on compare si les deux bits de poids forts sont à 1, si oui on met 1 sinon 0. et ainsi de suite pour tous les bits
+- Le résultat obtenu est 0
 
 Pareillement, si l'on fait (12)10 & (7)10, on obtiendra (4)10, car (12)10 donne (1100)2 et (7)10 donne (0111)2. On obtient, après comparaison, (0100)2, soit (4)10.
 
@@ -51,10 +51,10 @@ Cet opérateur peut servir, par exemple, à obtenir le reste de divisions par un
 
 L'opérateur | fait une comparaison bit par bit. Si un des bits = 1, alors il retourne 1, sinon il retourne 0. Par exemple si l'on prend (8)10 | (7)10, on obtient (15)10 :
 
-    (8)10 donne (1000)2, (7)10 donne (111)2
-    Les 2 n'ont pas le même nombre de bits, on ajoute un 0 devant le (111)2, on a donc (1000)2 et (0111)2
-    On regarde bit par bit, donc on compare le 1 avec le 0, le 0 avec le 1, ...
-    Le résultat obtenu est (1111)2, soit (15)10
+- (8)10 donne (1000)2, (7)10 donne (111)2
+- Les 2 n'ont pas le même nombre de bits, on ajoute un 0 devant le (111)2, on a donc (1000)2 et (0111)2
+- On regarde bit par bit, donc on compare le 1 avec le 0, le 0 avec le 1, ...
+- Le résultat obtenu est (1111)2, soit (15)10
 
 Pareillement, si l'on fait (12)10 | (7)10, on obtiendra (15)10, car (12)10 donne (1100) et (7)10 donne (0111)2. On obtient, après comparaison, (1111)2, soit (15)10.
 
@@ -79,17 +79,17 @@ int fonction_q1(int x, int nombre){
 
 Réponse : Elle retourne le reste (modulo) de la division entre nombre et 2x. C'est vrai que ça a l'air barbare, mais c'est ce n'est pas si compliqué. Décortiquons la :
 
-    - 1 << x correspond à 1 * 2x
-    - On enlève 1 à ce resultat. En effet, une puissance de 2 a 1 bit à 1 et tout les autres à 0, donc une puissance de 2 moins 1 aura 1 bit de moins et tous ses bits à 1 (exemple : (8)10 donne (1000)2 et (7)10 donne (111)2).
-    - On utilise l'opérateur & entre le nombre et la puissance de 2 moins 1.
-    - La magie des bits fait que cela retourne le reste de la division. Si l'on prend par exemple :
-        * nombre = (15)10
-        * x = (3)10 (i.e on va diviser par 8)
-        * (15)10 donne (1111)2
-        * (8)10 donne (1000)2 en binaire, 8-1 = 7 donne donc (0111)2
-        * On applique l'opérateur &
-        * On obtient (0111)2, soit (7)10
-        * On vérifie : le reste de 15 / 8 est bel et bien 7 !
+- 1 << x correspond à 1 * 2x
+- On enlève 1 à ce resultat. En effet, une puissance de 2 a 1 bit à 1 et tout les autres à 0, donc une puissance de 2 moins 1 aura 1 bit de moins et tous ses bits à 1 (exemple : (8)10 donne (1000)2 et (7)10 donne (111)2).
+- On utilise l'opérateur & entre le nombre et la puissance de 2 moins 1.
+- La magie des bits fait que cela retourne le reste de la division. Si l'on prend par exemple :
+    * nombre = (15)10
+    * x = (3)10 (i.e on va diviser par 8)
+    * (15)10 donne (1111)2
+    * (8)10 donne (1000)2 en binaire, 8-1 = 7 donne donc (0111)2
+    * On applique l'opérateur &
+    * On obtient (0111)2, soit (7)10
+    * On vérifie : le reste de 15 / 8 est bel et bien 7 !
 
 Pour bien comprendre pourquoi cela fonctionne, passons en base 10. Les opérations précédentes correspondent à : prendre une puissance de 10, puis ne conserver que les chiffres de cette puissance de dix dans le nombre initial !
 
@@ -100,6 +100,7 @@ L'avantage de cette fonction est que ce calcul sera plus rapide qu'un modulo.
 ### Exercice 2 :
 
 Prenons le code suivant :
+
 ``` C
 if(x%2 == 0){
     cout << "Pair";
@@ -112,6 +113,7 @@ else{
 Ce code vérifie que x est pair. Pour cela on utilise le modulo. Mais n'y aurait-il pas un moyen plus efficace de le faire ?
 
 Réponse :
+
 ``` C
 if(x & 1){
     cout << "Impair";
@@ -131,6 +133,7 @@ Solution :
 Il suffirait par exemple d'utiliser un char. En effet, un char est codé sur 1 octet, soit 8 bits. Cela signifie donc 8 choses dont la valeur peut être 1 ou 0, comme les booléens.
 
 Pour récupérer un bit, vous pourriez utiliser la fonction suivante :
+
 ``` C
 unsigned short int recupererTelBit(unsigned int position, char lesBools)
 {
@@ -144,15 +147,16 @@ Attention, cette fonction manipule le char comme s'il était un tableau de droit
 
 Voyons ce que fait cette fonction :
 
-    - Prenons position = 2 et lesBools = 'a' (a est codé (97)10 = (01100001)2)
-    - 1 << position retourne ici (100)2
-    - On a donc (100)2 & lesBools, i.e (100)2 & (01100001)2. Comme ils n'ont pas le même nombre de bits, on rajoute des 0. On a donc : (00000100)2 & (01100001)2, ce qui donne (00000000)2.
-    - Finalement, on a 00000000 >> 2, ce qui donne 000000, soit 0.
-    - Le 3 ème bits est donc un 0
+- Prenons position = 2 et lesBools = 'a' (a est codé (97)10 = (01100001)2)
+- 1 << position retourne ici (100)2
+- On a donc (100)2 & lesBools, i.e (100)2 & (01100001)2. Comme ils n'ont pas le même nombre de bits, on rajoute des 0. On a donc : (00000100)2 & (01100001)2, ce qui donne (00000000)2.
+- Finalement, on a 00000000 >> 2, ce qui donne 000000, soit 0.
+- Le 3 ème bits est donc un 0
 
 Maintenant, il faut aussi savoir comment changer tel ou tel bit.
 
 Voyons 3 fonctions différentes :
+
 ``` C
 unsigned int changerTelBit(unsigned int position, unsigned char lesBools)
 {
@@ -161,8 +165,8 @@ unsigned int changerTelBit(unsigned int position, unsigned char lesBools)
 ```
 Cette fonction change un bit. Si celui-ci était un 0, il deviendra 1, et inversement. Décortiquons la :
 
-    - 1 << position permet de se placer au bit voulu
-    lesBools ^ (1 << position) fait un XOR sur le bit voulu. Si on a lesBools = (1111)2 et position = 2, on aura comme résultat (1011)2
+- 1 << position permet de se placer au bit voulu
+- lesBools ^ (1 << position) fait un XOR sur le bit voulu. Si on a lesBools = (1111)2 et position = 2, on aura comme résultat (1011)2
 
 ``` C
 unsigned int changerTelBitEn1(unsigned int position, unsigned char lesBools)
@@ -172,8 +176,8 @@ unsigned int changerTelBitEn1(unsigned int position, unsigned char lesBools)
 ```
 Cette fonction force un bit à prendre la valeur 1. Décortiquons la :
 
-    - 1 << position permet de se placer au bit voulu
-    - Le | (OR) nous permet de changer ce bit. Comme x | 1 (où x = 0 ou 1) donnera toujours 1, le bit à la position deviendra un 1 obligatoirement.
+- 1 << position permet de se placer au bit voulu
+- Le | (OR) nous permet de changer ce bit. Comme x | 1 (où x = 0 ou 1) donnera toujours 1, le bit à la position deviendra un 1 obligatoirement.
 
 ``` C
 unsigned int changerTelBitEn0(unsigned int position, unsigned char lesBools)
@@ -184,9 +188,9 @@ unsigned int changerTelBitEn0(unsigned int position, unsigned char lesBools)
 
 Enfin, cette fonction force un bit à prendre la valeur 0. Décortiquons la elle aussi :
 
-    - 1 << position permet de se placer au bit voulu
-    - Le ~ retourne l'inverse, du coup au lieu d'avoir un 1 et sept 0, on a sept 1 et un 0
-    - Le & (AND) nous permet de changer ce bit. Comme x & 0 (où x = 0 ou 1) donnera toujours 0, le bit à la position voulue deviendra un 0 obligatoirement.
+- 1 << position permet de se placer au bit voulu
+- Le ~ retourne l'inverse, du coup au lieu d'avoir un 1 et sept 0, on a sept 1 et un 0
+- Le & (AND) nous permet de changer ce bit. Comme x & 0 (où x = 0 ou 1) donnera toujours 0, le bit à la position voulue deviendra un 0 obligatoirement.
 
 Voilà, vous savez maintenant créer un tableau de booléens prenant moins de place en mémoire et parcourable sans boucles.
 
