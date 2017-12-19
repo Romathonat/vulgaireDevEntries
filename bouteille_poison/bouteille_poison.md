@@ -14,7 +14,12 @@ On arrondit k à l'entier supérieur (on doit faire toutes les divisions de l'es
 Mais cette approche ne fonctionne que sans contrainte de temps, donc n'est pas viable ici.
 
 On pourrait ensuite penser différement en se disant que un esclave peut gouter plusieurs bouteilles (ce qui est équivalent à la technique du mélange). Imaginons que nous repartitions les bouteilles dans une salle de sorte à ce qu'elles forment un carré (plus une rangée non complète car on ne peut pas faire un carré avec 1000 bouteilles). On associe à chaque rangée (colonnes et lignes) un serviteur. Celui-ci boit toute sa rangée. Ainsi, l'intersection des rangées des deux serviteurs morts nous donne la bouteille empoisonée.  Ici on trouve sqrt(1000) = 31,6..., on fait prend donc un rectangle de 31*32 = 992, et on rajoute une rangée incomplète de 8, ce qui nous fait 64 serviteurs utilisés. C'est pas mal. Mais on peut encore faire mieux.
+
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/bouteille_poison/bouteille_poison.png) 
+
 Les points rouges sont des serviteurs, les carrés noirs des bouteilles
+
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/bouteille_poison/bouteille_poison_trouve.png) 
 Le vert représente le poison. On trouve la bouteille empoisonée.
 
 
@@ -24,7 +29,7 @@ Ce nombre binaire comportera autant de bits que de serviteurs, et la position d'
 
 Par exemple la bouteille 3 sera codée 0110 (si on code sur 4 bits, c'est à dire 4 serviteurs), ce qui signifie que les serviteurs 2 et 3 auront bu dedans.
 
-Une fois que tout le monde a bu, on regarde les numéros des décédés : tous on leur bit à 1 dans la bouteille empoisonée, leur mort nous apporte l'information nécessaire.
+**Une fois que tout le monde a bu**, on regarde les numéros des décédés : tous on leur bit à 1 dans la bouteille empoisonée, leur mort nous apporte l'information nécessaire.
 
 Si par exemple on avait le serviteur 1 et le 3 de mort, alors la bouteille correspondante serait (0101), c'est à dire la numéro 5 !
 
