@@ -19,17 +19,16 @@ On va installer la triplette django+nginx+gunicorn sur le serveur. En gros nginx
 
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/deploy_django/wsgi_with_nginx.png)   
 
-Schém d'utilistation de WSGI avec Nginx
+Schéma d'utilistation de WSGI avec Nginx
 
+En parallèle, on va installer une base de données MySQL, pour stocker nos données, avec laquelle django va communiquer. Pour une application plus importante où on souhaite répartir la charge, on conseille de ne pas avoir et la base de données et le serveur applicatif sur la même machine, mais ici on s'en contentera largement .
+Mettre son système à jour:
 
-
-En parallèle, on va installer une base de données MySQL, pour stocker nos données, avec laquelle django va communiquer. Pour une application plus importante où on souhaite répartir la charge, on conseille de ne pas avoir et la base de données et le serveur applicatif sur la même machine, mais ici on s'en contentera largement (laaargement).
-Mettre son système à jour
 ``` bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
-Installer MySQL
+### Installer MySQL
 
 J'ai choisi MySQL comme base de donné, mais on peut tout aussi bien prendre MariaDB, PostgreSQL, Oracle etc.
 
@@ -81,7 +80,7 @@ Maintenant on va créer un nouvel utilisateur : les applications seront lancées
 sudo useradd --system --shell /bin/bash --home /webApps webUser
 ```
 (le dernier paramètre est le nom du nouvel user, et le --home définit le répertoire home, celui sur lequel on arrive en faisant "cd ~", de webUser)
-Installer VirtualEnv et pip
+### Installer VirtualEnv et pip
 
 VirtualEnv est un outil qui permet de créer un environnement virtuel Python. En gros, ça veut dire que toutes les installations python faites lorsqu'on est dans un environnement virtuel ne seront disponibles que dans cet environnement virtuel, et pas en-dehors. Ainsi, on peut avoir sur le même système plusieurs projets dont les versions de python, de django etc sont différentes. Un autre avantage est que si on se foire dans l'installation, ce n'est pas toute l'installation linux qui est compromise, mais simplement le virtualEnv ! (c'est assez pratique)
 
@@ -147,7 +146,7 @@ Et une fois sur le serveur on définit webUser comme propriétaire de ce dossier
 sudo chown webuser /webApps/monProjet/
 ```
  
-## Installer Gunicorn
+###  Installer Gunicorn
 
 On va donc maintenant installer Gunicorn, qui va communiquer avec django comme on a vu dans le schéma plus haut.
 ``` bash
@@ -210,7 +209,7 @@ Et on peut maintenant redémarrer gunicorn à notre guise :
 sudo supervisorctl restart monProjet 
 ```
  
-## Installer Nginx
+### Installer Nginx
 
 Il ne reste plus qu'à installer le serveur Nginx, qui intercepte les requêtes HTTP pour les envoyer au couple (Gunicorn,Django)
 ``` bash
@@ -225,7 +224,7 @@ nano /etc/nginx/sites-available/monProjet
 ```
 et encore une fois un fichier de configuration à adapter à votre projet:
 ```
-# Configuration du server
+### Configuration du server
 server {
     listen      80;
     server_name www.monDomaine.fr monDomaine.fr;
@@ -352,3 +351,4 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deploym
 https://www.digitalocean.com/community/tutorials/how-to-use-mysql-or-mariadb-with-your-django-application-on-ubuntu-14-04
 
 http://sametmax.com/votre-python-aime-les-pip/
+
