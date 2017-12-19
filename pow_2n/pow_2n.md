@@ -24,7 +24,7 @@ Comment est-ce que je coupe ma barre de sorte à maximiser mon profit?
 
 On ne va pas résoudre le problème ici ce n'est pas le sujet, mais simplement calculer le nombre de possibilités de coupe.
 
-Plutôt que de calculer le nombre de façon d'avoir des morceaux d'acier différents, il est plus simple de calculer le nombre de coupes differentes possibles, ce qui revient au même.
+Plutôt que de calculer le nombre de façons d'avoir des morceaux d'acier différents, il est plus simple de calculer le nombre de coupes differentes possibles, ce qui revient au même.
 
 On revient donc exactement au même problème que précedemment, puisque le nombre de coupes différentes est égale au nombre de façons d'effectuer une seule coupe, plus le nombre de façons d'en faire deux etc, ce qui nous mène, comme nous l'avons vu précedemment à 2^n+1 possibilités.
 
