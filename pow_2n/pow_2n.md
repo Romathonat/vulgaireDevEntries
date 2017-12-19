@@ -4,7 +4,8 @@ La question est la suivante : "S'il y a n éléments dans ma fenêtre, combien d
 
 Réponse : $$2^n$$
 
-En effet, l'ensemble des possibilités, c'est l'ensemble des façons d'afficher un seul élément dans ma fenêtre, plus l'ensemble des façons d'en afficher deux etc. Ce raisonement nous mène à la formule suivante :
+En effet, l'ensemble des possibilités, c'est l'ensemble des façons d'afficher un seul élément dans ma fenêtre, plus l'ensemble des façons d'en afficher deux etc. Ce raisonement nous mène à la formule suivante :  
+
 $$\sum_{k=0}^{n}\binom{n}{k} = \sum_{k=0}^{n}\binom{n}{k}1^n1^{n-k} = (1 + 1)^n = 2^n$$
 
 (d'après la formule du Binôme de Newton)
@@ -20,8 +21,6 @@ Le problème de découpe des barres.
 Admettons que je travaille dans la metallurgie. Je souhaite gagner un maximum d'argent et je dispose d'une grande barre en acier, de taille n. J'ai aussi à ma disposition une scie, qui me permet de couper la barre à ma guise, avec pour limite que je ne coupe la barre que de sorte à avoir des morceaux dont les longueurs soient des entiers. Enfin, je possède un tableau qui me donne les cours du marché selon la longueur de la barre.
 
 Comment est-ce que je coupe ma barre de sorte à maximiser mon profit?
-3 exemples de découpe différents
-
 
 On ne va pas résoudre le problème ici ce n'est pas le sujet, mais simplement calculer le nombre de possibilités de coupe.
 
