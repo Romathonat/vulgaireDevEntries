@@ -4,16 +4,16 @@ aux probabilités et statistiques", mais le cours est tout de même assez comple
 ## Loi de multiplication
 *S'il y a n façons de réaliser l'action 1, et m façons de réaliser l'action 2, alors il y a n\*m façons de réaliser l'action 1 suivi de l'action 2*.  
 **Exemple:** Combien y a-t-il de façons de tirer une paire d'as si l'on tire deux cartes d'un jeu de 52 cartes ?  
-**Réponse:** Il y a 4 as dans le jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi qu'on va voir juste après, on a donc une probabilité de:
+**Réponse:** Il y a 4 as dans le jeu, donc 4 possibilités pour le premier tirage. Une fois qu'un premier as a été tiré, il n'en reste plus que 3 pour le second tirage, on a 3 possibilités. On a donc 4\*3=12 tirages possibles. D'après la loi qu'on va voir juste après, on a donc une probabilité de:  
 $$\frac{12}{52*51} = \frac{1}{221}$$
   
 Avoir une paire d'as avant le flop au poker est donc rare, puisqu'on a seulement 0.45% de chances.
 
 ## Dénombrement
-Dans le cas discret (par exemple tirer au hasard des cartes parmi un jeu de 52 cartes), si il y a équiprobabilité des issues, on fait souvent:
+Dans le cas discret (par exemple tirer au hasard des cartes parmi un jeu de 52 cartes), si il y a équiprobabilité des issues, on fait souvent:  
 $$\frac{nombreIssuesQuiNousInteressent}{nombreIssuesPossibles}$$
 
-Par exemple, trouver la probabilité de tirer un carreau (on parle de poker):
+Par exemple, trouver la probabilité de tirer un carreau (on parle de poker):  
 $$\frac{13}{52} = \frac{1}{4}$$
   
 ### Arrangement sans répétition
@@ -22,7 +22,7 @@ $$A_n^{k}$$
 
 Un arrangement avec répétions c'est prendre k billes parmi n dans un sac de billes, en tenant compte de l'ordre dans lequel on sort chacune d'elles. L'ensemble des issues (qui sont de longueur k) correspond aux arrangements sans répétition.
 
-Par exemple j'ai un sac avec une boule verte (V), une bleue (B) et une rouge(R) (n=3), dans lequel je prend deux billes (k=2) l'ensemble des issues possibles est:
+Par exemple j'ai un sac avec une boule verte (V), une bleue (B) et une rouge(R) (n=3), dans lequel je prend deux billes (k=2) l'ensemble des issues possibles est:  
 $${VB, VR, BV, BR, RV, RB}$$   
 Ce sont des tuples, l'ordre des éléments est importants.
   
@@ -57,7 +57,7 @@ Une combinaison sans répétition correspond au fait de tirer k billes parmi n, 
 Pour le sac exemple, ça nous donne:  
 $$\{VR, RB, BV\}$$
 
-**Le nombre d'issues possibles est**:
+**Le nombre d'issues possibles est**:  
 $$\frac{n!}{k!(n-k)!} = \frac{A_n^{k}}{k!}$$
 
 Ici on trouve:
@@ -74,7 +74,7 @@ Par exemple faire 2 tirage de boules avec remise, si on s'intéresse uniquement 
 Pour le sac exemple, ça nous donne:
 $$\{VR, RB, BV, VV, RR, BB\}$$
 
-**Le nombre d'issues possibles est**:
+**Le nombre d'issues possibles est**:  
 $$\frac{(n+k-1)!}{k!(n-1)!}$$
 
 Ca correpond à une combinaison sans remise de k éléments parmi n + k - 1.
@@ -90,7 +90,7 @@ $$|A\cup B| = |A|+|B|-|A\cap B|$$
 
 ## Probabilité conditionelle et théorème de Bayes
 
-### Probabilité conditionnelle:
+### Probabilité conditionnelle:  
 $$P(A|B) = \frac{P(A\cap B)}{P(B)}$$ si P(B) != 0
 
 ### Loi des probabilités totales
@@ -102,7 +102,7 @@ $$P(A) = P(A\cap B) + P(A\cap C)$$
 Deux évènements sont indépendants ssi:
 $$P(A\cap B) = P(A)*P(B)$$
 
-### Théorème de Bayes
+### Théorème de Bayes  
 $$P(B|A) = \frac{P(A|B)*P(B)}{P(A)}$$
 
 
@@ -125,15 +125,15 @@ En language courant, la traduction de ces sigles est la suivante:
 - FN: Malades non detectés (erreur)
 - TN: Non-malades non detectés.
 
-D'après l'énoncé et la définition du FPR (False Positive Rate), on a:
+D'après l'énoncé et la définition du FPR (False Positive Rate), on a:  
 $$FPR = \frac{FP}{FP+TN}$$
 C'est donc l'ensemble des non-malades détectés comme étant malades, divisé par l'ensemble des non-malades, càd la **proportion d'erreur parmi les non-malades**.
 
-De même, le FNR (False Negative Rate):
+De même, le FNR (False Negative Rate):  
 $$FNR = \frac{FN}{FN+TP}$$
 C'est donc l'ensemble des malades non-détectés, divisé par l'ensemble de malades, càd la **proportion d'erreurs parmi les malades**.
 
-La précision, quand à elle, est définie comme suit:
+La précision, quand à elle, est définie comme suit:  
 $$Precision = \frac{TP}{TP+TN}$$
 C'est l'ensemble des malades détectés sur l'ensemble des détections, càd la **proportion de détections justes**.  
 
@@ -148,36 +148,36 @@ D: détecté
 
 On veut la probabilité d'être malade sachant qu'on est détecté, càd P(M|D).
 On sait aussi que:
-
-$$p(M) = \frac{0.5}{100}$$
-$$p(D|\neg M) = \frac{5}{100}$$
+  
+$$p(M) = \frac{0.5}{100}$$  
+$$p(D|\neg M) = \frac{5}{100}$$  
 (définition du faux positif)
 
-$$p(\neg D|M) = \frac{10}{100}$$
+$$p(\neg D|M) = \frac{10}{100}$$  
 (définition du faux négatif)
 
-$$p(\neg D|\neg M) = \frac{95}{100}$$
-(complémentaire du faux positif)
+$$p(\neg D|\neg M) = \frac{95}{100}$$  
+(complémentaire du faux positif)  
 
 
-$$p(D| M) = \frac{90}{100}$$
+$$p(D| M) = \frac{90}{100}$$  
 (complémentaire du faux négatif)
   
 En appliquant le théorème de Bayes, on a:
-$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} $$
+$$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} $$  
 
 Or, d'après la loi des probabilités totales, on a:
 
-$$p(D) =  p(D\cap M) + p(D\cap \neg M)$$
+$$p(D) =  p(D\cap M) + p(D\cap \neg M)$$  
   
-$$p(D) = 0.90\*0.005 + 0.995\*0.05$$
+$$p(D) = 0.90*0.005 + 0.995*0.05$$  
 
-Donc on trouve 
+Donc on trouve:  
 $$p(M|D) = \frac{p(D|M)*p(M)}{p(D)} \approx 0.083$$
 
 
 **Se souvenir**:
-
+  
 $$P(A|B)+P(\neg A|B) = 1$$
 
 ## Variable aléatoire
@@ -192,7 +192,7 @@ $$F(x) = \sum \limits_{i=1}^x p(x)$$
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
 On a:  
 
-$$ E(x) = \sum \limits_{i=1}^n p(xi) \* xi $$
+$$ E(x) = \sum \limits_{i=1}^n p(xi) * xi $$
 
 **Propriétés de E(x)**:
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
@@ -201,40 +201,40 @@ La **variance** est l'espérance des carrés des écarts à la moyenne (le carr�
 $$Var(X) = E((X - \mu)^2)$$
 
 **Propriétés de Var(X)**:
-Si X et Y sont *indépendantes*
-$$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
-$$Var(X) = E(X^2) - E(X)^2$$
+Si X et Y sont *indépendantes*  
+$$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$  
+$$Var(X) = E(X^2) - E(X)^2$$  
 
 L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine carrée de la variance:
-$$\sigma = \sqrt{Var(X)}$$
+$$\sigma = \sqrt{Var(X)}$$  
 
 ### Continue
 La **densité de probabilité** (probability mass function = pdf) la loi de probabilité des issues. La "probabilité unitaire" est f(x)dx. On la note f(x).
 La **fonction de répartition** (cumulative mass function = cdf) décrit la probabilité d'avoir p(X < x). On la note F(x).
-Elle est définie comme suit:
+Elle est définie comme suit:  
 $$F(x) = \int_{-\infty}^{b} p(x)dx$$
 
 **Propriétés de F(x)**:
-$$p(a \le X \le b) = F(b) - F(a) $$
-$$F'(x) = f(x)$$
-$$p(a \le X \le b) = \int_{a}^{b} f(x)dx$$
+$$p(a \le X \le b) = F(b) - F(a) $$  
+$$F'(x) = f(x)$$  
+$$p(a \le X \le b) = \int_{a}^{b} f(x)dx$$  
 
 L'**espérance** est la moyenne des issues. Elle est notée E(x).
-On a:
+On a:  
 $$E(x) = \int_{a}^{b} xf(x)dx$$
 
-**Propriétés de E(x)**:
+**Propriétés de E(x)**:  
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
 
-La **variance** est l'écart à la moyenne (au carré pour ne pas avoir de nombres négatifs). Notée Var(X):
+La **variance** est l'écart à la moyenne (au carré pour ne pas avoir de nombres négatifs). Notée Var(X):  
 $$Var(X) = E((X - \mu)^2)$$
 
 **Propriétés de Var(X)**:
-Si X et Y sont *indépendantes*
-$$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$
-$$Var(X) = E(X^2) - E(X)^2$$
+Si X et Y sont *indépendantes*  
+$$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$  
+$$Var(X) = E(X^2) - E(X)^2$$  
 
-L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:
+L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine de la variance:  
 $$\sigma = \sqrt{Var(X)}$$
 
 ## Théorème central limite et loi des grands nombres.
@@ -243,7 +243,7 @@ $$\sigma = \sqrt{Var(X)}$$
 Si on a un ensemble de n variables indépendantes et identiquement distribuées (i.i.d), plus n augmente, plus la moyenne des X s'approche de E(X).
 
 ### Théorème central limite
-On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et Xn la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):
+On a un ensemble de n variables i.i.d. Soit Sn la somme de ces éléments, et Xn la moyenne de ces évènements. Ces deux variables suivent approximativement des lois normales (si n est suffisamment grand):  
 
 $$Zn = \frac{Sn - n\mu}{\sigma \sqrt{n}} = \frac{\bar Xn - \mu}{\frac{\sigma}{\sqrt{n}}}$$
 
@@ -256,18 +256,18 @@ Si on a plusieurs variables, on a une loi de probabilité à plusieurs variables
 
 Voir [ce pdf pour avoir des exemples](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading7a.pdf).    
 
-La fonction de répartition à plusieurs variables est:
+La fonction de répartition à plusieurs variables est:  
 
 $$F(x,y) = p(X \leq x, Y \leq y) = \iint\limits_{[a,y][b,x]} f(u,v)dudv$$
 
-Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.
+Pour retrouver la loi de densité de probabilité, il faut dériver selon les deux variables.  
 
 $$f(x,y) = \frac{\partial^2F(x,y)}{\partial x\partial y}$$
 
 ### Loi de probabilité marginale
 Une loi de probabilité marginale permet d'avoir le "comportement" d'une seule variable.
 
-Si y prend ses valeurs dans [c, d], on a :
+Si y prend ses valeurs dans [c, d], on a :  
 
 $$ fX(x) =  \int_{c}^{d} f(x,y)dy$$
 
@@ -275,35 +275,35 @@ $$ fX(x) =  \int_{c}^{d} f(x,y)dy$$
 
 
 ### Fonction de répartition
-Pour avoir la fonction de répartition marginale, si X et Y prennent leur valeur dans [a,b]x[c,d], on a:
+Pour avoir la fonction de répartition marginale, si X et Y prennent leur valeur dans [a,b]x[c,d], on a:  
 $$FX(x) = F(x,d)$$  
 
 $$FY(y) = F(b,y)$$
 
 ### Indépendance
 X et Y sont indépendantes ssi:
-$$F(X,Y) = FX(x)FY(y)$$
-ou encore:
-$$f(x,y) = fX(x)fY(y)$$
+$$F(X,Y) = FX(x)FY(y)$$  
+ou encore:  
+$$f(x,y) = fX(x)fY(y)$$  
 
 ## Covariance et corrélation
 ### Covariance
 La covariance est une mesure de la façon dont deux variables varient ensemble. Par exemple la taille et le poids des girafes ont des covariances positives car quand l'une est grande, l'autre a tendance à l'être aussi. Inversement, quand la covariance est négative, quand une des variables est grande, l'autre a tendance a être petite.
 
-$$Cov(X,Y) = E((X- \mu X)(Y- \mu Y))$$
+$$Cov(X,Y) = E((X- \mu X)(Y- \mu Y))$$  
 
-**Propriétés de la covariance**
-$$Cov(aX+b, cY+ d) = acCov(X,Y)$$
-$$Cov(X1+X2, Y) = Cov(X1,Y)+Cov(X2,Y)$$
-$$Cov(X,X) = Var(X)$$
-$$Cov(X,Y) = E(X,Y) - \mu X \mu Y$$
-$$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$
+**Propriétés de la covariance**  
+$$Cov(aX+b, cY+ d) = acCov(X,Y)$$  
+$$Cov(X1+X2, Y) = Cov(X1,Y)+Cov(X2,Y)$$  
+$$Cov(X,X) = Var(X)$$  
+$$Cov(X,Y) = E(X,Y) - \mu X \mu Y$$  
+$$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$  
 
 Si X et Y sont indépendants, alors Cov(X, Y) = 0.  
 **Attention la réciproque n'est pas vraie!**
 
 ### Corrélation
-Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.
+Le coefficient de corrélation permet de créer une mesure sans unité, adaptée pour comparer entre deux paires de variables.  
 
 $$Cor(X,Y)=\frac{Cov(X,Y)}{\sigma X\sigma Y}$$
 
