@@ -231,6 +231,7 @@ $$Var(X) = E((X - \mu)^2)$$
 
 **Propriétés de Var(X)**:
 Si X et Y sont *indépendantes*  
+
 $$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$  
 $$Var(X) = E(X^2) - E(X)^2$$  
 
@@ -281,9 +282,9 @@ $$FX(x) = F(x,d)$$
 $$FY(y) = F(b,y)$$
 
 ### Indépendance
-X et Y sont indépendantes ssi:
+X et Y sont indépendantes ssi:  
 $$F(X,Y) = FX(x)FY(y)$$  
-ou encore:  
+ou encore:   
 $$f(x,y) = fX(x)fY(y)$$  
 
 ## Covariance et corrélation
@@ -293,11 +294,17 @@ La covariance est une mesure de la façon dont deux variables varient ensemble. 
 $$Cov(X,Y) = E((X- \mu X)(Y- \mu Y))$$  
 
 **Propriétés de la covariance**  
+
 $$Cov(aX+b, cY+ d) = acCov(X,Y)$$  
+
 $$Cov(X1+X2, Y) = Cov(X1,Y)+Cov(X2,Y)$$  
+
 $$Cov(X,X) = Var(X)$$  
+
 $$Cov(X,Y) = E(X,Y) - \mu X \mu Y$$  
+
 $$Var(X+Y) = Var(X) + Var(Y) + 2Cov(X, Y)$$  
+
 
 Si X et Y sont indépendants, alors Cov(X, Y) = 0.  
 **Attention la réciproque n'est pas vraie!**
