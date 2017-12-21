@@ -16,12 +16,13 @@ Posons n = nombres de points et f = nombre de zones.
 
 Une restriction cependant : deux points d'intersection entre des lignes ne peuvent pas être confondus. Autrement dit, on a au maximum deux lignes qui se coupent en un même point. On ne peut donc pas avoir la disposition suivante (pour n =6):
 
-[](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/zones_cercle/impossible.png)
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/zones_cercle/impossible.png)
+
 *Figure impossible d'après nos restrictions*
 
 Mais plûtôt quelque chose du style:
 
-[](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/zones_cercle/possible.png)
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/zones_cercle/possible.png)
 
 *Mais celle-là oui !*
 
@@ -42,7 +43,7 @@ Nous allons raisonner en imaginant que nous construisons la figure, en ajoutant 
 2 zones à l'origine. On ajoute une corde, ce qui fait ici 2 segments, càd 1 intersection,
 càd 2 nouvelles zones.
 
-[](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/zones_cercle/explication.png)
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/zones_cercle/explication.png)
 
 Ainsi, on trouve que l'ajout d'une corde à la figure entraine la création de :
 $$\Delta f = 1+nbIntersectionsCorde$$
@@ -56,11 +57,11 @@ En effet, à chaque ajout d'une nouvelle corde, les nouvelles intersections cré
 On peut maintenant trouver f en fonction de n : le nombre de cordes correspond au nombre de façons de sélectionner 2 points parmis n (puisqu'on relie toutes les cordes possibles), et le nombre d'intersections correspond au nombre de façons de sélectionner 4 points parmis n. Pourquoi 4? Parce qu'il faut deux cordes pour faire une intersection, donc 4 points.
 
 On a alors :
-$$f=\binom{n}{2}+\binom{n}{4}+1$$
-$$f = \frac{n}{(n-2)!2!} + \frac{n}{(n-4)!4!} + 1$$ 
-$$f = \frac{n*(n-1))}{2} + \frac{n*(n-1)*(n-2)*(n-3)}{24} + 1$$ 
-$$f = \frac{n^4-6n^3+23n^2-18n}{24} + 1$$ 
-$$f = \frac{n^4}{24} - \frac{n^3}{4} + \frac{23n^2}{24} + \frac{3n}{4} + 1$$ 
+$$f=\binom{n}{2}+\binom{n}{4}+1$$  
+$$f = \frac{n}{(n-2)!2!} + \frac{n}{(n-4)!4!} + 1$$   
+$$f = \frac{n*(n-1))}{2} + \frac{n*(n-1)*(n-2)*(n-3)}{24} + 1$$   
+$$f = \frac{n^4-6n^3+23n^2-18n}{24} + 1$$   
+$$f = \frac{n^4}{24} - \frac{n^3}{4} + \frac{23n^2}{24} + \frac{3n}{4} + 1$$   
 
 En utilisant la propriété des coefficients binomiaux suivante:
 
