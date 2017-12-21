@@ -1,4 +1,4 @@
-Je suis en train de faire les cours du MIT sur les probabilités/statisitques ([ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)). Le titre officiel est "Introduction 
+Je suis en train de faire les cours du MIT sur les probabilités/statistiques ([ici](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)). Le titre officiel est "Introduction 
 aux probabilités et statistiques", mais le cours est tout de même assez complet je trouve, donc je fais un résumé ici (ce n'est pas un vrai cours suffisamment, donc si vous ne connaissez pas un minimum, ça risque d'être un peu dur).
 
 ## Loi de multiplication
