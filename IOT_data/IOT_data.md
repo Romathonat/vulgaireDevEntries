@@ -10,9 +10,9 @@ There are data from multiples sites, each one with its own database. There is al
 
 ## Solution
 
-First, we need to maker sure there is no collision between data from different site, which means we need to have unique primary keys on all data. To do so, we can compose primary keys with the name of the local site, wich needs to be unique.
+First, we need to maker sure there is no collision between data from different sites, which means we need to have unique primary keys on all data. To do so, we can compose primary keys with the name of the local site, wich needs to be unique.
 
-Then, we dump data to sql (insert into) format, on each site, then send it to the backend. On the backend, we execute each line one by one. If there is an Integrity error, it means we are trying to insert a key that is already present, so we do not need to insert the data but to update it. Indeed, the data may have been updated on site.
+Then, we dump data to sql (insert into) format, on each site, and send it to the backend. On the backend, we execute each line one by one. If there is an Integrity error, it means we are trying to insert a key that is already present, so we do not need to insert the data but to update it. Indeed, the data may have been updated on site.
 
 In practise, we use python for our backend, with psycopg2 to communicate with our postgreSQL, which is boosted for timeseries data with timescaleDB.
 
@@ -82,7 +82,7 @@ And then we use them that way:
     con.close()
 ```
 
-This approach works fine.
+This approach works fine, but it is just a workaround depending on the format of the output error though (not very robust)
 
 Issue: Updating each row when there is a conflict can be quite inefficient when working on hypertables, because these data does not need to be updated (sensor data in our case).
 Solution: Differentiate each case, when working or not on an hypertable.
