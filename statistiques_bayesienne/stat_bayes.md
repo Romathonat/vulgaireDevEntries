@@ -40,7 +40,7 @@ Finalement, il n'est pas vraiment nécessaire d'appliquer complétement la méth
 ## Mise à jour bayésienne
 L'idée générale est qu'on va faire une ou des hypothèses, et qu'on va calculer leur probabilités *a priori*. Ensuite, on va récolter des données. Ces données vont nous donner de l'information pour mieux approximer ces probabilités, cela nous donne la probabilité *postérieure*.
 
-Par exemple dans le cas d'un détecteur de maladie, avec un taux de faux positifs de 99%, et un taux de faux négatifs de 2%, sachant que la proportion de la population qui est malade est de 0,5%, la probabilité d'être malade si le test est positif est de (NB: H+ c'est être malade, T+ c'est être détecté):
+Par exemple dans le cas d'un détecteur de maladie, avec un taux de vrai positifs de 99%, et un taux de faux positifs de 2%, sachant que la proportion de la population qui est malade est de 0,5%, la probabilité d'être malade si le test est positif est de (NB: H+ c'est être malade, T+ c'est être détecté):
 
 ![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/statistiques_bayesienne/bayes1.png)
 
