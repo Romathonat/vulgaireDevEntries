@@ -21,7 +21,7 @@ Par contre s'' = <{vin}, {carotte}, {chou}> n'est pas une sous-séquence de s.
 On se place ici dans le cadre des sous-séquences de singleton, sinon c'est un peu plus compliqué même si l'idée reste la même (voir [ici](https://hal.inria.fr/hal-00740231v1/document), p5)
 
 ## La DP
-Notons $\phi(s)$ l'ensemble des sous-séquences de s. Prenons un exemple, pour bien voir. Je vais enlever les acolades pour plus de lisibilité, et parce qu'on est dans le cas des itemsets singletons.
+Notons $$\phi(s)$$ l'ensemble des sous-séquences de s. Prenons un exemple, pour bien voir. Je vais enlever les acolades pour plus de lisibilité, et parce qu'on est dans le cas des itemsets singletons.
 
 $$s = <h,o,n,o,l,u,l,u>$$ 
 
