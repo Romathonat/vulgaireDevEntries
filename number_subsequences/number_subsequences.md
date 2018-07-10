@@ -25,11 +25,22 @@ Notons $\phi(s)$ l'ensemble des sous-séquences de s. Prenons un exemple, pour b
 
 $$s = <h,o,n,o,l,u,l,u>$$ 
 
-Pour énumérer les sous-séquences possibles, on ne prend que X_1 au départ (on note s<sup>1</sup> la séquence constituée uniquement de X_1). Ses sous-séquences sont $$\phi(s^1) = \{<>, <h>\}$$. Ensuite on ajoute X_2. Les sous-séquences sont alors $$\phi(s^2) = \{ <>, <h>, <o>, <h,o>\}$$. En fait, à chaque nouvelle itération, on prend les sous-séquences du rang précédent, auxquelles on concatène un nouvel item. Il suffit donc de multiplier par deux le nombre de solutions du rang n-1.
+Pour énumérer les sous-séquences possibles, on ne prend que X_1 au départ (on note s<sup>1</sup> la séquence constituée uniquement de X_1). Ses sous-séquences sont: 
+
+$$\phi(s^1) = \{<>, <h>\}$$
+    
+Ensuite on ajoute X_2. Les sous-séquences sont alors 
+    
+$$\phi(s^2) = \{ <>, <h>, <o>, <h,o>\}$$
+
+En fait, à chaque nouvelle itération, on prend les sous-séquences du rang précédent, auxquelles on concatène un nouvel item. Il suffit donc de multiplier par deux le nombre de solutions du rang n-1.
 
 ... sauf qu'on va avoir un problème lorsque le nouvel item existe déjà dans la séquence précédente. Continuons:
+
 $$\phi(s^3) = \{ <>, <h>, <o>, <h,o>, <n>, <h,n>, <o,n>, <h,o,n> \}$$
+    
 $$\phi(s^4) = \{ <>, <h>, <o>, <h,o>, <n>, <h,n>, <o,n>, <h,o,n>, <o,o>, <h,o,o>, <n, o>, <h,n,o>, <o,n,o>, <h,o,n,o>\}$$
+    
 Et là on se rend bien compte que le cas est différent, puisque le nombre d'éléments est inférieur au double du rang précédent. 
 La récursivité pour la DP est donc la suivante:
 
