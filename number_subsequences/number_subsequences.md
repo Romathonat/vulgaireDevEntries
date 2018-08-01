@@ -47,8 +47,8 @@ La récursivité pour la DP est donc la suivante:
 $$
 \phi(s^n) = \left\{
     \begin{array}{ll}
-        \phi(s^{n-1}) \space \mbox{si } <X_n> \not\sqsubseteq s^{n-1}\\
-        \phi(s^{n-1}) - R(s, X_n) \space \mbox{si } <X_n> \sqsubseteq s^{n-1}
+        2 \phi(s^{n-1}) \space \mbox{si } <X_n> \not\sqsubseteq s^{n-1}\\
+        2 \phi(s^{n-1}) - R(s, X_n) \space \mbox{si } <X_n> \sqsubseteq s^{n-1}
     \end{array}
 \right.
 $$
@@ -60,8 +60,8 @@ On a donc:
 $$
 \phi(s^n) = \left\{
     \begin{array}{ll}
-        \phi(s^{n-1}) \space \mbox{si } <X_n> \not\sqsubseteq s^{n-1}\\
-        \phi(s^{n-1}) - \phi(x^{l-1}) \space \mbox{si } <X_n> \sqsubseteq s^{n-1}
+        2 \phi(s^{n-1}) \space \mbox{si } <X_n> \not\sqsubseteq s^{n-1}\\
+        2 \phi(s^{n-1}) - \phi(x^{l-1}) \space \mbox{si } <X_n> \sqsubseteq s^{n-1}
     \end{array}
 \right.
 $$
