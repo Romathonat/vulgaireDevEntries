@@ -15,7 +15,10 @@ Je m'intéresse ensuite aux écoles d'ingénieurs possibles: les classements, ce
 **Avec le recul**, je ne peux pas donner d'avis sur la prépa classique, je ne l'ai pas vécu, j'ai juste des retours assez disparates sur le ressenti mais tout le monde est d'accord pour affirmer qu'il faut fournir une très grande quantité de travail (et par grande je veux dire, qui n'a rien à voir avec ce qu'il faut fournir au lycée). Ce que je peux dire cependant c'est que la prépa intégrée de l'INSA de Lyon est dure, il ne faut pas se leurrer (on y reviendra après). Il est aussi important de noter qu'il y a une sorte d'hostilité de certaines personnes qui ont fait une prépa classique envers ceux qui n'en ont pas fait, clamant par exemple qu'ils seraient meilleurs, plus méritant ou que sais-je. S'il y a une chose qui me paraît absolument important de comprendre, c'est que l'école qu'un individu a fait n'atteste en rien de sa non-compétence. J'ai croisé dans le travail des gens d'écoles considérées comme "meilleures" que je dominais très clairement dans mon domaine, et d'autres venant de la fac, qui était bien meilleurs que moi. Bref, il y a chez certaines personnes, ce n'est pas la majorité fort heureusement, une sorte de dissonance entre la souffrance qu'ils ont éprouvé lors de leur prépa et la considération que le monde porte à leur égard (qu'ils voudraient plus haute) ce qui peut mener à des comportements détestables.
 
 ## Entretien
+Pour intégrer l'INSA, il me faut, après un premier filtrage des dossiers, passer un entretien. Celui-ci est en fait surtout présent pour tester 
+Je me retrouve devant un jury de trois personnes: un ingénieur, un prof, 
 
+## C'est la rentrée !
 
 
 
