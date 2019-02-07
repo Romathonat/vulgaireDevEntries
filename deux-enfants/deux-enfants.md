@@ -11,11 +11,11 @@ Intuitivement on voudrait dire une chance sur deux. Nous allons voir que non.
 
 ## Solution mathématique
 On peut résoudre ce problème par la formule de Bayes. On pose A = "Au moins un enfant est un garçon" et B = "Le deuxième enfant est un garçon". On veut donc savoir la probabilité d'avoir un garçon sachant qu'on a au moins un garçon parmi ces deux enfants, soit p(B|A)
-p(B|A) = \frac{p(A|B)*p(B)}{p(A)}
+$$ p(B|A) = \frac{p(A|B)*p(B)}{p(A)} $$
 
-On a  p(A) = 3/4, car il a 4 cas possibles équiprobables : Soit le couple a eu un garçon puis une fille, soir une fille puis un garçon, soir deux garçons, soit deux filles. 
-On a p(B) = 1/2. Dans l'absolu, sans avoir d'informations supplémentaire, on a une chance sur deux d'avoir un nouvel enfant qui est un garçon.
-On a p(A|B) = 1. Si un enfant est un garçon, alors obligatoirement au moins un enfant est un garçon.
+On a  p(A) = 3/4, car il a 4 cas possibles équiprobables : Soit le couple a eu un garçon puis une fille, soir une fille puis un garçon, soir deux garçons, soit deux filles.  
+On a p(B) = 1/2. Dans l'absolu, sans avoir d'informations supplémentaire, on a une chance sur deux d'avoir un nouvel enfant qui est un garçon.  
+On a p(A|B) = 1. Si un enfant est un garçon, alors obligatoirement au moins un enfant est un garçon.  
 
 On a donc p(B|A) = 1/3 (et non pas 1/2 comme on pouvait le penser initialement).
 
@@ -65,7 +65,7 @@ for i in range(xp_nombre):
 print('La probabilité empirique d\'avoir un garçon est de {}'.format(nombre_freres/xp_nombre))
 ```
 Résultats
-```
+``` bash
 La probabilité empirique d\'avoir un garçon est de 0.3368
 ```
 
