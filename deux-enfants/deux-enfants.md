@@ -57,7 +57,7 @@ for i in range(xp_nombre):
   # on prend un de ces couple d'enfants où il y a un garçon:
   couple_enfants = random.sample(enfants_garcon, 1)[0]
 
-  # on test si on a un garçon où un fille
+  # on test si on a un garçon ou un fille
   if couple_enfants[0] == 'F' or couple_enfants[1] == 'F':
     nombre_soeurs += 1
   else:
