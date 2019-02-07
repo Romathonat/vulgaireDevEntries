@@ -1,5 +1,3 @@
-# L'énigme des deux enfants
-
 Je suis tombé sur l'énigme des deux enfants, proposé par [science4all](https://www.youtube.com/channel/UC0NCbj8CxzeCGIF6sODJ-7A/featured).
 
 ## Problème
