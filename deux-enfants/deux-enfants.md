@@ -8,11 +8,14 @@ On fait les hypothèses que le sexe d'un enfant n'est pas influencé par le sexe
 Intuitivement on voudrait dire une chance sur deux. Nous allons voir que non.
 
 ## Solution mathématique
-On peut résoudre ce problème par la formule de Bayes. On pose A = "Au moins un enfant est un garçon" et B = "Le deuxième enfant est un garçon". On veut donc savoir la probabilité d'avoir un garçon sachant qu'on a au moins un garçon parmi ces deux enfants, soit p(B|A)
+On peut résoudre ce problème par la formule de Bayes. On pose A = "Au moins un enfant est un garçon" et B = "Le deuxième enfant est un garçon". On veut donc savoir la probabilité d'avoir un garçon sachant qu'on a au moins un garçon parmi ces deux enfants, soit p(B|A).
+
 $$ p(B|A) = \frac{p(A|B)*p(B)}{p(A)} $$
 
 On a  p(A) = 3/4, car il a 4 cas possibles équiprobables : Soit le couple a eu un garçon puis une fille, soir une fille puis un garçon, soir deux garçons, soit deux filles.  
+
 On a p(B) = 1/2. Dans l'absolu, sans avoir d'informations supplémentaire, on a une chance sur deux d'avoir un nouvel enfant qui est un garçon.  
+
 On a p(A|B) = 1. Si un enfant est un garçon, alors obligatoirement au moins un enfant est un garçon.  
 
 On a donc p(B|A) = 1/3 (et non pas 1/2 comme on pouvait le penser initialement).
@@ -62,9 +65,9 @@ for i in range(xp_nombre):
 
 print('La probabilité empirique d\'avoir un garçon est de {}'.format(nombre_freres/xp_nombre))
 ```
-Résultats
-``` bash
-La probabilité empirique d\'avoir un garçon est de 0.3368
+Résultats  
+``` 
+La probabilité empirique d'avoir un garçon est de 0.3368
 ```
 
 On applique ici la loi des grands nombres : la moyenne de n évènements qui suivent la même loi de probabilité converge vers l'espérance du phénomène. On trouve que pour n = 5000 couples, en moyenne on a 0.3368 chances d'avoir un garçon, ce qui correspond bien au 1/3 trouvé précédemment.
