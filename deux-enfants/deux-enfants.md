@@ -12,7 +12,7 @@ On peut résoudre ce problème par la formule de Bayes. On pose A = "Au moins un
 
 $$ p(B|A) = \frac{p(A|B)*p(B)}{p(A)} $$
 
-On a  p(A) = 3/4, car il a 4 cas possibles équiprobables : Soit le couple a eu un garçon puis une fille, soir une fille puis un garçon, soit deux garçons, soit deux filles.  
+On a  p(A) = 3/4, car il a 4 cas possibles équiprobables : Soit le couple a eu un garçon puis une fille, soit une fille puis un garçon, soit deux garçons, soit deux filles.  
 
 On a p(B) = 1/2. Dans l'absolu, sans avoir d'informations supplémentaire, on a une chance sur deux d'avoir un nouvel enfant qui est un garçon.  
 
