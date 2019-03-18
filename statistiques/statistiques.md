@@ -212,7 +212,7 @@ $$\sigma = \sqrt{Var(X)}$$
 La **densité de probabilité** (probability density function = pdf) la loi de probabilité des issues. La "probabilité unitaire" est f(x)dx. On la note f(x).
 La **fonction de répartition** (cumulative density function = cdf) décrit la probabilité d'avoir p(X < x). On la note F(x).
 Elle est définie comme suit:  
-$$F(x) = \int_{-\infty}^{b} p(x)dx$$
+$$F(b) = \int_{-\infty}^{b} p(x)dx$$
 
 **Propriétés de F(x)**:
 $$p(a \le X \le b) = F(b) - F(a) $$  
