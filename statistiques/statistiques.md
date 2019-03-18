@@ -209,8 +209,8 @@ L'**écart-type** est un indicateur de la dipersion des mesures. C'est la racine
 $$\sigma = \sqrt{Var(X)}$$  
 
 ### Continue
-La **densité de probabilité** (probability mass function = pdf) la loi de probabilité des issues. La "probabilité unitaire" est f(x)dx. On la note f(x).
-La **fonction de répartition** (cumulative mass function = cdf) décrit la probabilité d'avoir p(X < x). On la note F(x).
+La **densité de probabilité** (probability density function = pdf) la loi de probabilité des issues. La "probabilité unitaire" est f(x)dx. On la note f(x).
+La **fonction de répartition** (cumulative density function = cdf) décrit la probabilité d'avoir p(X < x). On la note F(x).
 Elle est définie comme suit:  
 $$F(x) = \int_{-\infty}^{b} p(x)dx$$
 
