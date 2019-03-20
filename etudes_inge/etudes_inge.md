@@ -3,7 +3,7 @@
 Aujourd'hui je suis en thèse, en fouille de données/machine learning. Plus le temps passe et plus je me dis "tiens ça j'aurais bien aimé le savoir avant" ou "ah ok je croyais que c'était comme ceci mais dans les faits c'est comme cela". 
 Et je me rend compte que cette sensation, je l'avais déjà quand je commençais mes études d'ingénieurs. Avec le recul (j'ai commencé ma première année il y a plus de 6 ans maintenant), j'aimerais partager mon impression/mon avis sur les études d'ingénieurs en France. Plus exactement je vais essayer de raconter ce que j'aurais aimé qu'on me raconte.
 
-**Disclaimer**: Ce que je vais expliquer est avant tout une expérience personnelle. Inutile donc de venir pleurer en me disant que vous n'êtes pas d'accord, soyons clairs je m'en fout ! 
+**Note**: Ce que je vais expliquer est avant tout une expérience personnelle. 
 
 ## Contexte
 Derniers mois de lycée. Je dois rentrer mes choix de voeux pour l'avenir dans admission PostBac. Ça fait quelques temps maintenant qu'on me bassine et qu'on me met la pression pour que je choisisse ce que je veux faire plus tard et les formations de l'enseignement supérieures auxquelles je veux candidater. 
