@@ -10,8 +10,7 @@ We start from indice 0, we add n//w points, then we add a proportion of the next
 The issue with this strategy is that is is quite difficult and inelegant to code.
 
 There is a better way. If we multiply n by w, we can see that as repeating each point w times. What is the point of doing this ? We saw that the proportion of a point we need to add to the current slot is a quantity that we will divide by w (it is (n%w)/w). Considering we repeat each point w times, we will have to deal with a number of point which is an integer.
-
-## ex
+![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/paa/paa_transform.png)
 
 Now the slot does not have a size of n/w, but n. We sum each element of the slot, then we divide by n at the end: we indeed get the mean of the slot. For example, the second slot in the picture above have a mean of (s[i] corresponds to the $i^{th}$ element of the serie):
 $$\frac{\frac{2}{3}s[2] +\frac{2}{3}s[3]}{\frac{4}{3}}$$
