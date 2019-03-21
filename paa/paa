@@ -3,7 +3,7 @@
 
 This question appeared when I read the [SAX algorithm](https://cs.gmu.edu/~jessica/SAX_DAMI_preprint.pdf). It is used to convert a time serie to a sequence of symbols. The trick is briefly explained in the paper, but the implementation requires a bit of thinking.
 
-SAX image
+![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/paa/sax.png)
 
 The natural way would be to consider each slot to be the size of the following equation (n//w is the floor division) $$\frac{n}{w} = n // w + \frac{n \% w}{w}$$. 
 We start from indice 0, we add n//w points, then we add a proportion of the next point, corresponding to (n%w)/w. For the second slot, we take the rest of the proportion of the previous point, we add n//w point, then the rest of the proportion of the last point so that the size of the slot is n/w. We keep doing this process until we reach the end of the serie.   
@@ -37,3 +37,5 @@ print(paa([1, 2, 0, 4, 3, 5, 6, -2, 3  -4], 4))
 # >>> [1.3333333333333333, 2.4444444444444446, 4.888888888888889, -0.6666666666666666]
 ```
 The following plot shows what the PAA looks like:
+
+![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/paa/paa_plot.png)
