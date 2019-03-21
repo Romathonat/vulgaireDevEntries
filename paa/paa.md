@@ -1,4 +1,3 @@
-# SAX: Piecewise Aggregate Approximation
 **Problem**: We have a serie of n numbers, wich we want to divide into w slots. We want to compute the mean of each slot, how do we do it when n is not divisible by w ? This is called a Piecewise Aggregate Approximation (PAA).
 
 This question appeared when I read the [SAX algorithm](https://cs.gmu.edu/~jessica/SAX_DAMI_preprint.pdf). It is used to convert a time serie to a sequence of symbols. The trick is briefly explained in the paper, but the implementation requires a bit of thinking.
