@@ -19,6 +19,7 @@ $$\frac{\frac{2}{3}s[2] +\frac{2}{3}s[3]}{\frac{4}{3}}$$
 
 Considering the new representation, the mean is:  
  $$\frac{2s[2] +2s[3]}{4}$$
+ 
 which is the same.
 
 Now the code:
