@@ -8,7 +8,7 @@ The natural way would be to consider each slot to be the size of the following e
 We start from index 0, we add n//w points, then we add a proportion of the next point, corresponding to (n%w)/w. For the second slot, we take the rest of the proportion of the previous point, we add n//w point, then the rest of the proportion of the last point so that the size of the slot is n/w. We keep doing this process until we reach the end of the series.   
 The issue with this strategy is that is quite difficult and inelegant to code.
 
-There is a better way. If we multiply n by w, we can consider that we repeat each point w times. What is the point of doing this ? We saw that the proportion of point we need to add to the current slot is a quantity that we will divide by w (it is (n%w)/w). Considering we repeat each point w times, we will be able to deal with a number of points that is an integer.
+There is a more elegant way. If we multiply n by w, we can consider that we repeat each point w times. What is the point of doing this ? We saw that the proportion of point we need to add to the current slot is a quantity that we will divide by w (it is (n%w)/w). Considering we repeat each point w times, we will be able to deal with a number of points that is an integer.
 
 
 ![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/paa/paa_transform.png)
@@ -41,3 +41,6 @@ print(paa([1, 2, 0, 4, 3, 5, 6, -2, 3  -4], 4))
 The following plot shows what the PAA looks like:
 
 ![https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/OCCInterface/images/screenOccinterface.png](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/paa/paa_plot.png)
+
+NB: Note however that this method has the disadvantage of increasing a lot the number of iterations. If you consider a long timeseries, it may be too long. If it is the case, you can choose to simply consider slot to have
+size n // w. If w is not divisble by w, we will have w + 1 slot, the last one having less points (you need to be aware of that).
