@@ -58,7 +58,8 @@ def Fibo(n):
   if t[n] != 0:
     return t[n]
   else:
-    return Fibo(n-1)+Fibo(n-2)
+    t[n] = Fibo(n-1)+Fibo(n-2)
+    return t[n]
     
 print(Fibo(10))
 ```
