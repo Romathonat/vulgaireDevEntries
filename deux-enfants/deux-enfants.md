@@ -3,7 +3,9 @@ Je suis tombé sur l'énigme des deux enfants, proposé par [science4all](https:
 ## Problème
 Un couple a deux enfants. L'un de ces enfants est un garçon. Quelle est la probabilité pour que l'autre enfant soit aussi un garçon ?
 
-On fait les hypothèses que le sexe d'un enfant n'est pas influencé par le sexe de l'enfant né précédemment (=évènements indépendants), et qu'on a une chance sur deux d'avoir un garçon.
+On fait les hypothèses suivantes:
+- le sexe d'un enfant n'est pas influencé par le sexe de l'enfant né précédemment (=évènements indépendants)
+- on a une chance sur deux d'avoir un garçon.
 
 Intuitivement on voudrait dire une chance sur deux. Nous allons voir que non.
 
