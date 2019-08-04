@@ -7,7 +7,7 @@ On fait les hypothèses suivantes:
 - le sexe d'un enfant n'est pas influencé par le sexe de l'enfant né précédemment (=évènements indépendants)
 - on a une chance sur deux d'avoir un garçon
 
-Intuitivement on voudrait dire une chance sur deux. Nous allons voir que non.
+Intuitivement on voudrait dire une chance sur deux. 
 
 ## Solution mathématique
 On peut résoudre ce problème par la formule de Bayes. On pose A = "Au moins un enfant est un garçon" et B = "Le deuxième enfant est un garçon". On veut donc savoir la probabilité d'avoir un garçon sachant qu'on a au moins un garçon parmi ces deux enfants, soit p(B|A).
