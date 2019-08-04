@@ -5,7 +5,7 @@ Un couple a deux enfants. L'un de ces enfants est un garçon. Quelle est la prob
 
 On fait les hypothèses suivantes:
 - le sexe d'un enfant n'est pas influencé par le sexe de l'enfant né précédemment (=évènements indépendants)
-- on a une chance sur deux d'avoir un garçon.
+- on a une chance sur deux d'avoir un garçon
 
 Intuitivement on voudrait dire une chance sur deux. Nous allons voir que non.
 
