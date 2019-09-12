@@ -21,7 +21,7 @@ Pour faire nos tests, nous utiliserons [pytest](https://docs.pytest.org/en/lates
 
 ## Cycle numéro 1 
 Le programme doit fonctionner de la manière suivante:  
-**Entrée**: 1
+**Entrée**: 1  
 **Sortie**: 1
 
 Lancer le cycle TDD: Ecrire les tests, les lancer, écrire le code, relancer les test.  
