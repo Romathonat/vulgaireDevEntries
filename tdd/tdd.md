@@ -204,8 +204,7 @@ Les tests fonctionnent bien, on peut "refactor" le code pour avoir quelque chose
 def fizzbuzz(number):
     '''
     :param number: number
-    :return: 'fizz' if number is multiple of 3, 'buzz' if number is multiple of 5, 'fizzbuzz' is 
-     multiple of both, the number in default case.
+    :return: 'fizz' if number is multiple of 3, 'buzz' if number is multiple of 5, 'fizzbuzz' is multiple of both, or number in the default case.
     '''
     multiple_3 = number % 3 == 0
     multiple_5 = number % 5 == 0
