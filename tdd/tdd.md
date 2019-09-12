@@ -1,5 +1,3 @@
-# TDD en python pour débutants
-
 ## Contexte
  Dans la vie réelle, les applications informatiques durent dans le temps (on ne jette pas le code à la fin de la journée contrairement à un TP). De plus, les spécifications et les entrées du programme évoluent. A partir du moment où le code contient plus de 2 ou 3 fonctions, il va falloir faire attention aux "effets de bords", c-à-d que la modification du programme pour répondre à cette nouvelle spécification ne détruise pas d'autres fonctionnalités du logiciel.  
 
@@ -21,7 +19,7 @@ Pour faire mes tests, nous utiliserons [pytest](https://docs.pytest.org/en/lates
 │   └── `test_fizzbuzz.py`  
 
 
-## 1 
+## Cycle numéro 1 
 Le programme doit fonctionner de la manière suivante:  
 **Entrée**: 1
 **Sortie**: 1
@@ -56,7 +54,7 @@ pytest
 
 On écrit le code minimal qui répond à la spécification. On lance les tests. Si tout fonctionne, on a fait un cycle de TDD.
 
-## 2
+## Cycle numéro 2
 **Entrée**: 1, 2 (1 ou 2)  
 **Sortie**: 1, 2
 
@@ -80,7 +78,7 @@ def fizzbuzz(number):
 
 On a modifié fizzbuzz, il répond à la nouvelle spécification, mais on vérifie aussi (et facilement) que les spécifications précédentes sont validées. On à la garantie qu'on a pas cassé le fonctionnement du programme testé.  
 
-## 3
+## Cycle numéro 3
 **Entrée**: 1, 2,3  
 **Sortie**: 1, 2, fizz  
 
@@ -106,7 +104,7 @@ def fizzbuzz(number):
 ```
 On a un nouveau cas, qu'on gère facilement avec un if.
 
-## 4
+## Cycle numéro 4
 
 **Entrée**: 1, 2, 3, 5  
 **Sortie**: 1, 2, fizz 
@@ -135,7 +133,7 @@ def fizzbuzz(number):
 ```
 Encore un nouveau cas, qu'on a géré avec un autre if.
 
-## 5
+## Cycle numéro 5
 **Entrée**: 1, 2, 3, 5, 6, 10  
 **Sortie**: 1, 2, fizz, buzz, fizz, buzz  
 
@@ -165,7 +163,7 @@ def fizzbuzz(number):
 ```
 Cette fois-ci on se rend compte que c'est les multiples de 3 qui doivent retourner "fizz" et les multiples de 5 qui doivent donner "buzz".
 
-## 6
+## Cycle numéro 6
 
 **Entrée**: 1, 2, 3, 5, 6, 10, 15  
 **Sortie**: 1, 2, fizz, buzz, fizz, buzz, fizzbuzz  
