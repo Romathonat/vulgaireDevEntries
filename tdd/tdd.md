@@ -34,7 +34,7 @@ Lancer le cycle TDD: Ecrire les tests, les lancer, écrire le code, relancer les
 from fizzbuzz import fizzbuzz  
   
 def test_process_number():  
-assert fizzbuzz(1) == 1  
+    assert fizzbuzz(1) == 1  
 
 ```
 
