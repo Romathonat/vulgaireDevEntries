@@ -13,7 +13,7 @@ Le cycle du TDD est le suivant:
 5. Refactor. La modification du programme peut faire qu'il faille le "nettoyer" pour qu'il soit plus simple à maintenir à l'avenir.
 
 ## Activité:  FizzBuzz
-Pour faire mes tests, nous utiliserons [pytest](https://docs.pytest.org/en/latest/getting-started.html). L'arborescence des fichiers est simple: 
+Pour faire nos tests, nous utiliserons [pytest](https://docs.pytest.org/en/latest/getting-started.html). L'arborescence des fichiers est simple: 
 ├── TDD_example  
 │   ├── `fizzbuzz.py`  
 │   └── `test_fizzbuzz.py`  
