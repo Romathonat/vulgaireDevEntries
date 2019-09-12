@@ -16,9 +16,9 @@ Le cycle du TDD est le suivant:
 
 ## Activité:  FizzBuzz
 Pour faire mes tests, nous utiliserons [pytest](https://docs.pytest.org/en/latest/getting-started.html). L'arborescence des fichiers est simple: 
-├── TDD_example
-│   ├── `fizzbuzz.py`
-│   └── `test_fizzbuzz.py`
+├── TDD_example  
+│   ├── `fizzbuzz.py`  
+│   └── `test_fizzbuzz.py`  
 
 
 ## 1 
@@ -199,7 +199,8 @@ def fizzbuzz(number):
 ```
 On a encore un nouveau cas: les nombres multiples de 3 et 5 doivent afficher 'fizzbuzz'. On le gère dans ce nouveau cycle TDD
 
-Les tests fonctionnent bien, on peut "refactor" le code pour avoir quelque chose de plus élégant. On ajoute une doc pour expliquer ce que fait la fonction, utile quand on voudra reprendre le code des mois/années plus tard ou pour expliquer rapidement à un autre développeur qui travaillerait sur le projet.
+Les tests fonctionnent bien, on peut "refactor" le code pour avoir quelque chose de plus élégant. On ajoute une doc pour expliquer ce que fait la fonction, utile quand on voudra reprendre le code des mois/années plus tard ou pour expliquer rapidement à un autre développeur qui travaillerait sur le projet.  
+
 ```python  
 # fizzbuzz.py
 def fizzbuzz(number):
