@@ -107,7 +107,7 @@ On a un nouveau cas, qu'on gère facilement avec un if.
 ## Cycle numéro 4
 
 **Entrée**: 1, 2, 3, 5  
-**Sortie**: 1, 2, fizz 
+**Sortie**: 1, 2, fizz, buzz
 
 **Solution**:
 
