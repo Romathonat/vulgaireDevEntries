@@ -41,9 +41,8 @@ def test_process_number():
 ```python  
 # fizzbuzz.py
 def fizzbuzz(number):  
-
-if number == 1:
-    return 1  
+    if number == 1:
+        return 1  
 ```
 
 Pour lancer les tests avec pytest c'est simple, en étant dans le répertoire:
@@ -76,7 +75,7 @@ def fizzbuzz(number):
 ```
 
 
-On a modifié fizzbuzz, il répond à la nouvelle spécification, mais on vérifie aussi (et facilement) que les spécifications précédentes sont validées. On à la garantie qu'on a pas cassé le fonctionnement du programme testé.  
+On a modifié fizzbuzz, il répond à la nouvelle spécification, mais on vérifie aussi (et facilement) que les spécifications précédentes sont validées. On a la garantie qu'on n'a pas cassé le fonctionnement du programme testé.  
 
 ## Cycle numéro 3
 **Entrée**: 1, 2,3  
