@@ -12,7 +12,7 @@ $$\sum_{k=0}^{n}\binom{n}{k} = \sum_{k=0}^{n}\binom{n}{k}1^n1^{n-k} = (1 + 1)^n 
 
 C'est juste, mais il est possible de trouver plus simplement.
 
-Si on numérote les éléments dans cette fenêtre (pour les identifier par pour leur donner un ordre), et si on se rappelle que chaque élément a 2 états possibles, activé ou désactivé, alors on comprend vite qu'on est face à un mot binaire de n bits. Le nombre de possibilités vient ensuite très simplement puisque pour l'élement 1 on a deux possibilités, pour le 2 on a deux possibilités donc 2*2 = 4 combinaisons possibles, pour le 3 on a deux possibilités aussi donc 4*2 = 8 combinaisons possibles, etc. On trouve bien encore une fois 2^n possibilités.
+Si on numérote les éléments dans cette fenêtre (pour les identifier par pour leur donner un ordre), et si on se rappelle que chaque élément a 2 états possibles, activé ou désactivé, alors on comprend vite qu'on est face à un mot binaire de n bits. Le nombre de possibilités vient ensuite très simplement puisque pour l'élement 1 on a deux possibilités, pour le 2 on a deux possibilités donc 2\*2 = 4 combinaisons possibles, pour le 3 on a deux possibilités aussi donc 4\*2 = 8 combinaisons possibles, etc. On trouve bien encore une fois 2^n possibilités.
 
 On peut aussi démontrer ça par récurence, je ne fais pas la démo complète par soucis de concision, mais si au rang n on a 2^n possibilités, le fait d'ajouter un élément double les possibilités, car maintenant on a 2^{n} possibilités avec le nouvel élément activé, et 2^n possibilités sans l'élément activé, ce qui fait qu'on a bien 2^n+1 possibilités au rang n+1.
 
