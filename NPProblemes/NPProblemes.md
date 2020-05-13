@@ -5,7 +5,7 @@ autant de problèmes que nous devons résoudre chaque jour. Notre spécialité c
 Alors bien sûr, nous ne sommes pas capables de résoudre tous les problèmes, et on est même assez spécialisé :
 un ingenieur réseau ne va pas, a priori, savoir calculer les contraintes mécaniques auquel est soumis un avion de ligne afin d'optimiser son poids. Il y a des catégories de problèmes.
 
-Concernant l'informatique, c'est pareil. Il y a des catégories de problèmes, et celle qui m'interessent dans ce billet sont celles qu'on nomme **P, NP, NP-Complet, NP-difficile**. 
+Concernant l'informatique, c'est pareil. Il y a des catégories de problèmes, et celles qui m'interessent dans ce billet sont celles qu'on nomme **P, NP, NP-Complet, NP-difficile**. 
 
 ## Pourquoi classifier les problèmes ?
 Pour savoir si on est capable de les résoudre ! On se rend bien compte qu'entre trouver, par exemple, le maximum d'un tableau, et le problème de la [somme de sous-ensembles](https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_la_somme_de_sous-ensembles), il y a une différence ! 
