@@ -48,7 +48,19 @@ $$n^k$$
 Pour notre exemple, cela fait:
 
 $$3^2 = 9$$
-  
+
+### Nombre de permutations
+Une permutation est une suite ordonné de n éléments.
+Pour un arrangement $BRVV$, une permuation possible est $RVBV$.
+
+**Une permutation correspond à un arrangement avec k=n**
+Si les billes sont toutes disctinctes, on a $n!$ permutations possibles.
+
+Dans le cas où les il y a plusieurs billes du même type, notons $n_B$ le nombre de billes bleues, $n_R$ et $n_V$ le nombre de billes rouges et vertes. Notons que $n_R + n_V + n_B = n$. On a alors un nombre de permutations possibles de:  
+$$ \frac{n!}{n_A!n_B!n_C!}$$
+
+On divise par le produit des factoriels des nombre de billes de chaque type pour éliminer les permutations redondantes (avec la formule $n!$ on répète plusieurs fois la combinaison $BRVV$ par exemple, puisque les deux billes V peuvent échanger de place et donner le même résultat).
+
 ### Combinaison sans répétition
 Une combinaison sans répétition est notée:  
 $$C_n^{k}$$
@@ -126,18 +138,18 @@ En language courant, la traduction de ces sigles est la suivante:
 - TN: Non-malades non detectés.
 
 D'après l'énoncé et la définition du FPR (False Positive Rate), on a:  
-$$FPR = \frac{FP}{FP+TN}$$
+$$FPR = \frac{FP}{FP+TN}$$  
 C'est donc l'ensemble des non-malades détectés comme étant malades, divisé par l'ensemble des non-malades, càd la **proportion d'erreur parmi les non-malades**.
 
 De même, le FNR (False Negative Rate):  
-$$FNR = \frac{FN}{FN+TP}$$
+$$FNR = \frac{FN}{FN+TP}$$  
 C'est donc l'ensemble des malades non-détectés, divisé par l'ensemble de malades, càd la **proportion d'erreurs parmi les malades**.
 
 La précision, quand à elle, est définie comme suit:  
-$$Precision = \frac{TP}{TP+TN}$$
+$$Precision = \frac{TP}{TP+TN}$$  
 C'est l'ensemble des malades détectés sur l'ensemble des détections, càd la **proportion de détections justes**.  
 
-Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades d&tectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est **faux** (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes détectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effectivement malade faible, bien que le test soit positif.
+Ceci étant dit, revenons au problème. Si on me dit que le test est positif, cela signifie que je suis soit dans la catégorie des non-malades détectés (erreur), soit dans la catégorie des malades détectés. **C'est là qu'il ne faut pas se tromper** et dire que la répartition dans ces deux catégories est 5% et 95%, puisque c'est **faux** (contraire à la définition du dessus). Puisque la probabilité d'être malade est très faible (0.5%), le nombre de personnes détectées comme étant malades alors qu'elles ne le sont pas est très élevé (99.5% \* 5% \* n), en tous cas bien supérieur au nombre de personnes detectées comme étant malades et l'étant rééllement (0.5% \* 90% \* n). C'est pour cela qu'on trouve finalement une probabilité d'être effectivement malade faible, bien que le test soit positif.
 
 ### Démo
 Notation:
@@ -194,14 +206,15 @@ On a:
 
 $$ E(x) = \sum \limits_{i=1}^n p(xi) * xi $$
 
-**Propriétés de E(x)**:
+**Propriétés de E(x)**:  
 $$E(aX+Y+b) = aE(X) + E(Y) + b$$
 
-La **variance** est l'espérance des carrés des écarts à la moyenne (le carré est là pour ne pas avoir de nombres négatifs). Notée Var(X):
+La **variance** est l'espérance des carrés des écarts à la moyenne (le carré est là pour ne pas avoir de nombres négatifs). Notée Var(X):  
 $$Var(X) = E((X - \mu)^2)$$
 
 **Propriétés de Var(X)**:
-Si X et Y sont *indépendantes*  
+Si X et Y sont *indépendantes*   
+
 $$Var(aX + Y + b) = a^2Var(X) + Var(Y)$$  
 $$Var(X) = E(X^2) - E(X)^2$$  
 
