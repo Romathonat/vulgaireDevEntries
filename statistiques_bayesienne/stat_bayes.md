@@ -9,7 +9,7 @@ $$p(A|B) = \frac{p(B|A)p(A)}{p(B)}$$
 ## Estimateur du maximum de vraisemblance.
 (Maximum Likelihood Estimates, MLE)
 C'est une méthode permettant d'estimer la valeur d'un paramètre pour une distribution de probabilités données.  
-Par exemple si on sait que la durée de vie d'une lampe se modélise bien par une loi géométrique, et qu'on a 5 ampoules qui ont vécues 2, 3, 1, 3 et 4 ans, on peut faire une estimation du paramètre lambda, grâce au MLE.
+Par exemple si on sait que la durée de vie d'une lampe se modélise bien par une loi exponentielle, et qu'on a 5 ampoules qui ont vécues 2, 3, 1, 3 et 4 ans, on peut faire une estimation du paramètre lambda, grâce au MLE.
 
 $$f(x1, x2, x3, x4, x5|\lambda) = (\lambda e^{-\lambda x1})(\lambda e^{-\lambda x2})(\lambda e^{-\lambda x3})(\lambda e^{-\lambda x4})(\lambda e^{-\lambda x5}) = \lambda^{5}e^{-\lambda(x1+x2+x3+x4+x5)}$$
 $$f(2, 3, 1, 3, 4|\lambda) = \lambda^{5}e^{-13\lambda}$$
