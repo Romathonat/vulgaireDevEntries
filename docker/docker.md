@@ -214,7 +214,7 @@ Now if you want to call the container <container1> (let's say a REST API) from <
 ### Enter in a container:
 
 ```bash
-docker exexc -ti <container_name> bash
+docker exec -ti <container_name> bash
 ```
 Now you can use it like a classical VM.
 
