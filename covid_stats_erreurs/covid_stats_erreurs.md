@@ -23,7 +23,7 @@ On a :
 
 $$p(vacciné|covid) = \frac{p(vacciné)}{p(covid)}p(covid|vacciné)$$
 
-Admettons que la covid est suffisamment virulente pour qu'on considère que la probabilité qu'on finisse par l'attraper soit de 100%. La probabilité a priori d'être vacciné est de 60%. Enfin, d'après l'étude du pfizer, la probabilité de contracter la covid sachant que l'on est vacciné est de 95%. Pour d'autres vaccins ce serait moins. Admettons que ce soit 70%, pour essayer de prendre en compte que les vaccins sont moins efficaces avec les nouveaux variants. On a alors une probabilité d'être vacciné, sachant qu'on a la covid de 42%. (*dans la suite des calculs cela correspond à p(vacciné), par soucis de simplification*
+Admettons que la covid est suffisamment virulente pour qu'on considère que la probabilité qu'on finisse par l'attraper soit de 100%. La probabilité a priori d'être vacciné est de 60%. Enfin, d'après l'étude du pfizer, la probabilité de contracter la covid sachant que l'on est vacciné est de 95%. Pour d'autres vaccins ce serait moins. Admettons que ce soit 70%, pour essayer de prendre en compte que les vaccins sont moins efficaces avec les nouveaux variants. On a alors une probabilité d'être vacciné, sachant qu'on a la covid de 42%. (*dans la suite des calculs cela correspond à p(vacciné), par soucis de simplification*)
 
 
 Enfin, en france, p(non vacciné|hospitalisé) = 85% ([source](https://www.lexpress.fr/actualite/societe/sante/covid-19-en-france-85-des-hospitalises-ne-sont-pas-vaccinees_2155849.html))
