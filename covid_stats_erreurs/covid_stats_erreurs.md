@@ -61,7 +61,8 @@ Sans rentrer dans les formalisation mathématiques rigoureuses, on dit que deux 
 Par exemple chez les êtres humains la taille est assez bien corrélée à la masse: plus l'on est grand, plus on a tendance à être lourd, et inversement.
 La causalité elle, consiste à dire qu'une variable cause/influence une autre. Par exemple la quantité d'alcool que j'ingère cause une augmentation de mon taux d'alcool dans le sang. La recherche de causalité peut être une problématique très difficile, sur lesquelles travaillent de nombreux chercheurs.
 
-Par exemple ici, on peut voir que la consomation de mozarella est correllée au nombres de doctorats en mecanique decernés, aux etats-unis. TODO example.
+Par exemple ici, on peut voir que la consomation de mozarella est correllée au nombres de doctorats en genie civil decernés aux etats-unis . 
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/covid_stats_erreurs/chart.png) 
 
 Est ce qu'il y a un lien entre ces deux variables ? Probablement pas. Mais à cause de l'alétoire de notre monde, on peut trouver des correlations, par "chance", sans qu'il y ait de causalité.
 De même, il peut y avoir avoir correlation entre deux variables sans que l'une soit la cause de l'autre, mais plutôt qu'il y ait un autre phénomène caché qui influence ces deux variables.
@@ -71,10 +72,11 @@ Non ! Il y a une variable cachée qui est "les personnes qui boivent trop s'endo
 
 Revenons à notre épidémie. On constate qu'à partir du moment où on vaccine, la mortalité augmente. Est ce qu'on peut conclure que le vaccin cause la mort ? Non. Très probablement, ce qui se passe c'est que l'épidémie repart vite, donc on vaccine pour éviter des morts du covid.
 Le vaccin permet d'eviter des morts, mais il y en a tout de même à cause de l'épidemie. Ici la variable cachée, qui cause la vaccination et l'augmentation du nombre de mort, c'est tout simplement l'épidémie. Notons qu'en toute rigueur, il faudrait valider cette hypothese experimentalement.
-Ce qui tombe "bien" (si tant est que nous puissions parler ainsi étant donné la situation), c'est que nous avons déjà ces données, puisque certains pays ont beaucoup vacciné, quand d'autres non. TODO graphiquehttps://twitter.com/nathanpsmad/status/1416732064020369412?s=19&fbclid=IwAR1KZ-sJYoMZi1FtZwClxUS1fP3qITtyX2xOIk82QsDGIrTUkOgpX1i5xhA
+Ce qui tombe "bien" (si tant est que nous puissions parler ainsi étant donné la situation), c'est que nous avons déjà ces données, puisque certains pays ont beaucoup vacciné, quand d'autres non (pris [d'ici](https://twitter.com/nathanpsmad/status/1416732064020369412?s=19&fbclid=IwAR1KZ-sJYoMZi1FtZwClxUS1fP3qITtyX2xOIk82QsDGIrTUkOgpX1i5xhA)):
+![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/covid_stats_erreurs/comparer_pays.jpeg) 
 
 **Ici on a bien deux groupes aléatoires, de grandes tailles, ce qui nous permet d'avoir une bonne idée de l'influence du vaccin sur la mortalité. Dans celui vacciné on a très peu de décès, dans celui non-vacciné, on en a beaucoup plus.**
-Ceci n'est pas une preuve en soi, si on veut être rigoureux, car il faudrait que l'experience se passe dans le même pays, avec le même climat, etc., pour être sûr qu'il n'y ait pas de facteur confondant (biais).
+Ceci n'est pas une preuve en soi, si on veut être rigoureux, car il faudrait que l'experience se passe dans le même pays, avec le même climat, etc., pour être sûr qu'il n'y ait pas de facteur confondant (biais), mais c'est tout de même tres encourageant.
 
 ## Autre remarques diverses
 - Dans l'article de Mr Mucchielli, il est assuré que la balance bénéfice-risque pour les jeunes est très mauvaise. Si
