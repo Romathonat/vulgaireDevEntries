@@ -10,7 +10,7 @@ En language commun, la question "parmi tous les gens hospitalisés, quelle est l
 En vérité ce qui nous intéresse ce serait plutôt p(hospitalisé|vacciné), càd le risque d'être hospitalisé sachant qu'on est vacciné, et de le comparer
 à la probabilité d'être hospitalisé sachant qu'on est pas vacciné. 
 
-Nous allons appliquer la [loi de bayes](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Bayes), en considérant une probabilité d'être vacciné de 60% (dernières données pour la France).
+Nous allons appliquer la [loi de bayes](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Bayes).
 Le risque *a priori* d'être hospitalisé à cause du covid peut être estimé à [6,8%](https://www.thelancet.com/action/showFullTableHTML?isHtml=true&tableId=tbl3&pii=S1473-3099%2820%2930243-7) si on suit les premières estimations en début d'épidemie, et de [8,5%](https://www.cascoronavirus.fr/) si on divise
 le nombre total d'hospitalisations en france par le nombre total de cas détectés.
 Notons que la véritable valeur est probablement plus basse,
@@ -18,29 +18,36 @@ puisqu'il y a des cas de covid asymptomatiques qui n'ont pas été détectés. C
 
 De plus, en toute rigueur, on devrait préciser dans les notations
 que les estimations se font sous l'hypothèse qu'on attrape la covid (on l'enlève par soucis de simplification).
+Dans ce cas là, on doit estimer la probabilité d'être vacciné sous l'hypothèse d'avoir contracté la covid. On doit donc réappliquer une loi de bayes à l'intérieur.
+On a :
 
-Enfin, en france, p(vacciné|hospitalisé) = 85% ([source](https://www.lexpress.fr/actualite/societe/sante/covid-19-en-france-85-des-hospitalises-ne-sont-pas-vaccinees_2155849.html))
+$$p(vacciné|covid) = \frac{p(vacciné)}{p(covid)}p(covid|vacciné)$$
+
+Admettons que la covid est suffisamment virulente pour qu'on considère que la probabilité qu'on finisse par l'attraper soit de 100%. La probabilité a priori d'être vacciné est de 60%. Enfin, d'après l'étude du pfizer, la probabilité de contracter la covid sachant que l'on est vacciné est de 95%. Pour d'autres vaccins ce serait moins. Admettons que ce soit 70%, pour essayer de prendre en compte que les vaccins sont moins efficaces avec les nouveaux variants. On a alors une probabilité d'être vacciné, sachant qu'on a la covid de 42%. (*dans la suite des calculs cela correspond à p(vacciné), par soucis de simplification*
+
+
+Enfin, en france, p(non vacciné|hospitalisé) = 85% ([source](https://www.lexpress.fr/actualite/societe/sante/covid-19-en-france-85-des-hospitalises-ne-sont-pas-vaccinees_2155849.html))
 
 Calculons donc la probabilité d'ếtre hospitalisé sachant qu'on est vacciné, avec les données françaises.
 
 $$ p(hospitalisé|vacciné) = \frac{p(hospitalisé)}{p(vacciné)}p(vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{60}x0.15$$
+$$ = \frac{8.5}{42}x0.15$$
 
-$$ = 2.1\%$$
+$$ = 3.0\%$$
 
 Si on applique le même raisonnement pour calculer la probabilité d'être hospitalisé sachant qu'on est pas vacciné, on obtient:
 
 $$ p(hospitalisé|non vacciné) = \frac{p(hospitalisé)}{p(non vacciné)}p(non vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{40}x0.85$$
+$$ = \frac{8.5}{58}x0.85$$
 
-$$ = 18.1\%$$
+$$ = 12.4\%$$
 
 **Attention**, encore une fois, cette estimation est faite en considérant une probabilité de 8,5% d'être hospitalisé si on contracte la covid, cette probabilité est discutable, mais elle ne change pas
 le ratio suivant:
 
-**En france, actuellement, on a 9 fois plus (18.1 / 2.1) de risques d'être hospitalisé si on est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
+**En france, actuellement, on a 9 fois plus (12.4 / 3.0) de risques d'être hospitalisé si on est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
 
 **Remarque importante**: il y a en plus au moins un biais suplémentaire dans ces données: on a donné le vaccin prioritairement aux personnes les plus vulnérables. Ainsi, on compare une population vaccinée qui est plus fragile (âge, comorbidités) à une population non-vaccinée plus résistante, ce qui peut avoir tendance à faire baisser les "résultats" du vaccin.
 
@@ -102,6 +109,6 @@ A quoi correspond concrétement la proportion/la statistique qu'on nous présent
 **quand on présente un graphique et qu'on en conclut "parce que ça se voit", il faut bien réfléchir à ce qu'il y a derrière**. Est ce que c'est une étude expérimentale où on prend deux groupes alétoires de grandes tailles pour vraiment étudier 
 l'impact d'une seule variable, ou sont-ce des données observationnelles (càd observations sans avoir défini un plan d'experience au préalable, où on ne contrôle pas le processus de génération de données), qui peuvent donc comporter des biais ? Pour une explication visuelle et bien vulgarisée, voir [ici](https://www.youtube.com/watch?v=aOX0pIwBCvw).
 
-On a finalement aussi estimé ici qu'une personne moyenne de la population française, si elle attrape la covid actuellement, a **neuf fois plus de risque d'être hospitalisée si elle n'est pas vaccinée**.
+On a finalement aussi estimé ici qu'une personne moyenne de la population française, si elle attrape la covid actuellement, a **quatre fois plus de risques d'être hospitalisée si elle n'est pas vaccinée**.
 Enfin, les données comparatives entre l'angleterre et la tunisie semblent bien confirmer que **la vaccination protège des risques de décès dus au covid**.
 
