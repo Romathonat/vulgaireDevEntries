@@ -22,16 +22,18 @@ que les estimations se font sous l'hypothèse qu'on attrape la covid (on l'enlè
 Enfin, en france, p(vacciné|hospitalisé) = 85% ([source](https://www.lexpress.fr/actualite/societe/sante/covid-19-en-france-85-des-hospitalises-ne-sont-pas-vaccinees_2155849.html))
 
 Calculons donc la probabilité d'ếtre hospitalisé sachant qu'on est vacciné, avec les données françaises.
+
 $$ p(hospitalisé|vacciné) = \frac{p(hospitalisé)}{p(vacciné)}p(vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{60}0.15$$
+$$ = \frac{8.5}{60}\*0.15$$
 
 $$ = 2.1\%$$
 
 Si on applique le même raisonnement pour calculer la probabilité d'être hospitalisé sachant qu'on est pas vacciné, on obtient:
+
 $$ p(hospitalisé|non vacciné) = \frac{p(hospitalisé)}{p(non vacciné)}p(non vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{40}0.85$$
+$$ = \frac{8.5}{40}\*0.85$$
 
 $$ = 18.1\%$$
 
@@ -94,12 +96,12 @@ Ceci n'est pas une preuve en soi, si on veut être rigoureux, car il faudrait qu
 - Cet article n'est pas un article scientifique revu par les pairs. Les erreurs pointées ici (entre autres) n'auraient pas permis une telle publication dans un journal/une conférence serieux/sérieuse.
   
 ## Conclusion
-L'isolation de la causalité est un problème difficile, c'est une des raisons pour lesquelles des gens passent leur vie à faire de la recherche. Il y a plusieurs réflexes qu'il est bon d'avoir lorsqu'on nous présente des chiffres et conclusions toutes faites:
+**L'isolation de la causalité est un problème difficile**, c'est une des raisons pour lesquelles des gens passent leur vie à faire de la recherche. Il y a plusieurs réflexes qu'il est bon d'avoir lorsqu'on nous présente des chiffres et conclusions toutes faites:
 qui parle ? Ces personnes s'expriment-elles dans leur domaine de compétence ? Avons-nous à faire à un article scientifique revu par les pairs ? Où a-t-il été publié ? 
 A quoi correspond concrétement la proportion/la statistique qu'on nous présente ? Et surtout, il faut se méfier des corrélations, qui ne sont pas forcément des causalités. En particulier,
-quand on présente un graphique et qu'on en conclut "parce que ça se voit", il faut bien réfléchir à ce qu'il y a derrière. Est ce que c'est une étude expérimentale où on prend deux groupes alétoires de grandes tailles pour vraiment étudier 
+**quand on présente un graphique et qu'on en conclut "parce que ça se voit", il faut bien réfléchir à ce qu'il y a derrière**. Est ce que c'est une étude expérimentale où on prend deux groupes alétoires de grandes tailles pour vraiment étudier 
 l'impact d'une seule variable, ou sont-ce des données observationnelles (càd observations sans avoir défini un plan d'experience au préalable, où on ne contrôle pas le processus de génération de données), qui peuvent donc comporter des biais ? Pour une explication visuelle et bien vulgarisée, voir [ici](https://www.youtube.com/watch?v=aOX0pIwBCvw).
 
-On a finalement aussi estimé ici qu'une personne moyenne de la population française, si elle attrape la covid actuellement, a neuf fois plus de risque d'être hospitalisée si elle n'est pas vaccinée.
-Enfin, les données comparatives entre l'angleterre et la tunisie semblent bien confirmer que la vaccination protège des risques de décès dus au covid.
+On a finalement aussi estimé ici qu'une personne moyenne de la population française, si elle attrape la covid actuellement, a **neuf fois plus de risque d'être hospitalisée si elle n'est pas vaccinée**.
+Enfin, les données comparatives entre l'angleterre et la tunisie semblent bien confirmer que **la vaccination protège des risques de décès dus au covid**.
 
