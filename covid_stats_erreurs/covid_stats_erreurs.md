@@ -1,5 +1,3 @@
-  
-# Erreurs et manipulation en temps d'épidémie
 Le sujet polarise énormément, je vais donc essayer de m'en tenir au fond pour tenter d'y voir plus clair parmi plusieurs erreurs ou manipulations que j'ai pu voir ces derniers temps.
 En particulier, un [article](https://blogs.mediapart.fr/laurent-mucchielli/blog/300720/la-vaccination-covid-l-epreuve-des-faits-2eme-partie-une-mortalite-inedite) a récemment été publié sur le blog de mediapart (il n'engage donc pas la rédaction). Il a été rédigé par Laurent Mucchielli, directeur de recherche au CRNS en sociologie, qui s'exprime donc en dehors de son domaine de compétence.
 D'autres auteurs, visiblement issus du monde scientifique et de la recherche (en pharmacie, médecine, informatique), ont co-signé l'article. A première vue, on peut donc se dire qu'on va avoir à faire à de la vraie connaissance scientifique. Voyons plus en détail. 
