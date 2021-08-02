@@ -23,13 +23,17 @@ Enfin, en france, p(vacciné|hospitalisé) = 85% ([source](https://www.lexpress.
 
 Calculons donc la probabilité d'ếtre hospitalisé sachant qu'on est vacciné, avec les données françaises.
 $$ p(hospitalisé|vacciné) = \frac{p(hospitalisé)}{p(vacciné)}p(vacciné|hospitalisé) $$
+
 $$ = \frac{8.5}{60}0.15$$
-$$ = 2.1%$$
+
+$$ = 2.1\%$$
 
 Si on applique le même raisonnement pour calculer la probabilité d'être hospitalisé sachant qu'on est pas vacciné, on obtient:
 $$ p(hospitalisé|non vacciné) = \frac{p(hospitalisé)}{p(non vacciné)}p(non vacciné|hospitalisé) $$
+
 $$ = \frac{8.5}{40}0.85$$
-$$ = 18.1%$$
+
+$$ = 18.1\%$$
 
 **Attention**, encore une fois, cette estimation est faite en considérant une probabilité de 8,5% d'être hospitalisé si on contracte la covid, cette probabilité est discutable, mais elle ne change pas
 le ratio suivant:
