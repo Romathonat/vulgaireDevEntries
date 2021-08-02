@@ -3,8 +3,8 @@ En particulier, un [article](https://blogs.mediapart.fr/laurent-mucchielli/blog/
 D'autres auteurs, visiblement issus du monde scientifique et de la recherche (en pharmacie, médecine, informatique), ont co-signé l'article. A première vue, on peut donc se dire qu'on va avoir à faire à de la vraie connaissance scientifique. Voyons plus en détail. 
 
 ## "Beaucoup de malades sont vaccinés"
-Un premier argument, reprise dans de plusieurs [médias](https://www.cnews.fr/videos/monde/2021-06-27/israel-40-des-nouveaux-cas-sont-vaccines-1098663), est que "la majorité des personnes hospitalisées pour des formes graves sont désormais des personnes vaccinées." Ca n'est pas une une statistique intéressante. Si tout le monde est vacciné 
-la proportion de personnes hospitalisées qui sont vaccinées est de 100%, et ce même s'il n'y a qu'une seule personne concernée. Peut-on pour autant conclure que le vaccin n'est pas efficace ? Non ! C'est une erreur classique appellée "base rate fallacy" dont on déjà parlé [ici](http://vulgairedev.fr/blog/article/resume-statistique)
+Un premier argument, repris dans de plusieurs [médias](https://www.cnews.fr/videos/monde/2021-06-27/israel-40-des-nouveaux-cas-sont-vaccines-1098663), est que "la majorité des personnes hospitalisées pour des formes graves sont désormais des personnes vaccinées." Ca n'est pas une une statistique intéressante. Si tout le monde est vacciné 
+la proportion de personnes hospitalisées qui sont vaccinées est de 100%, et ce même s'il n'y a qu'une seule personne concernée. Peut-on pour autant conclure que le vaccin n'est pas efficace ? Non ! C'est une erreur classique appellée "base rate fallacy" dont on déjà parlé [ici](http://vulgairedev.fr/blog/article/resume-statistique).
 
 En language commun, la question "parmi tous les gens hospitalisés, quelle est la proportion de vaccinés ?" peut être écrite p(vacciné|hospitalisé). 
 En vérité ce qui nous intéresse ce serait plutôt p(hospitalisé|vacciné), càd le risque d'être hospitalisé sachant qu'on est vacciné, et de le comparer
@@ -25,7 +25,7 @@ Calculons donc la probabilité d'ếtre hospitalisé sachant qu'on est vacciné,
 
 $$ p(hospitalisé|vacciné) = \frac{p(hospitalisé)}{p(vacciné)}p(vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{60}\*0.15$$
+$$ = \frac{8.5}{60}x0.15$$
 
 $$ = 2.1\%$$
 
@@ -33,14 +33,14 @@ Si on applique le même raisonnement pour calculer la probabilité d'être hospi
 
 $$ p(hospitalisé|non vacciné) = \frac{p(hospitalisé)}{p(non vacciné)}p(non vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{40}\*0.85$$
+$$ = \frac{8.5}{40}x0.85$$
 
 $$ = 18.1\%$$
 
 **Attention**, encore une fois, cette estimation est faite en considérant une probabilité de 8,5% d'être hospitalisé si on contracte la covid, cette probabilité est discutable, mais elle ne change pas
 le ratio suivant:
 
-**En france, actuellement, on a 9 fois plus (18.1 / 2.1) de risques d'être hospitalisé si on est pas vacciné, sous l'hypothèse où on contracte la covid.**
+**En france, actuellement, on a 9 fois plus (18.1 / 2.1) de risques d'être hospitalisé si on est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
 
 **Remarque importante**: il y a en plus au moins un biais suplémentaire dans ces données: on a donné le vaccin prioritairement aux personnes les plus vulnérables. Ainsi, on compare une population vaccinée qui est plus fragile (âge, comorbidités) à une population non-vaccinée plus résistante, ce qui peut avoir tendance à faire baisser les "résultats" du vaccin.
 
@@ -68,7 +68,7 @@ La causalité elle, consiste à dire qu'une variable cause/influence une autre. 
 Par exemple ici, on peut voir que la consomation de mozarella est correllée au nombres de doctorats en genie civil decernés aux etats-unis . 
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/covid_stats_erreurs/chart.png) 
 
-Est ce qu'il y a un lien entre ces deux variables ? Probablement pas. Mais à cause de l'alétoire de notre monde, on peut trouver des correlations, par "chance", sans qu'il y ait de causalité.
+Est ce qu'il y a un lien entre ces deux variables ? Probablement pas. Mais à cause de l'aléatoire de notre monde, on peut trouver des correlations, par "chance", sans qu'il y ait de causalité.
 De même, il peut y avoir avoir correlation entre deux variables sans que l'une soit la cause de l'autre, mais plutôt qu'il y ait un autre phénomène caché qui influence ces deux variables.
 
 Par exemple, (repris du livre [Prenez le temps d'y penser](https://livre.fnac.com/a8928388/Bruce-Benamran-Prenez-le-temps-d-e-penser), B. Benamran), les gens qui se couchent avec leurs chaussures on mal à la tête le lendemain. Est ce que pour autant le fait de dormir avec ses chaussures cause le mal de tête ?
