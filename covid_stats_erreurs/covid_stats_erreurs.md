@@ -47,7 +47,7 @@ $$ = 12.4\%$$
 **Attention**, encore une fois, cette estimation est faite en considérant une probabilité de 8,5% d'être hospitalisé si on contracte la covid, cette probabilité est discutable, mais elle ne change pas
 le ratio suivant:
 
-**En france, actuellement, on a 9 fois plus (12.4 / 3.0) de risques d'être hospitalisé si on est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
+**En france, actuellement, on a 4 fois plus (12.4 / 3.0) de risques d'être hospitalisé si on est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
 
 **Remarque importante**: il y a en plus au moins un biais suplémentaire dans ces données: on a donné le vaccin prioritairement aux personnes les plus vulnérables. Ainsi, on compare une population vaccinée qui est plus fragile (âge, comorbidités) à une population non-vaccinée plus résistante, ce qui peut avoir tendance à faire baisser les "résultats" du vaccin.
 
@@ -59,7 +59,7 @@ les nombres de personnes ayant contracté la covid dans chaque groupe (7 pour le
 
 Pourquoi alors semble-t-on dire que le vaccin n'empeche pas d'attraper la covid ? Plusieurs hypothèses sont possibles, 
 comme le fait que le virus ait muté, qu'il y a ce biais de donner un vaccin à une population plus vulnérable, qui fait baisser son score, entre autres. Je ne me risquerai pas à en dire plus, encore une fois ce n'est pas mon domaine de compétence. Toujours est-il qu'en tous cas, retenons que les données actuelles nous donnent une estimation 
-de 9 fois plus de risques d'être hospitalisés à cause du covid en France actuellement si l'on est pas vaccinés que si on l'est.
+de 4 fois plus de risques d'être hospitalisés à cause du covid en France actuellement si l'on est pas vaccinés que si on l'est.
 
 ## Confondre causalité et corrélation
 L'article cite deux chercheurs, qui sont aussi co-signataires: Emanuelle Darles et Vincent Pavant. Dans [cette vidéo](https://crowdbunker.com/v/nen8o1aI), Mr Pavant utilise un modèle (qui peut paraître complexe au premier abord, et même inadéquat au second) et l'adapte à une courbe d'évolution de la mortalité, 
