@@ -91,8 +91,8 @@ Ceci n'est pas une preuve en soi, si on veut être rigoureux, car il faudrait qu
 
 ## Autre remarques diverses
 - Dans l'article de Mr Mucchielli, il est assuré que la balance bénéfice-risque pour les jeunes est très mauvaise. Si
-  on se réfère à la source qui est citée, on se rend compte qu'on compare les risques de la covid sur la population générale
-  par rapport au risque du vaccin pour les jeunes. On compare donc des choses qui sont différentes, les **conclusions sont
+  on se réfère à la source qui est citée, on se rend compte qu'on compare les risques de la covid chez les jeunes
+  par rapport au risque du vaccin dans la population générale. On compare donc des choses qui sont différentes, les **conclusions sont
   donc fausses**. Dans les rapports qu'ils [citent](https://ansm.sante.fr/uploads/2021/07/16/20210716-vaccins-covid-19-rapport-moderna-periode-28-05-2021-01-07-2021.pdf), on a par exemple qu'un seul cas grave pour les 0-15 ans, et on voit que la médiane des décès pour les vaccinés est de 76,2 ans... 
 - On fait l'hypothese que les morts après le vaccin sont liés au vaccin dans cet article. Dans les rapports du CRPV sur le moderna, il est pourtant bien écrit "Aussi ce rapport mensuel présente uniquement les effets indésirables pour lesquels le rôle du vaccin est confirmé ou suspecté". Encore une fois, **trouver la causalité est difficile**. Dans les conclusions des rapports, il est clairement dit
   qu'il n'y a pas de certitude sur le fait que ce soit le vaccin qui cause les morts. Il faut être prudent sur ces affirmations.
