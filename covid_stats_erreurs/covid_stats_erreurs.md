@@ -32,7 +32,7 @@ Calculons donc la probabilité d'ếtre hospitalisé sachant qu'on est vacciné,
 
 $$ p(hospitalisé|vacciné) = \frac{p(hospitalisé)}{p(vacciné)}p(vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{42}*0.15$$
+$$ = \frac{0.85}{0.42}*0.15$$
 
 $$ = 3.0\%$$
 
@@ -40,7 +40,7 @@ Si on applique le même raisonnement pour calculer la probabilité d'être hospi
 
 $$ p(hospitalisé|non vacciné) = \frac{p(hospitalisé)}{p(non vacciné)}p(non vacciné|hospitalisé) $$
 
-$$ = \frac{8.5}{58}*0.85$$
+$$ = \frac{0.85}{0.58}*0.85$$
 
 $$ = 12.4\%$$
 
