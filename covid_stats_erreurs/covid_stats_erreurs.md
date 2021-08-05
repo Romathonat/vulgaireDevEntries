@@ -112,3 +112,4 @@ l'impact d'une seule variable, ou sont-ce des données observationnelles (càd o
 On a finalement aussi estimé ici qu'une personne moyenne de la population française, si elle attrape la covid actuellement, a **quatre fois plus de risques d'être hospitalisée si elle n'est pas vaccinée**.
 Enfin, les données comparatives entre l'angleterre et la tunisie semblent bien confirmer que **la vaccination protège des risques de décès dus au covid**.
 
+*NB*: Merci à [Anes Bendimerad](https://scholar.google.fr/citations?user=GmIYR0UAAAAJ&hl=en), [Aurélie Gabriel](https://scholar.google.com/citations?user=l8NPFGcAAAAJ&hl=fr) et [Nicolas Nativel](https://www.linkedin.com/in/nicolas-nativel-42b2a5b4/) pour leurs relectures et critiques.
