@@ -47,7 +47,7 @@ $$ = 12.4\%$$
 **Attention**, encore une fois, cette estimation est faite en considérant une probabilité de 8,5% d'être hospitalisé si on contracte la covid, cette probabilité est discutable, mais elle ne change pas
 le ratio suivant:
 
-**En france, actuellement, on a 4 fois plus (12.4 / 3.0) de risque d'être hospitalisé si on n'est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
+**En france, actuellement, on a 4 fois plus (12.4 / 3.0) de risques d'être hospitalisé si on n'est pas vacciné, dans l'hypothèse où l'on contracte la covid.**
 
 **Remarque importante**: il y a en plus au moins un biais supplémentaire dans ces données: on a donné le vaccin prioritairement aux personnes les plus vulnérables. Ainsi, on compare une population vaccinée qui est plus fragile (âge, comorbidités) à une population non-vaccinée plus résistante, ce qui peut avoir tendance à faire baisser les "résultats" du vaccin.
 
