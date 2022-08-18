@@ -8,7 +8,7 @@ I used Docker during last months. I write down here what I would have liked to k
 ### As a sysadmin
 Docker was originally based on [LXC](https://en.wikipedia.org/wiki/LXC). Now it uses its own user-space process management mechanism (you can read [here](https://www.infoworld.com/article/3204171/linux/what-is-docker-linux-containers-explained.html) if you want more informations on the underlying architecture of Docker).
 
-In fact there is no hypervisor like with a VM. The term "lightweigt virtualization" is often used, but there is no virtualization. The docker-engine manages processes and take care of them, and their isolation. The size of a docker image can go from some MB to some hundred of MB. The average size is way less than with a VM. In fact, it takes less CPU/RAM/Disk than a VM, that is why for the same bare-metal machine, you can get more with docker than with VMs. It's like filling a box with rocks or with sand.  
+In fact there is no hypervisor (that would be present in the case of a VM). The term "lightweigt virtualization" is often used, but there is no virtualization. The docker-engine manages processes and take care of them, and their isolation. The size of a docker image can go from some MB to some hundred of MB. The average size is way less than with a VM. In fact, it takes less CPU/RAM/Disk than a VM, that is why for the same bare-metal machine, you can get more with docker than with VMs. It's like filling a box with rocks or with sand.  
 ![](https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/docker/docker_vm.png)  
 
 ## Why is it cool ?
