@@ -57,7 +57,6 @@ It does not seems so much better on this image than in the one from iteration 2,
  	
 Here we can se that Daryl (on the right) is not detected because his face is a little turn away from the camera, and our training only included faces "in front" of the camera. In the same way, I think black faces may be more difficult to detect for our CNN because there was less black faces in our training set.
 
-<img src="https://raw.githubusercontent.com/Romathonat/vulgaireDevEntries/master/CNNarticle/irlande.jpg_with_clusters_on_source.jpg" width="600">
 ##Improvement axes
 We could keep only one circle when there are multiple on a the same location. A more important and reprensentative set of faces could also be a good improvement. Finally, we did not pay attention to performances, we could optimize the process because actually, it takes something like 30 seconds to detect faces in an image, depending on it size.
 
