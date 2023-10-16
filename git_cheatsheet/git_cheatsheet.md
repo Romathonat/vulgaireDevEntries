@@ -1,4 +1,3 @@
-# Cheatsheet git
 ## Local branch creation
 ``` bash
 git checkout main
