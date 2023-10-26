@@ -70,18 +70,18 @@ Here is my config file,  useful to handle copy paster in vim, or autolaunch ruff
 ## Testing
 ``` bash
 poetry add pytest pytest-cov
-```
+```  
 The first one will give a coverage visible directly in vs code, the other one a report inside the terminal
 ```bash
 pytest . --cov-report xml:cov.xml --cov .
 pytest . --cov-report term --cov .
-```
+```  
 
 ## Profiling
 ``` bash
 poetry add py-spy
-```
-You can then launch the py-spy to sample the running process and get a nice svg visualization:
+```  
+You can then launch the py-spy to sample the running process and get a nice svg visualization:  
 ``` bash
 py-spy record --pid 1400174 --format speedscope -r 1000
 ```
