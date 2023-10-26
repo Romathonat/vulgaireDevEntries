@@ -13,58 +13,58 @@
 Here is my config file,  useful to handle copy paster in vim, or autolaunch ruff on save for example:
 ```
 {
-	"editor.minimap.enabled": false,
-	// Bracket-pair colorization
-	"editor.bracketPairColorization.enabled": false,
-	"notebook.diff.ignoreMetadata": true,
-	"gitlens.hovers.currentLine.over": "line",
-	"workbench.iconTheme": "material-icon-theme",
-	"files.autoSave": "afterDelay",
-	"git.confirmSync": false,
-	"jupyter.notebookFileRoot": "${workspaceFolder}",
-	"vim.commandLineModeKeyBindingsNonRecursive": [],
-	"vim.useSystemClipboard": true,
-	"vim.handleKeys": {
-		"<C-c>": false,
-		"<C-v>": false
-	},
-	"vim.visualModeKeyBindingsNonRecursive": [
-	{
-		"before": [
-			"p",
-		],
-		"after": [
-			"p",
-			"g",
-			"v",
-			"y"
-		]
-	}
-	],
-	"[python]": {
-		"editor.formatOnSave": true,
-		"editor.codeActionsOnSave": {
-		"source.organizeImports": true,
-		"source.fixAll": true
-		},
-		"editor.formatOnType": true,
-	},
-	"python.analysis.typeCheckingMode": "basic",
-	"python.analysis.autoImportCompletions": true,
-	"python.analysis.stubPath": "",
-	"python.analysis.indexing": true,
-	"python.terminal.activateEnvironment": false,
-	"workbench.colorTheme": "Theme",
-	"gitlens.views.branches.branches.layout": "list",
-	"explorer.confirmDragAndDrop": false,
-	"files.exclude": {
-	"**/__pycache__": true,
-	"**/.pytest_cache": true
-	},
-	"python.analysis.inlayHints.pytestParameters": true,
-	"pythonTestExplorer.testFramework": "pytest",
-	"python.analysis.inlayHints.functionReturnTypes": false,
-}
+	"editor.minimap.enabled": false,  
+	// Bracket-pair colorization  
+	"editor.bracketPairColorization.enabled": false,  
+	"notebook.diff.ignoreMetadata": true,  
+	"gitlens.hovers.currentLine.over": "line",  
+	"workbench.iconTheme": "material-icon-theme",  
+	"files.autoSave": "afterDelay",  
+	"git.confirmSync": false,  
+	"jupyter.notebookFileRoot": "${workspaceFolder}",  
+	"vim.commandLineModeKeyBindingsNonRecursive": [],  
+	"vim.useSystemClipboard": true,  
+	"vim.handleKeys": {  
+		"<C-c>": false,  
+		"<C-v>": false  
+	},  
+	"vim.visualModeKeyBindingsNonRecursive": [  
+	{  
+		"before": [  
+			"p",  
+		],  
+		"after": [  
+			"p",  
+			"g",  
+			"v",  
+			"y"  
+		]  
+	}  
+	],  
+	"[python]": {  
+		"editor.formatOnSave": true,  
+		"editor.codeActionsOnSave": {  
+		"source.organizeImports": true,  
+		"source.fixAll": true  
+		},  
+		"editor.formatOnType": true,  
+	},  
+	"python.analysis.typeCheckingMode": "basic",  
+	"python.analysis.autoImportCompletions": true,  
+	"python.analysis.stubPath": "",  
+	"python.analysis.indexing": true,  
+	"python.terminal.activateEnvironment": false,  
+	"workbench.colorTheme": "Theme",  
+	"gitlens.views.branches.branches.layout": "list",  
+	"explorer.confirmDragAndDrop": false,  
+	"files.exclude": {  
+	"**/__pycache__": true,  
+	"**/.pytest_cache": true  
+	},  
+	"python.analysis.inlayHints.pytestParameters": true,  
+	"pythonTestExplorer.testFramework": "pytest",  
+	"python.analysis.inlayHints.functionReturnTypes": false,  
+}  
 ```
 
 ## Testing
