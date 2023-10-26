@@ -23,7 +23,7 @@ If we have conflicts, handle them manually
 ``` bash
 git push -u --force-with-lease origin illustration_workflow
 ```
-We can configure git to directly send the current branch without having to specify those arguement (simple "git push"):
+We can configure git to directly send the current branch without having to specify those arguement (simple "git push"):  
 ``` bash
 git config --add --bool push.autoSetupRemote true
 ```
@@ -40,7 +40,7 @@ git reset --hard HEAD to delete permanently modifications made after HEAD
 git commit -am --amend --no-edit
 ```
 **Warning** Only on local commit that have not been pushed !
-To change only the commit message:
+To change only the commit message:  
 ``` bash
 git commit --amend
 ```
