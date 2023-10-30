@@ -28,6 +28,11 @@ We can configure git to directly send the current branch without having to speci
 ``` bash
 git config --add --bool push.autoSetupRemote true
 ```
+or for older git version:  
+
+``` bash
+git config --global push.default current
+```
 
 ## Reseting
 ``` bash
