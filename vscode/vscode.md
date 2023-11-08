@@ -10,7 +10,8 @@
 - Theme (publisher:"Mhammed Talhaouy"), personnal preference
 
 ## Configuration file
-Here is my config file,  useful to handle copy paster in vim, or autolaunch ruff on save for example:
+Here is my config file,  useful to handle copy paster in vim, or autolaunch ruff on save for example:  
+
 ```
 {
 	"editor.minimap.enabled": false,  
