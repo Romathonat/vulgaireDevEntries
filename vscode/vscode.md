@@ -48,7 +48,8 @@ Here is my config file,  useful to handle copy paster in vim, or autolaunch ruff
 		"source.organizeImports": true,  
 		"source.fixAll": true  
 		},  
-		"editor.formatOnType": true,  
+		"editor.formatOnType": true,
+ 		"editor.defaultFormatter": "charliermarsh.ruff"
 	},  
 	"python.analysis.typeCheckingMode": "basic",  
 	"python.analysis.autoImportCompletions": true,  
