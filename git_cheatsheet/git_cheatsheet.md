@@ -10,6 +10,12 @@ git add compute_sessions.py
 git commit -m "illustration du workflow"
 ```
 
+## Revert
+Add a commit that reverts previous changes (that way we can create a new tag to deploy anew a previous version)
+``` bash
+git revert HEAD
+```
+
 ## Rebase on main
 ``` bash
 git checkout main
@@ -17,7 +23,11 @@ git pull
 git checkout illustration_workflow
 git rebase main
 ```
-If we have conflicts, handle them manually
+We can also use git fomo (see below aliases)
+If we have conflicts, handle them manually, then
+```
+git push -f
+```
 
 ## Push
 ``` bash
@@ -58,4 +68,35 @@ git checkout new_branch
 git cherry-pick master
 git checkout master
 git reset HEAD~ --hard
+
+
+## Aliases
+```
+[alias]
+     fomo = !git fetch origin main && git rebase origin/main
+     ci = commit
+     co = checkout
+     st = status
+     sts = status -s
+     br = branch
+     tip = log -n 1 --abbrev-commit --decorate
+     lol = log --graph --decorate --pretty=oneline --abbrev-commit
+     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+     unstage = reset HEAD
+     cp = cherry-pick
+     cam = commit -am
+     last = log -1 --stat
+     cl = clone
+     dc = diff --cached
+     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+     dt = diff-tree --no-commit-id --name-only -r
+     pushf = push --force-with-lease
+     last = log -1 --stat
+     oups = commit --amend --no-edit
+     unadd = reset HEAD
+     nvm = reset --hard HEAD
+```
+
+
+
 ```
