@@ -68,7 +68,7 @@ git checkout new_branch
 git cherry-pick master
 git checkout master
 git reset HEAD~ --hard
-
+```
 
 ## Aliases
 ```
@@ -97,6 +97,3 @@ git reset HEAD~ --hard
      nvm = reset --hard HEAD
 ```
 
-
-
-```
