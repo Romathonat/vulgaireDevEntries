@@ -75,12 +75,12 @@ git reset HEAD~ --hard
 [alias]
      fomo = !git fetch origin main && git rebase origin/main
      ci = commit
-     co = checkout
-     st = status
+     co = checkout -b
+     st = status -sb
      sts = status -s
      br = branch
      tip = log -n 1 --abbrev-commit --decorate
-     lol = log --graph --decorate --pretty=oneline --abbrev-commit
+     lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
      lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
      unstage = reset HEAD
      cp = cherry-pick
